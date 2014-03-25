@@ -1,0 +1,1782 @@
+18/02/2014 10:20:04 Comp�tition 1 mise � jour
+18/02/2014 10:21:18 Comp&eacute;tition 2014-02-02-TEST4 ajout&eacute;e
+18/02/2014 10:21:18 Comp&eacute;tition 2014-02-02-TEST4 ajout&eacute;e
+18/02/2014 10:22:11 Comp�tition 3 mise � jour
+18/02/2014 11:40:46 Erreur dans la suppression de la comp�tition 3
+18/02/2014 11:49:10 Comp�tition 3 supprim�e
+18/02/2014 11:51:50 Comp�tition 1 mise � jour
+18/02/2014 14:21:10 Cat�gorie Benjamin ajout�e
+18/02/2014 18:32:32 Comp�tition 1 mise � jour
+18/02/2014 18:37:44 Comp�tition 1 mise � jour
+18/02/2014 18:37:53 Cat�gorie Minimes ajout�e
+18/02/2014 18:38:06 Cat�gorie Test à Supprimer ajout�e
+18/02/2014 18:38:09 Cat�gorie 3 supprim�e
+18/02/2014 19:09:00 Comp�tition 2 mise � jour
+18/02/2014 19:11:56 Comp�tition 2 mise � jour
+18/02/2014 19:12:47 Comp�tition 2 mise � jour
+18/02/2014 19:12:58 Comp�tition 1 mise � jour
+18/02/2014 19:15:30 Comp�tition 2 mise � jour
+18/02/2014 19:41:26 Comp�tition 4 mise � jour
+18/02/2014 19:43:06 Comp�tition 1 mise � jour
+18/02/2014 19:43:38 Comp�tition 2 mise � jour
+18/02/2014 19:44:05 Comp�tition 4 mise � jour
+18/02/2014 22:37:36 Cat�gorie 1 mise � jour
+18/02/2014 22:37:39 Cat�gorie 2 mise � jour
+18/02/2014 23:07:30 Club JKCF ajout�
+18/02/2014 23:07:37 Club 1 supprim�
+18/02/2014 23:18:58 Club 2 mis � jour
+18/02/2014 23:54:15 Club JJKH ajout�
+18/02/2014 23:54:34 Licenci�  ajout�
+19/02/2014 00:01:43 Licenci�  ajout�
+19/02/2014 00:05:01 Licenci�  ajout�
+19/02/2014 00:06:06 Licenci�  supprim�
+19/02/2014 00:06:50 Licenci�  supprim�
+19/02/2014 00:07:12 Licenci� 3 supprim�
+19/02/2014 00:09:04 Licenci� 1 mis � jour
+19/02/2014 01:09:27 Licenci�  ajout�
+19/02/2014 01:09:43 Licenci�  ajout�
+19/02/2014 01:09:55 Licenci�  ajout�
+19/02/2014 01:21:47 Club kendo saint brieux ajout�
+19/02/2014 01:22:05 Licenci�  ajout�
+19/02/2014 01:22:18 Licenci�  ajout�
+19/02/2014 15:19:30 Cat�gorie equipes ajout�e
+19/02/2014 22:04:24 Erreur dans la repartition pour la categorie 4 pour ajout de 4
+19/02/2014 22:04:25 Erreur dans la repartition pour la categorie 4 pour ajout de 6
+19/02/2014 22:06:39 Repartition pour la categorie 4 : ajout de 4
+19/02/2014 22:06:39 Repartition pour la categorie 4 : ajout de 6
+19/02/2014 22:23:56 Repartition pour la categorie 10 : ajout de 4
+19/02/2014 22:23:56 Repartition pour la categorie 10 : ajout de 1
+19/02/2014 22:23:56 Repartition pour la categorie 10 : ajout de 5
+20/02/2014 15:50:08 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 15:50:08 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 15:50:08 Le club Budokan Angers existe en base
+20/02/2014 16:27:17 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:27:17 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:27:17 Le club Budokan Angers existe en base
+20/02/2014 16:28:54 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:28:54 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:28:54 Le club Budokan Angers existe en base
+20/02/2014 16:46:43 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:46:43 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:46:43 Le club Budokan Angers existe en base
+20/02/2014 16:49:19 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE
+%') 
+20/02/2014 16:49:19 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:49:19 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE
+%') 
+20/02/2014 16:49:19 La region PAYS DE LA LOIRE
+ n'existe pas en base
+20/02/2014 16:49:19 Le club Budokan Angers existe en base
+20/02/2014 16:51:43 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE%') 
+20/02/2014 16:51:43 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE%') 
+20/02/2014 16:51:44 Le club Budokan Angers existe en base
+20/02/2014 16:55:48 Le club SAMOURAI 2000 existe en base
+20/02/2014 16:55:48 Le club Ketsugo existe en base
+20/02/2014 16:55:48 Le club Budokan Angers existe en base
+20/02/2014 17:17:17 Categorie HONNEURS ajoutee
+20/02/2014 17:17:33 Categorie SAMOURAI ajoutee
+20/02/2014 17:17:43 Categorie 10 mise a jour
+20/02/2014 17:28:52 Competition 1 mise a jour
+20/02/2014 17:30:44 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE%') 
+20/02/2014 17:30:45 Club  ajoute
+20/02/2014 17:30:45 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:45 Club  ajoute
+20/02/2014 17:30:45 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:47 Club  ajoute
+20/02/2014 17:30:47 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE%') 
+20/02/2014 17:30:48 Club  ajoute
+20/02/2014 17:30:48 Le club JJKH existe en base
+20/02/2014 17:30:48 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE%') 
+20/02/2014 17:30:49 Club  ajoute
+20/02/2014 17:30:49 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:50 Club  ajoute
+20/02/2014 17:30:50 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:51 Club  ajoute
+20/02/2014 17:30:51 Le club KETSUGO existe en base
+20/02/2014 17:30:51 sql : select * from region where upper(libelle) like upper('%POITOU CHARENTES%') 
+20/02/2014 17:30:52 Club  ajoute
+20/02/2014 17:30:52 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:53 Club  ajoute
+20/02/2014 17:30:53 sql : select * from region where upper(libelle) like upper('%POITOU CHARENTES%') 
+20/02/2014 17:30:54 Club  ajoute
+20/02/2014 17:30:54 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:55 Club  ajoute
+20/02/2014 17:30:55 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:56 Club  ajoute
+20/02/2014 17:30:56 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:57 Club  ajoute
+20/02/2014 17:30:57 Le club SAMOURAI 2000 existe en base
+20/02/2014 17:30:57 sql : select * from region where upper(libelle) like upper('%PAYS DE LA LOIRE%') 
+20/02/2014 17:30:58 Club  ajoute
+20/02/2014 17:30:58 sql : select * from region where upper(libelle) like upper('%BRETAGNE%') 
+20/02/2014 17:30:59 Club  ajoute
+20/02/2014 23:01:17 Le licencie ALBA GARTISER Jean Baptiste  n'existe pas en base
+20/02/2014 23:01:17 Le licencie ALBERT Lorenzo  n'existe pas en base
+20/02/2014 23:01:17 Licencie ALLARD Paul ajoute
+20/02/2014 23:01:17 Licencie ALLEE Tanguy ajoute
+20/02/2014 23:01:17 Licencie ANDO Hiromi ajoute
+20/02/2014 23:01:17 Le licencie ANDRE Guillaume  n'existe pas en base
+20/02/2014 23:01:17 Licencie BARANTON Steve ajoute
+20/02/2014 23:01:17 Licencie BENTE Laure ajoute
+20/02/2014 23:01:17 Licencie BERGOUGNIOU Yann ajoute
+20/02/2014 23:01:17 Licencie BERNIER Benjamin ajoute
+20/02/2014 23:01:17 Licencie BILLON Loïc ajoute
+20/02/2014 23:01:17 Licencie BIROT Vincent ajoute
+20/02/2014 23:01:17 Licencie BLANCHARD Ingrid ajoute
+20/02/2014 23:01:17 Licencie BLANCHARD Léonie ajoute
+20/02/2014 23:01:17 Licencie BLANCHARD Maxime ajoute
+20/02/2014 23:01:17 Licencie BOBINET François ajoute
+20/02/2014 23:01:17 Licencie BOBINET Pierre-Louis ajoute
+20/02/2014 23:01:17 Licencie BONNET Arnaud ajoute
+20/02/2014 23:01:17 Licencie BOUDJADI Romain ajoute
+20/02/2014 23:01:17 Licencie BOUHYER Jonathan ajoute
+20/02/2014 23:01:17 Licencie BOUSIQUE Sylvain ajoute
+20/02/2014 23:01:17 Licencie BOUSIQUES Léo ajoute
+20/02/2014 23:01:17 Licencie BOUVET Sébastien ajoute
+20/02/2014 23:01:17 Licencie BOUYSSOU Charles ajoute
+20/02/2014 23:01:17 Licencie BRIERE Patrick ajoute
+20/02/2014 23:01:17 Le licencie BRIOT Christophe  n'existe pas en base
+20/02/2014 23:01:17 Le licencie BRUN Juliette  n'existe pas en base
+20/02/2014 23:01:17 Licencie BRUNES Didier ajoute
+20/02/2014 23:01:17 Licencie CANTIN Sébastien ajoute
+20/02/2014 23:01:17 Licencie CASBONNE Yves ajoute
+20/02/2014 23:01:17 Le licencie CAYARCY Myriam  n'existe pas en base
+20/02/2014 23:01:17 Le licencie CHAIZY Kenvin  n'existe pas en base
+20/02/2014 23:01:17 Le licencie CHARPENTIER Florian  n'existe pas en base
+20/02/2014 23:01:17 Le licencie CHARPENTIER Kévin  n'existe pas en base
+20/02/2014 23:01:17 Licencie CHATILLON Fréderic ajoute
+20/02/2014 23:01:17 Licencie CHAUMEIL Guillaume ajoute
+20/02/2014 23:01:17 Licencie CHEMIN Azeline ajoute
+20/02/2014 23:01:17 Le licencie CHEN Jia  n'existe pas en base
+20/02/2014 23:01:17 Licencie CLAIN Nino ajoute
+20/02/2014 23:01:17 Licencie COM Frédéric ajoute
+20/02/2014 23:01:17 Licencie CORNIER Emmeric ajoute
+20/02/2014 23:01:17 Licencie COUE Anthony ajoute
+20/02/2014 23:01:17 Le licencie DALLANCON Sébastien  n'existe pas en base
+20/02/2014 23:01:17 Le licencie DAVRAINVILLE Arthur  n'existe pas en base
+20/02/2014 23:01:17 Licencie DEBRAY-DESCHODT Paul ajoute
+20/02/2014 23:01:17 Licencie DECAMPS Stéphanie ajoute
+20/02/2014 23:01:17 Licencie DELAHAIE Gilles ajoute
+20/02/2014 23:01:17 Le licencie DELAMARRE Mickael  n'existe pas en base
+20/02/2014 23:01:17 Le licencie DELANNE Lucas  n'existe pas en base
+20/02/2014 23:01:17 Le licencie DELANNE Thierry  n'existe pas en base
+20/02/2014 23:01:17 Licencie DELMOTTE Gérald ajoute
+20/02/2014 23:01:17 Le licencie DERRIEN Christian  n'existe pas en base
+20/02/2014 23:01:17 Le licencie DESCOMBES Eric  n'existe pas en base
+20/02/2014 23:01:17 Licencie DESPONDS Christophe ajoute
+20/02/2014 23:01:17 Licencie DESROZIERS Allan ajoute
+20/02/2014 23:01:17 Licencie DION Emilie ajoute
+20/02/2014 23:01:17 Le licencie DOUTEMENT François  n'existe pas en base
+20/02/2014 23:01:17 Licencie EL IDRISSI Walid ajoute
+20/02/2014 23:01:17 Licencie EPHREM Grégoire ajoute
+20/02/2014 23:01:17 Le licencie EXBRAYAT Mathieu  n'existe pas en base
+20/02/2014 23:01:17 Licencie FALCONE Joseph ajoute
+20/02/2014 23:01:17 Licencie FAMECHON Erwan ajoute
+20/02/2014 23:01:17 Licencie FAMECHON Fabrice ajoute
+20/02/2014 23:01:17 Le licencie FAUCHON Mickaël  n'existe pas en base
+20/02/2014 23:01:17 Le licencie FERAILLE David  n'existe pas en base
+20/02/2014 23:01:17 Licencie FESTOC Jean-Philippe ajoute
+20/02/2014 23:01:17 Licencie FILLIASTRE Vincent ajoute
+20/02/2014 23:01:17 Le licencie FOUBERT Paul  n'existe pas en base
+20/02/2014 23:01:17 Le licencie FOUQUE Adrien  n'existe pas en base
+20/02/2014 23:01:17 Le licencie FOURE Justine  n'existe pas en base
+20/02/2014 23:01:17 Licencie FRAGNAUD Sébastien ajoute
+20/02/2014 23:01:17 Le licencie FRESNEDA Jean-Pierre  n'existe pas en base
+20/02/2014 23:01:17 Licencie GAILLARD Benoit ajoute
+20/02/2014 23:01:17 Licencie GANGLOFF Renaud ajoute
+20/02/2014 23:01:17 Le licencie GANTY Ambre  n'existe pas en base
+20/02/2014 23:01:17 Licencie GAUGNE Ronan ajoute
+20/02/2014 23:01:17 Le licencie GENTILLET Loïc  n'existe pas en base
+20/02/2014 23:01:17 Licencie GERARD Damien ajoute
+20/02/2014 23:01:17 Licencie GIGNON Thibault ajoute
+20/02/2014 23:01:17 Licencie GIMON Thibault ajoute
+20/02/2014 23:01:17 Licencie GIVAUDAN Florimond ajoute
+20/02/2014 23:01:17 Le licencie GOEMAERE Guillaume  n'existe pas en base
+20/02/2014 23:01:18 Licencie GRAS Sébastien ajoute
+20/02/2014 23:01:18 Le licencie GREGOIRE Fabien  n'existe pas en base
+20/02/2014 23:01:18 Le licencie GROLEAU Mickael  n'existe pas en base
+20/02/2014 23:01:18 Licencie GUILLOT Sébastien ajoute
+20/02/2014 23:01:18 Licencie GUYOMARD Samuel ajoute
+20/02/2014 23:01:18 Licencie GUYONVAR'CH Ludovic ajoute
+20/02/2014 23:01:18 Licencie HAFFENER Nicolas ajoute
+20/02/2014 23:01:18 Licencie HAMELIN David ajoute
+20/02/2014 23:01:18 Licencie HARDY Thomas ajoute
+20/02/2014 23:01:18 Licencie HAROU Franck ajoute
+20/02/2014 23:01:18 Licencie HAYART Vincent ajoute
+20/02/2014 23:01:18 Licencie HELBERT Caroline ajoute
+20/02/2014 23:01:18 Licencie HELOU Nicolas ajoute
+20/02/2014 23:01:18 Licencie HERVET Ophélie ajoute
+20/02/2014 23:01:18 Le licencie IIZARN Jules  n'existe pas en base
+20/02/2014 23:01:18 Licencie JARASSIER Ambre ajoute
+20/02/2014 23:01:18 Le licencie JUDITH Nicolas  n'existe pas en base
+20/02/2014 23:01:18 Licencie JULIEN Willyam ajoute
+20/02/2014 23:01:18 Le licencie KERCRET Arnaud  n'existe pas en base
+20/02/2014 23:01:18 Licencie LAFITTE Laëtitia ajoute
+20/02/2014 23:01:18 Le licencie LAMBERT Olivier  n'existe pas en base
+20/02/2014 23:01:18 Licencie LANDABOUROU Simon ajoute
+20/02/2014 23:01:18 Licencie LANDRE Laura ajoute
+20/02/2014 23:01:18 Licencie LANGLOIS Thierry ajoute
+20/02/2014 23:01:18 Licencie LANIO Stéphane ajoute
+20/02/2014 23:01:18 Le licencie LE BOURHIS Yves  n'existe pas en base
+20/02/2014 23:01:18 Licencie LE DAUPHIN Luc ajoute
+20/02/2014 23:01:18 Licencie LE POUPON Ronan ajoute
+20/02/2014 23:01:18 Le licencie LEBIHAN William  n'existe pas en base
+20/02/2014 23:01:18 Licencie LECLERC Laurent ajoute
+20/02/2014 23:01:18 Le licencie LECLOAREC Yann  n'existe pas en base
+20/02/2014 23:01:18 Licencie LEGALL Jean Luc ajoute
+20/02/2014 23:01:18 Le licencie LEMPEREUR Christian  n'existe pas en base
+20/02/2014 23:01:18 Licencie LEPIEZ Didier ajoute
+20/02/2014 23:01:18 Licencie LETTY Quentin ajoute
+20/02/2014 23:01:18 Licencie LION Alexandre ajoute
+20/02/2014 23:01:18 Licencie LOBEL Mathias ajoute
+20/02/2014 23:01:18 Licencie MARCAILLOU Maxime ajoute
+20/02/2014 23:01:18 Licencie MARCELIN Titouan ajoute
+20/02/2014 23:01:18 Licencie MARCELLIN Alan ajoute
+20/02/2014 23:01:18 Le licencie MARECHAL Clément  n'existe pas en base
+20/02/2014 23:01:18 Licencie MARTEL Xavier ajoute
+20/02/2014 23:01:18 Licencie MARY Nathan ajoute
+20/02/2014 23:01:18 Le licencie MASSACRET Léo  n'existe pas en base
+20/02/2014 23:01:18 Licencie MAUGE Axel ajoute
+20/02/2014 23:01:18 Licencie MAUGE Simon ajoute
+20/02/2014 23:01:18 Licencie MELNOTTE Iwan ajoute
+20/02/2014 23:01:18 Licencie MENARD Hélène ajoute
+20/02/2014 23:01:18 Licencie MEUNIER Christian ajoute
+20/02/2014 23:01:18 Licencie MICHAUD Julien ajoute
+20/02/2014 23:01:18 Licencie MICHAUD Olivier ajoute
+20/02/2014 23:01:18 Licencie MICHEL Gaëtan ajoute
+20/02/2014 23:01:18 Le licencie MICHEL Jocelin  n'existe pas en base
+20/02/2014 23:01:18 Licencie MICHEL Pascal ajoute
+20/02/2014 23:01:18 Licencie MINGUY Sebastien ajoute
+20/02/2014 23:01:18 Licencie MOIGNET François ajoute
+20/02/2014 23:01:18 Licencie MONFREUX Sébastien ajoute
+20/02/2014 23:01:18 Licencie MONTESSINOS Léo ajoute
+20/02/2014 23:01:18 Le licencie MOREAU Emeline  n'existe pas en base
+20/02/2014 23:01:18 Licencie MOREAU Perrine ajoute
+20/02/2014 23:01:18 Licencie MORIO Benjamin ajoute
+20/02/2014 23:01:18 Licencie MUZET Sébastien ajoute
+20/02/2014 23:01:18 Licencie NICOLAS Jean-Pierre ajoute
+20/02/2014 23:01:18 Licencie NIVAULT Isabelle ajoute
+20/02/2014 23:01:18 Le licencie OBERT Cyrille  n'existe pas en base
+20/02/2014 23:01:18 Licencie OI Makiko ajoute
+20/02/2014 23:01:18 Licencie PALUMBO Salvatore ajoute
+20/02/2014 23:01:18 Licencie PALVADEAU Brigitte ajoute
+20/02/2014 23:01:18 Le licencie PERIES Patrice  n'existe pas en base
+20/02/2014 23:01:18 Licencie PERNNES Rubens ajoute
+20/02/2014 23:01:18 Le licencie PHILIBERT Emmanuel  n'existe pas en base
+20/02/2014 23:01:18 Licencie PICHAUD Carine ajoute
+20/02/2014 23:01:18 Licencie PIERRE Jérémy ajoute
+20/02/2014 23:01:18 Le licencie PIERRE Philippe  n'existe pas en base
+20/02/2014 23:01:18 Licencie PLOQUIN Luc ajoute
+20/02/2014 23:01:18 Licencie PLOQUIN Stéphane ajoute
+20/02/2014 23:01:18 Licencie POHIN Eugène ajoute
+20/02/2014 23:01:18 Licencie PORTANGUEN Thierry ajoute
+20/02/2014 23:01:18 Licencie PRAT Fabien ajoute
+20/02/2014 23:01:18 Licencie QUERE-ROPERS Pierre-Yvan ajoute
+20/02/2014 23:01:18 Licencie RANNOU Laurent ajoute
+20/02/2014 23:01:18 Licencie RAULT Antoine ajoute
+20/02/2014 23:01:18 Licencie RAVELOMANANTSOA Malo ajoute
+20/02/2014 23:01:18 Licencie REGDOZ Thomas ajoute
+20/02/2014 23:01:18 Licencie REGNACQ Clément ajoute
+20/02/2014 23:01:18 Licencie REGNACQ François ajoute
+20/02/2014 23:01:18 Le licencie RENOUX Florian  n'existe pas en base
+20/02/2014 23:01:18 Le licencie RIBOULET Charlotte  n'existe pas en base
+20/02/2014 23:01:18 Licencie RICHARD Bruno ajoute
+20/02/2014 23:01:18 Licencie ROBERT Arnaud ajoute
+20/02/2014 23:01:18 Licencie ROBIN Adélie ajoute
+20/02/2014 23:01:18 Licencie ROBINEAU Lucie ajoute
+20/02/2014 23:01:18 Licencie ROCARD Kévin ajoute
+20/02/2014 23:01:18 Licencie ROMMEL Therry ajoute
+20/02/2014 23:01:18 Le licencie ROSZYPAL Gilles  n'existe pas en base
+20/02/2014 23:01:18 Licencie ROUSSEAU Sabrina ajoute
+20/02/2014 23:01:18 Licencie RUVOEN Laure ajoute
+20/02/2014 23:01:18 Licencie SABOUREAU Nathalie ajoute
+20/02/2014 23:01:18 Le licencie SALAZARD Allan  n'existe pas en base
+20/02/2014 23:01:18 Licencie SAUNIER Aubin ajoute
+20/02/2014 23:01:18 Licencie SENEGAL Luc ajoute
+20/02/2014 23:01:18 Le licencie SERNA Marie Lou  n'existe pas en base
+20/02/2014 23:01:18 Le licencie SERVECASTELIN Guillaume  n'existe pas en base
+20/02/2014 23:01:18 Le licencie SICARD Marie Josèphe  n'existe pas en base
+20/02/2014 23:01:18 Licencie SOULARD Benoit ajoute
+20/02/2014 23:01:18 Le licencie TANGUY Steven  n'existe pas en base
+20/02/2014 23:01:18 Le licencie TAVEL Géraldine  n'existe pas en base
+20/02/2014 23:01:18 Licencie TEXIER Coralie ajoute
+20/02/2014 23:01:18 Licencie TEXIER Léa ajoute
+20/02/2014 23:01:18 Licencie TEXIER Mathieu ajoute
+20/02/2014 23:01:18 Licencie THERET Franck ajoute
+20/02/2014 23:01:18 Licencie THOMAS Claire ajoute
+20/02/2014 23:01:18 Licencie THOMAS Pierre ajoute
+20/02/2014 23:01:18 Licencie TORDJMAN Kamel ajoute
+20/02/2014 23:01:18 Le licencie TREMEAU Emmanuel  n'existe pas en base
+20/02/2014 23:01:18 Licencie TREVEDY Gwenaël ajoute
+20/02/2014 23:01:18 Le licencie TRIBOULET Maurice  n'existe pas en base
+20/02/2014 23:01:18 Licencie TRUQUET Nicolas ajoute
+20/02/2014 23:01:18 Le licencie VANNERON Erwan  n'existe pas en base
+20/02/2014 23:01:18 Le licencie VAUTIER Jean Philippe  n'existe pas en base
+20/02/2014 23:01:18 Le licencie VIALLE Yoan  n'existe pas en base
+20/02/2014 23:01:18 Licencie VIGOUROUX Gurvan ajoute
+20/02/2014 23:01:18 Le licencie VIREPINTE Philippe  n'existe pas en base
+20/02/2014 23:01:18 Licencie WEEGER Cyril ajoute
+20/02/2014 23:01:18 Licencie YA Jenny ajoute
+20/02/2014 23:01:18 Licencie YA Paul ajoute
+20/02/2014 23:01:18 Licencie YAMAMOTO Manabu ajoute
+20/02/2014 23:15:39 Le licencie Jean Baptiste ALBA GARTISER  n'existe pas en base
+20/02/2014 23:15:39 Le licencie Lorenzo ALBERT  n'existe pas en base
+20/02/2014 23:15:39 Licencie Paul ALLARD ajoute
+20/02/2014 23:15:39 Licencie Tanguy ALLEE ajoute
+20/02/2014 23:15:39 Licencie Hiromi ANDO ajoute
+20/02/2014 23:15:39 Le licencie Guillaume ANDRE  n'existe pas en base
+20/02/2014 23:15:39 Licencie Steve BARANTON ajoute
+20/02/2014 23:15:39 Licencie Laure BENTE ajoute
+20/02/2014 23:15:39 Licencie Yann BERGOUGNIOU ajoute
+20/02/2014 23:15:39 Licencie Benjamin BERNIER ajoute
+20/02/2014 23:15:39 Licencie Loïc BILLON ajoute
+20/02/2014 23:15:39 Licencie Vincent BIROT ajoute
+20/02/2014 23:15:39 Licencie Ingrid BLANCHARD ajoute
+20/02/2014 23:15:39 Licencie Léonie BLANCHARD ajoute
+20/02/2014 23:15:39 Licencie Maxime BLANCHARD ajoute
+20/02/2014 23:15:39 Licencie François BOBINET ajoute
+20/02/2014 23:15:39 Licencie Pierre-Louis BOBINET ajoute
+20/02/2014 23:15:39 Licencie Arnaud BONNET ajoute
+20/02/2014 23:15:39 Licencie Romain BOUDJADI ajoute
+20/02/2014 23:15:39 Licencie Jonathan BOUHYER ajoute
+20/02/2014 23:15:39 Licencie Sylvain BOUSIQUE ajoute
+20/02/2014 23:15:39 Licencie Léo BOUSIQUES ajoute
+20/02/2014 23:15:39 Licencie Sébastien BOUVET ajoute
+20/02/2014 23:15:39 Licencie Charles BOUYSSOU ajoute
+20/02/2014 23:15:39 Licencie Patrick BRIERE ajoute
+20/02/2014 23:15:39 Le licencie Christophe BRIOT  n'existe pas en base
+20/02/2014 23:15:39 Le licencie Juliette BRUN  n'existe pas en base
+20/02/2014 23:15:39 Licencie Didier BRUNES ajoute
+20/02/2014 23:15:39 Licencie Sébastien CANTIN ajoute
+20/02/2014 23:15:39 Licencie Yves CASBONNE ajoute
+20/02/2014 23:15:39 Le licencie Myriam CAYARCY  n'existe pas en base
+20/02/2014 23:15:39 Le licencie Kenvin CHAIZY  n'existe pas en base
+20/02/2014 23:15:39 Le licencie Florian CHARPENTIER  n'existe pas en base
+20/02/2014 23:15:39 Le licencie Kévin CHARPENTIER  n'existe pas en base
+20/02/2014 23:15:39 Licencie Fréderic CHATILLON ajoute
+20/02/2014 23:15:39 Licencie Guillaume CHAUMEIL ajoute
+20/02/2014 23:15:39 Licencie Azeline CHEMIN ajoute
+20/02/2014 23:15:39 Le licencie Jia CHEN  n'existe pas en base
+20/02/2014 23:15:39 Licencie Nino CLAIN ajoute
+20/02/2014 23:15:39 Licencie Frédéric COM ajoute
+20/02/2014 23:15:39 Licencie Emmeric CORNIER ajoute
+20/02/2014 23:15:39 Licencie Anthony COUE ajoute
+20/02/2014 23:15:39 Le licencie Sébastien DALLANCON  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Arthur DAVRAINVILLE  n'existe pas en base
+20/02/2014 23:15:40 Licencie Paul DEBRAY-DESCHODT ajoute
+20/02/2014 23:15:40 Licencie Stéphanie DECAMPS ajoute
+20/02/2014 23:15:40 Licencie Gilles DELAHAIE ajoute
+20/02/2014 23:15:40 Le licencie Mickael DELAMARRE  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Lucas DELANNE  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Thierry DELANNE  n'existe pas en base
+20/02/2014 23:15:40 Licencie Gérald DELMOTTE ajoute
+20/02/2014 23:15:40 Le licencie Christian DERRIEN  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Eric DESCOMBES  n'existe pas en base
+20/02/2014 23:15:40 Licencie Christophe DESPONDS ajoute
+20/02/2014 23:15:40 Licencie Allan DESROZIERS ajoute
+20/02/2014 23:15:40 Licencie Emilie DION ajoute
+20/02/2014 23:15:40 Le licencie François DOUTEMENT  n'existe pas en base
+20/02/2014 23:15:40 Licencie Walid EL IDRISSI ajoute
+20/02/2014 23:15:40 Licencie Grégoire EPHREM ajoute
+20/02/2014 23:15:40 Le licencie Mathieu EXBRAYAT  n'existe pas en base
+20/02/2014 23:15:40 Licencie Joseph FALCONE ajoute
+20/02/2014 23:15:40 Licencie Erwan FAMECHON ajoute
+20/02/2014 23:15:40 Licencie Fabrice FAMECHON ajoute
+20/02/2014 23:15:40 Le licencie Mickaël FAUCHON  n'existe pas en base
+20/02/2014 23:15:40 Le licencie David FERAILLE  n'existe pas en base
+20/02/2014 23:15:40 Licencie Jean-Philippe FESTOC ajoute
+20/02/2014 23:15:40 Licencie Vincent FILLIASTRE ajoute
+20/02/2014 23:15:40 Le licencie Paul FOUBERT  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Adrien FOUQUE  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Justine FOURE  n'existe pas en base
+20/02/2014 23:15:40 Licencie Sébastien FRAGNAUD ajoute
+20/02/2014 23:15:40 Le licencie Jean-Pierre FRESNEDA  n'existe pas en base
+20/02/2014 23:15:40 Licencie Benoit GAILLARD ajoute
+20/02/2014 23:15:40 Licencie Renaud GANGLOFF ajoute
+20/02/2014 23:15:40 Le licencie Ambre GANTY  n'existe pas en base
+20/02/2014 23:15:40 Licencie Ronan GAUGNE ajoute
+20/02/2014 23:15:40 Le licencie Loïc GENTILLET  n'existe pas en base
+20/02/2014 23:15:40 Licencie Damien GERARD ajoute
+20/02/2014 23:15:40 Licencie Thibault GIGNON ajoute
+20/02/2014 23:15:40 Licencie Thibault GIMON ajoute
+20/02/2014 23:15:40 Licencie Florimond GIVAUDAN ajoute
+20/02/2014 23:15:40 Le licencie Guillaume GOEMAERE  n'existe pas en base
+20/02/2014 23:15:40 Licencie Sébastien GRAS ajoute
+20/02/2014 23:15:40 Le licencie Fabien GREGOIRE  n'existe pas en base
+20/02/2014 23:15:40 Le licencie Mickael GROLEAU  n'existe pas en base
+20/02/2014 23:15:40 Licencie Sébastien GUILLOT ajoute
+20/02/2014 23:15:40 Licencie Samuel GUYOMARD ajoute
+20/02/2014 23:15:40 Licencie Ludovic GUYONVAR'CH ajoute
+20/02/2014 23:15:40 Licencie Nicolas HAFFENER ajoute
+20/02/2014 23:15:40 Licencie David HAMELIN ajoute
+20/02/2014 23:15:40 Licencie Thomas HARDY ajoute
+20/02/2014 23:15:40 Licencie Franck HAROU ajoute
+20/02/2014 23:15:40 Licencie Vincent HAYART ajoute
+20/02/2014 23:15:40 Licencie Caroline HELBERT ajoute
+20/02/2014 23:15:40 Licencie Nicolas HELOU ajoute
+20/02/2014 23:15:40 Licencie Ophélie HERVET ajoute
+20/02/2014 23:15:40 Le licencie Jules IIZARN  n'existe pas en base
+20/02/2014 23:15:40 Licencie Ambre JARASSIER ajoute
+20/02/2014 23:15:40 Le licencie Nicolas JUDITH  n'existe pas en base
+20/02/2014 23:15:40 Licencie Willyam JULIEN ajoute
+20/02/2014 23:15:40 Le licencie Arnaud KERCRET  n'existe pas en base
+20/02/2014 23:15:40 Licencie Laëtitia LAFITTE ajoute
+20/02/2014 23:15:40 Le licencie Olivier LAMBERT  n'existe pas en base
+20/02/2014 23:15:40 Licencie Simon LANDABOUROU ajoute
+20/02/2014 23:15:40 Licencie Laura LANDRE ajoute
+20/02/2014 23:15:40 Licencie Thierry LANGLOIS ajoute
+20/02/2014 23:15:40 Licencie Stéphane LANIO ajoute
+20/02/2014 23:15:40 Le licencie Yves LE BOURHIS  n'existe pas en base
+20/02/2014 23:15:40 Licencie Luc LE DAUPHIN ajoute
+20/02/2014 23:15:40 Licencie Ronan LE POUPON ajoute
+20/02/2014 23:15:40 Le licencie William LEBIHAN  n'existe pas en base
+20/02/2014 23:15:40 Licencie Laurent LECLERC ajoute
+20/02/2014 23:15:40 Le licencie Yann LECLOAREC  n'existe pas en base
+20/02/2014 23:15:40 Licencie Jean Luc LEGALL ajoute
+20/02/2014 23:15:40 Le licencie Christian LEMPEREUR  n'existe pas en base
+20/02/2014 23:15:40 Licencie Didier LEPIEZ ajoute
+20/02/2014 23:15:40 Licencie Quentin LETTY ajoute
+20/02/2014 23:15:40 Licencie Alexandre LION ajoute
+20/02/2014 23:15:40 Licencie Mathias LOBEL ajoute
+20/02/2014 23:15:40 Licencie Maxime MARCAILLOU ajoute
+20/02/2014 23:15:40 Licencie Titouan MARCELIN ajoute
+20/02/2014 23:15:40 Licencie Alan MARCELLIN ajoute
+20/02/2014 23:15:40 Le licencie Clément MARECHAL  n'existe pas en base
+20/02/2014 23:15:40 Licencie Xavier MARTEL ajoute
+20/02/2014 23:15:40 Licencie Nathan MARY ajoute
+20/02/2014 23:15:40 Le licencie Léo MASSACRET  n'existe pas en base
+20/02/2014 23:15:40 Licencie Axel MAUGE ajoute
+20/02/2014 23:15:40 Licencie Simon MAUGE ajoute
+20/02/2014 23:15:40 Licencie Iwan MELNOTTE ajoute
+20/02/2014 23:15:40 Licencie Hélène MENARD ajoute
+20/02/2014 23:15:40 Licencie Christian MEUNIER ajoute
+20/02/2014 23:15:40 Licencie Julien MICHAUD ajoute
+20/02/2014 23:15:40 Licencie Olivier MICHAUD ajoute
+20/02/2014 23:15:40 Licencie Gaëtan MICHEL ajoute
+20/02/2014 23:15:40 Le licencie Jocelin MICHEL  n'existe pas en base
+20/02/2014 23:15:40 Licencie Pascal MICHEL ajoute
+20/02/2014 23:15:40 Licencie Sebastien MINGUY ajoute
+20/02/2014 23:15:40 Licencie François MOIGNET ajoute
+20/02/2014 23:15:40 Licencie Sébastien MONFREUX ajoute
+20/02/2014 23:15:40 Licencie Léo MONTESSINOS ajoute
+20/02/2014 23:15:40 Le licencie Emeline MOREAU  n'existe pas en base
+20/02/2014 23:15:40 Licencie Perrine MOREAU ajoute
+20/02/2014 23:15:40 Licencie Benjamin MORIO ajoute
+20/02/2014 23:15:40 Licencie Sébastien MUZET ajoute
+20/02/2014 23:15:40 Licencie Jean-Pierre NICOLAS ajoute
+20/02/2014 23:15:40 Licencie Isabelle NIVAULT ajoute
+20/02/2014 23:15:40 Le licencie Cyrille OBERT  n'existe pas en base
+20/02/2014 23:15:40 Licencie Makiko OI ajoute
+20/02/2014 23:15:40 Licencie Salvatore PALUMBO ajoute
+20/02/2014 23:15:40 Licencie Brigitte PALVADEAU ajoute
+20/02/2014 23:15:40 Le licencie Patrice PERIES  n'existe pas en base
+20/02/2014 23:15:40 Licencie Rubens PERNNES ajoute
+20/02/2014 23:15:40 Le licencie Emmanuel PHILIBERT  n'existe pas en base
+20/02/2014 23:15:40 Licencie Carine PICHAUD ajoute
+20/02/2014 23:15:40 Licencie Jérémy PIERRE ajoute
+20/02/2014 23:15:40 Le licencie Philippe PIERRE  n'existe pas en base
+20/02/2014 23:15:40 Licencie Luc PLOQUIN ajoute
+20/02/2014 23:15:40 Licencie Stéphane PLOQUIN ajoute
+20/02/2014 23:15:40 Licencie Eugène POHIN ajoute
+20/02/2014 23:15:40 Licencie Thierry PORTANGUEN ajoute
+20/02/2014 23:15:40 Licencie Fabien PRAT ajoute
+20/02/2014 23:15:40 Licencie Pierre-Yvan QUERE-ROPERS ajoute
+20/02/2014 23:15:40 Licencie Laurent RANNOU ajoute
+20/02/2014 23:15:40 Licencie Antoine RAULT ajoute
+20/02/2014 23:15:40 Licencie Malo RAVELOMANANTSOA ajoute
+20/02/2014 23:15:41 Licencie Thomas REGDOZ ajoute
+20/02/2014 23:15:41 Licencie Clément REGNACQ ajoute
+20/02/2014 23:15:41 Licencie François REGNACQ ajoute
+20/02/2014 23:15:41 Le licencie Florian RENOUX  n'existe pas en base
+20/02/2014 23:15:41 Le licencie Charlotte RIBOULET  n'existe pas en base
+20/02/2014 23:15:41 Licencie Bruno RICHARD ajoute
+20/02/2014 23:15:41 Licencie Arnaud ROBERT ajoute
+20/02/2014 23:15:41 Licencie Adélie ROBIN ajoute
+20/02/2014 23:15:41 Licencie Lucie ROBINEAU ajoute
+20/02/2014 23:15:41 Licencie Kévin ROCARD ajoute
+20/02/2014 23:15:41 Licencie Therry ROMMEL ajoute
+20/02/2014 23:15:41 Le licencie Gilles ROSZYPAL  n'existe pas en base
+20/02/2014 23:15:41 Licencie Sabrina ROUSSEAU ajoute
+20/02/2014 23:15:41 Licencie Laure RUVOEN ajoute
+20/02/2014 23:15:41 Licencie Nathalie SABOUREAU ajoute
+20/02/2014 23:15:41 Le licencie Allan SALAZARD  n'existe pas en base
+20/02/2014 23:15:41 Licencie Aubin SAUNIER ajoute
+20/02/2014 23:15:41 Licencie Luc SENEGAL ajoute
+20/02/2014 23:15:41 Le licencie Marie Lou SERNA  n'existe pas en base
+20/02/2014 23:15:41 Le licencie Guillaume SERVECASTELIN  n'existe pas en base
+20/02/2014 23:15:41 Le licencie Marie Josèphe SICARD  n'existe pas en base
+20/02/2014 23:15:41 Licencie Benoit SOULARD ajoute
+20/02/2014 23:15:41 Le licencie Steven TANGUY  n'existe pas en base
+20/02/2014 23:15:41 Le licencie Géraldine TAVEL  n'existe pas en base
+20/02/2014 23:15:41 Licencie Coralie TEXIER ajoute
+20/02/2014 23:15:41 Licencie Léa TEXIER ajoute
+20/02/2014 23:15:41 Licencie Mathieu TEXIER ajoute
+20/02/2014 23:15:41 Licencie Franck THERET ajoute
+20/02/2014 23:15:41 Licencie Claire THOMAS ajoute
+20/02/2014 23:15:41 Licencie Pierre THOMAS ajoute
+20/02/2014 23:15:41 Licencie Kamel TORDJMAN ajoute
+20/02/2014 23:15:41 Le licencie Emmanuel TREMEAU  n'existe pas en base
+20/02/2014 23:15:41 Licencie Gwenaël TREVEDY ajoute
+20/02/2014 23:15:41 Le licencie Maurice TRIBOULET  n'existe pas en base
+20/02/2014 23:15:41 Licencie Nicolas TRUQUET ajoute
+20/02/2014 23:15:41 Le licencie Erwan VANNERON  n'existe pas en base
+20/02/2014 23:15:41 Le licencie Jean Philippe VAUTIER  n'existe pas en base
+20/02/2014 23:15:41 Le licencie Yoan VIALLE  n'existe pas en base
+20/02/2014 23:15:41 Licencie Gurvan VIGOUROUX ajoute
+20/02/2014 23:15:41 Le licencie Philippe VIREPINTE  n'existe pas en base
+20/02/2014 23:15:41 Licencie Cyril WEEGER ajoute
+20/02/2014 23:15:41 Licencie Jenny YA ajoute
+20/02/2014 23:15:41 Licencie Paul YA ajoute
+20/02/2014 23:15:41 Licencie Manabu YAMAMOTO ajoute
+20/02/2014 23:34:21 Erreur dans la repartition pour la categorie 1 pour ajout de 250
+20/02/2014 23:34:21 Erreur dans la repartition pour la categorie 1 pour ajout de 251
+20/02/2014 23:50:25 Repartition pour la categorie 1 : ajout de 157
+20/02/2014 23:50:25 Repartition pour la categorie 1 : ajout de 185
+20/02/2014 23:50:25 Repartition pour la categorie 1 : ajout de 281
+20/02/2014 23:50:44 Repartition pour la categorie 4 : ajout de 250
+20/02/2014 23:50:44 Repartition pour la categorie 4 : ajout de 251
+21/02/2014 00:05:01 Repartition pour la categorie 1 : ajout de 250
+21/02/2014 14:42:28 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Léo BOUSIQUES
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Lucas DELANNE
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Thierry DELANNE
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Gérald DELMOTTE
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Christian DERRIEN
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Eric DESCOMBES
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Christophe DESPONDS
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Allan DESROZIERS
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Emilie DION
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie François DOUTEMENT
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Gilles ROSZYPAL
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Gurvan VIGOUROUX
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Philippe VIREPINTE
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Cyril WEEGER
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Jenny YA
+ n'existe pasen base
+21/02/2014 14:42:28 Le licencie Paul YA
+ n'existe pasen base
+21/02/2014 14:42:28 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pasen base
+21/02/2014 14:46:05 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Le licencie Lucas DELANNE
+ n'existe pasen base
+21/02/2014 14:46:05 Le licencie Thierry DELANNE
+ n'existe pasen base
+21/02/2014 14:46:05 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Le licencie Christian DERRIEN
+ n'existe pasen base
+21/02/2014 14:46:05 Le licencie Eric DESCOMBES
+ n'existe pasen base
+21/02/2014 14:46:05 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Le licencie François DOUTEMENT
+ n'existe pasen base
+21/02/2014 14:46:05 Le licencie Gilles ROSZYPAL
+ n'existe pasen base
+21/02/2014 14:46:05 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Le licencie Philippe VIREPINTE
+ n'existe pasen base
+21/02/2014 14:46:05 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:46:05 Erreur dans l'ajout de la repartition Manabu YAMAMOTO dans la cat�gorie 13
+21/02/2014 14:55:01 Erreur dans la suppression de la repartition 
+21/02/2014 14:55:29 Erreur dans la suppression de la repartition 
+21/02/2014 14:55:51 Erreur dans la suppression de la repartition 
+21/02/2014 14:56:09 Erreur dans la suppression de la repartition 
+21/02/2014 14:57:39 Repartition supprimee
+21/02/2014 14:57:40 Repartition supprimee
+21/02/2014 14:57:40 Repartition supprimee
+21/02/2014 14:57:41 Repartition supprimee
+21/02/2014 14:57:42 Repartition supprimee
+21/02/2014 14:57:43 Repartition supprimee
+21/02/2014 14:57:44 Repartition supprimee
+21/02/2014 14:57:44 Repartition supprimee
+21/02/2014 14:57:45 Repartition supprimee
+21/02/2014 14:57:56 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 14:57:56 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:57:56 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 14:57:56 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 14:57:57 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:57:57 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 14:57:57 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 14:57:57 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:57:58 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:57:59 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:57:59 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 14:57:59 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 14:57:59 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:57:59 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 14:58:00 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:58:00 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:58:01 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:58:01 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 14:58:53 Repartition supprimee
+21/02/2014 14:58:54 Repartition supprimee
+21/02/2014 14:58:54 Repartition supprimee
+21/02/2014 14:58:55 Repartition supprimee
+21/02/2014 14:58:55 Repartition supprimee
+21/02/2014 14:58:55 Repartition supprimee
+21/02/2014 14:58:55 Repartition supprimee
+21/02/2014 14:58:56 Repartition supprimee
+21/02/2014 14:58:56 Repartition supprimee
+21/02/2014 14:58:56 Repartition supprimee
+21/02/2014 14:59:07 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 14:59:08 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:08 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 14:59:08 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 14:59:08 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:08 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 14:59:08 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 14:59:08 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:09 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:09 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:09 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 14:59:09 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 14:59:09 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:09 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 14:59:09 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:10 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:10 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 14:59:10 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:21 Repartition supprimee
+21/02/2014 15:02:22 Repartition supprimee
+21/02/2014 15:02:22 Repartition supprimee
+21/02/2014 15:02:22 Repartition supprimee
+21/02/2014 15:02:22 Repartition supprimee
+21/02/2014 15:02:22 Repartition supprimee
+21/02/2014 15:02:23 Repartition supprimee
+21/02/2014 15:02:23 Repartition supprimee
+21/02/2014 15:02:23 Repartition supprimee
+21/02/2014 15:02:23 Repartition supprimee
+21/02/2014 15:02:35 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 15:02:36 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:36 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 15:02:36 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 15:02:36 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:36 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 15:02:36 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 15:02:36 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:36 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:36 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:37 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 15:02:37 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 15:02:37 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:37 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 15:02:37 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:37 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:37 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:02:37 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:08 Repartition supprimee
+21/02/2014 15:05:08 Repartition supprimee
+21/02/2014 15:05:08 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:09 Repartition supprimee
+21/02/2014 15:05:20 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 15:05:20 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:20 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 15:05:20 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 15:05:20 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:20 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 15:05:20 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 15:05:20 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:21 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:21 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:21 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 15:05:21 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 15:05:21 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:21 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 15:05:22 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:22 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:22 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:05:22 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 15:06:48 Repartition supprimee
+21/02/2014 15:06:48 Repartition supprimee
+21/02/2014 15:06:48 Repartition supprimee
+21/02/2014 15:06:48 Repartition supprimee
+21/02/2014 15:06:48 Repartition supprimee
+21/02/2014 15:06:49 Repartition supprimee
+21/02/2014 15:06:49 Repartition supprimee
+21/02/2014 15:06:49 Repartition supprimee
+21/02/2014 15:06:49 Repartition supprimee
+21/02/2014 15:06:49 Repartition supprimee
+21/02/2014 15:07:00 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 15:07:00 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 15:07:00 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 15:07:00 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 15:07:00 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 15:07:00 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 15:07:00 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 15:07:00 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 15:07:00 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 15:07:00 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 19:11:48 Licencie  ajoute
+21/02/2014 19:37:37 Licencie 1 supprime
+21/02/2014 19:37:38 Licencie 4 supprime
+21/02/2014 19:37:38 Licencie 5 supprime
+21/02/2014 19:37:39 Licencie 305 supprime
+21/02/2014 19:37:53 Licencie  ajoute
+21/02/2014 22:47:53 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:47:53 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Paul ALLARD ajoute
+21/02/2014 22:47:53 Licencie Tanguy ALLEE ajoute
+21/02/2014 22:47:53 Licencie Hiromi ANDO ajoute
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Steve BARANTON ajoute
+21/02/2014 22:47:53 Licencie Laure BENTE ajoute
+21/02/2014 22:47:53 Licencie Yann BERGOUGNIOU ajoute
+21/02/2014 22:47:53 Licencie Benjamin BERNIER ajoute
+21/02/2014 22:47:53 Licencie Loïc BILLON ajoute
+21/02/2014 22:47:53 Licencie Vincent BIROT ajoute
+21/02/2014 22:47:53 Licencie Ingrid BLANCHARD ajoute
+21/02/2014 22:47:53 Licencie Léonie BLANCHARD ajoute
+21/02/2014 22:47:53 Licencie Maxime BLANCHARD ajoute
+21/02/2014 22:47:53 Licencie François BOBINET ajoute
+21/02/2014 22:47:53 Licencie Pierre-Louis BOBINET ajoute
+21/02/2014 22:47:53 Licencie Arnaud BONNET ajoute
+21/02/2014 22:47:53 Licencie Romain BOUDJADI ajoute
+21/02/2014 22:47:53 Licencie Jonathan BOUHYER ajoute
+21/02/2014 22:47:53 Licencie Sylvain BOUSIQUE ajoute
+21/02/2014 22:47:53 Licencie Léo BOUSIQUES ajoute
+21/02/2014 22:47:53 Licencie Sébastien BOUVET ajoute
+21/02/2014 22:47:53 Licencie Charles BOUYSSOU ajoute
+21/02/2014 22:47:53 Licencie Patrick BRIERE ajoute
+21/02/2014 22:47:53 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:47:53 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Didier BRUNES ajoute
+21/02/2014 22:47:53 Licencie Sébastien CANTIN ajoute
+21/02/2014 22:47:53 Licencie Yves CASBONNE ajoute
+21/02/2014 22:47:53 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 22:47:53 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:53 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Fréderic CHATILLON ajoute
+21/02/2014 22:47:53 Licencie Guillaume CHAUMEIL ajoute
+21/02/2014 22:47:53 Licencie Azeline CHEMIN ajoute
+21/02/2014 22:47:53 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Nino CLAIN ajoute
+21/02/2014 22:47:53 Licencie Frédéric COM ajoute
+21/02/2014 22:47:53 Licencie Emmeric CORNIER ajoute
+21/02/2014 22:47:53 Licencie Anthony COUE ajoute
+21/02/2014 22:47:53 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Paul DEBRAY-DESCHODT ajoute
+21/02/2014 22:47:53 Licencie Stéphanie DECAMPS ajoute
+21/02/2014 22:47:53 Licencie Gilles DELAHAIE ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:53 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Gérald DELMOTTE ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Christophe DESPONDS ajoute
+21/02/2014 22:47:53 Licencie Allan DESROZIERS ajoute
+21/02/2014 22:47:53 Licencie Emilie DION ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Walid EL IDRISSI ajoute
+21/02/2014 22:47:53 Licencie Grégoire EPHREM ajoute
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Joseph FALCONE ajoute
+21/02/2014 22:47:53 Licencie Erwan FAMECHON ajoute
+21/02/2014 22:47:53 Licencie Fabrice FAMECHON ajoute
+21/02/2014 22:47:53 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Jean-Philippe FESTOC ajoute
+21/02/2014 22:47:53 Licencie Vincent FILLIASTRE ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Sébastien FRAGNAUD ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Benoit GAILLARD ajoute
+21/02/2014 22:47:53 Licencie Renaud GANGLOFF ajoute
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Ronan GAUGNE ajoute
+21/02/2014 22:47:53 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Damien GERARD ajoute
+21/02/2014 22:47:53 Licencie Thibault GIGNON ajoute
+21/02/2014 22:47:53 Licencie Thibault GIMON ajoute
+21/02/2014 22:47:53 Licencie Florimond GIVAUDAN ajoute
+21/02/2014 22:47:53 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Sébastien GRAS ajoute
+21/02/2014 22:47:53 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:53 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Sébastien GUILLOT ajoute
+21/02/2014 22:47:53 Licencie Samuel GUYOMARD ajoute
+21/02/2014 22:47:53 Licencie Ludovic GUYONVAR'CH ajoute
+21/02/2014 22:47:53 Licencie Nicolas HAFFENER ajoute
+21/02/2014 22:47:53 Licencie David HAMELIN ajoute
+21/02/2014 22:47:53 Licencie Thomas HARDY ajoute
+21/02/2014 22:47:53 Licencie Franck HAROU ajoute
+21/02/2014 22:47:53 Licencie Vincent HAYART ajoute
+21/02/2014 22:47:53 Licencie Caroline HELBERT ajoute
+21/02/2014 22:47:53 Licencie Nicolas HELOU ajoute
+21/02/2014 22:47:53 Licencie Ophélie HERVET ajoute
+21/02/2014 22:47:53 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Ambre JARASSIER ajoute
+21/02/2014 22:47:53 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Willyam JULIEN ajoute
+21/02/2014 22:47:53 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Laëtitia LAFITTE ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Simon LANDABOUROU ajoute
+21/02/2014 22:47:53 Licencie Laura LANDRE ajoute
+21/02/2014 22:47:53 Licencie Thierry LANGLOIS ajoute
+21/02/2014 22:47:53 Licencie Stéphane LANIO ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Luc LE DAUPHIN ajoute
+21/02/2014 22:47:53 Licencie Ronan LE POUPON ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Laurent LECLERC ajoute
+21/02/2014 22:47:53 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:53 Licencie Jean Luc LEGALL ajoute
+21/02/2014 22:47:54 Le club JSR
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Didier LEPIEZ ajoute
+21/02/2014 22:47:54 Licencie Quentin LETTY ajoute
+21/02/2014 22:47:54 Licencie Alexandre LION ajoute
+21/02/2014 22:47:54 Licencie Mathias LOBEL ajoute
+21/02/2014 22:47:54 Licencie Maxime MARCAILLOU ajoute
+21/02/2014 22:47:54 Licencie Titouan MARCELIN ajoute
+21/02/2014 22:47:54 Licencie Alan MARCELLIN ajoute
+21/02/2014 22:47:54 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Xavier MARTEL ajoute
+21/02/2014 22:47:54 Licencie Nathan MARY ajoute
+21/02/2014 22:47:54 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Axel MAUGE ajoute
+21/02/2014 22:47:54 Licencie Simon MAUGE ajoute
+21/02/2014 22:47:54 Licencie Iwan MELNOTTE ajoute
+21/02/2014 22:47:54 Licencie Hélène MENARD ajoute
+21/02/2014 22:47:54 Licencie Christian MEUNIER ajoute
+21/02/2014 22:47:54 Licencie Julien MICHAUD ajoute
+21/02/2014 22:47:54 Licencie Olivier MICHAUD ajoute
+21/02/2014 22:47:54 Licencie Gaëtan MICHEL ajoute
+21/02/2014 22:47:54 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Pascal MICHEL ajoute
+21/02/2014 22:47:54 Licencie Sebastien MINGUY ajoute
+21/02/2014 22:47:54 Licencie François MOIGNET ajoute
+21/02/2014 22:47:54 Licencie Sébastien MONFREUX ajoute
+21/02/2014 22:47:54 Licencie Léo MONTESSINOS ajoute
+21/02/2014 22:47:54 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Perrine MOREAU ajoute
+21/02/2014 22:47:54 Licencie Benjamin MORIO ajoute
+21/02/2014 22:47:54 Licencie Sébastien MUZET ajoute
+21/02/2014 22:47:54 Licencie Jean-Pierre NICOLAS ajoute
+21/02/2014 22:47:54 Licencie Isabelle NIVAULT ajoute
+21/02/2014 22:47:54 Le club LIMOGES
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Makiko OI ajoute
+21/02/2014 22:47:54 Licencie Salvatore PALUMBO ajoute
+21/02/2014 22:47:54 Licencie Brigitte PALVADEAU ajoute
+21/02/2014 22:47:54 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Rubens PERNNES ajoute
+21/02/2014 22:47:54 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Carine PICHAUD ajoute
+21/02/2014 22:47:54 Licencie Jérémy PIERRE ajoute
+21/02/2014 22:47:54 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Luc PLOQUIN ajoute
+21/02/2014 22:47:54 Licencie Stéphane PLOQUIN ajoute
+21/02/2014 22:47:54 Licencie Eugène POHIN ajoute
+21/02/2014 22:47:54 Licencie Thierry PORTANGUEN ajoute
+21/02/2014 22:47:54 Licencie Fabien PRAT ajoute
+21/02/2014 22:47:54 Licencie Pierre-Yvan QUERE-ROPERS ajoute
+21/02/2014 22:47:54 Licencie Laurent RANNOU ajoute
+21/02/2014 22:47:54 Licencie Antoine RAULT ajoute
+21/02/2014 22:47:54 Licencie Malo RAVELOMANANTSOA ajoute
+21/02/2014 22:47:54 Licencie Thomas REGDOZ ajoute
+21/02/2014 22:47:54 Licencie Clément REGNACQ ajoute
+21/02/2014 22:47:54 Licencie François REGNACQ ajoute
+21/02/2014 22:47:54 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:54 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Bruno RICHARD ajoute
+21/02/2014 22:47:54 Licencie Arnaud ROBERT ajoute
+21/02/2014 22:47:54 Licencie Adélie ROBIN ajoute
+21/02/2014 22:47:54 Licencie Lucie ROBINEAU ajoute
+21/02/2014 22:47:54 Licencie Kévin ROCARD ajoute
+21/02/2014 22:47:54 Licencie Therry ROMMEL ajoute
+21/02/2014 22:47:54 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Sabrina ROUSSEAU ajoute
+21/02/2014 22:47:54 Licencie Laure RUVOEN ajoute
+21/02/2014 22:47:54 Licencie Nathalie SABOUREAU ajoute
+21/02/2014 22:47:54 Le club HAKUYU KAI
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Aubin SAUNIER ajoute
+21/02/2014 22:47:54 Licencie Luc SENEGAL ajoute
+21/02/2014 22:47:54 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:47:54 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:47:54 Le club LIMOGES
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Benoit SOULARD ajoute
+21/02/2014 22:47:54 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:54 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Coralie TEXIER ajoute
+21/02/2014 22:47:54 Licencie Léa TEXIER ajoute
+21/02/2014 22:47:54 Licencie Mathieu TEXIER ajoute
+21/02/2014 22:47:54 Licencie Franck THERET ajoute
+21/02/2014 22:47:54 Licencie Claire THOMAS ajoute
+21/02/2014 22:47:54 Licencie Pierre THOMAS ajoute
+21/02/2014 22:47:54 Licencie Kamel TORDJMAN ajoute
+21/02/2014 22:47:54 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Gwenaël TREVEDY ajoute
+21/02/2014 22:47:54 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Nicolas TRUQUET ajoute
+21/02/2014 22:47:54 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:47:54 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:47:54 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Gurvan VIGOUROUX ajoute
+21/02/2014 22:47:54 Le club JCAS ST JUNIEN
+  n'existe pas en base
+21/02/2014 22:47:54 Licencie Cyril WEEGER ajoute
+21/02/2014 22:47:54 Licencie Jenny YA ajoute
+21/02/2014 22:47:54 Licencie Paul YA ajoute
+21/02/2014 22:47:54 Licencie Manabu YAMAMOTO ajoute
+21/02/2014 22:52:24 Licencie 379 supprime
+21/02/2014 22:52:27 Licencie 321 supprime
+21/02/2014 22:52:28 Licencie 430 supprime
+21/02/2014 22:52:29 Licencie 445 supprime
+21/02/2014 22:52:30 Licencie 320 supprime
+21/02/2014 22:53:41 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:53:41 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:53:41 Licencie Paul             ALLARD           ajoute
+21/02/2014 22:53:41 Licencie Tanguy           ALLEE            ajoute
+21/02/2014 22:53:41 Licencie Hiromi           ANDO             ajoute
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Steve            BARANTON         ajoute
+21/02/2014 22:53:42 Licencie Laure            BENTE            ajoute
+21/02/2014 22:53:42 Licencie Yann             BERGOUGNIOU      ajoute
+21/02/2014 22:53:42 Licencie Benjamin         BERNIER          ajoute
+21/02/2014 22:53:42 Licencie Loïc            BILLON           ajoute
+21/02/2014 22:53:42 Licencie Vincent          BIROT            ajoute
+21/02/2014 22:53:42 Licencie Ingrid           BLANCHARD        ajoute
+21/02/2014 22:53:42 Licencie Léonie          BLANCHARD        ajoute
+21/02/2014 22:53:42 Licencie Maxime           BLANCHARD        ajoute
+21/02/2014 22:53:42 Licencie François        BOBINET          ajoute
+21/02/2014 22:53:42 Licencie Pierre-Louis     BOBINET          ajoute
+21/02/2014 22:53:42 Licencie Arnaud           BONNET           ajoute
+21/02/2014 22:53:42 Licencie Romain           BOUDJADI         ajoute
+21/02/2014 22:53:42 Licencie Jonathan         BOUHYER          ajoute
+21/02/2014 22:53:42 Licencie Sylvain          BOUSIQUE         ajoute
+21/02/2014 22:53:42 Licencie Léo             BOUSIQUES        ajoute
+21/02/2014 22:53:42 Licencie Sébastien       BOUVET           ajoute
+21/02/2014 22:53:42 Licencie Charles          BOUYSSOU         ajoute
+21/02/2014 22:53:42 Licencie Patrick          BRIERE           ajoute
+21/02/2014 22:53:42 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:53:42 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Didier           BRUNES           ajoute
+21/02/2014 22:53:42 Licencie Sébastien       CANTIN           ajoute
+21/02/2014 22:53:42 Licencie Yves             CASBONNE         ajoute
+21/02/2014 22:53:42 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 22:53:42 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:42 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Fréderic        CHATILLON        ajoute
+21/02/2014 22:53:42 Licencie Guillaume        CHAUMEIL         ajoute
+21/02/2014 22:53:42 Licencie Azeline          CHEMIN           ajoute
+21/02/2014 22:53:42 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Nino             CLAIN            ajoute
+21/02/2014 22:53:42 Licencie Frédéric       COM              ajoute
+21/02/2014 22:53:42 Licencie Emmeric          CORNIER          ajoute
+21/02/2014 22:53:42 Licencie Anthony          COUE             ajoute
+21/02/2014 22:53:42 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Paul             DEBRAY-DESCHODT  ajoute
+21/02/2014 22:53:42 Licencie Stéphanie       DECAMPS          ajoute
+21/02/2014 22:53:42 Licencie Gilles           DELAHAIE         ajoute
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:42 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Gérald          DELMOTTE         ajoute
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Christophe       DESPONDS         ajoute
+21/02/2014 22:53:42 Licencie Allan            DESROZIERS       ajoute
+21/02/2014 22:53:42 Licencie Emilie           DION             ajoute
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Walid            EL IDRISSI       ajoute
+21/02/2014 22:53:42 Licencie Grégoire        EPHREM           ajoute
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Joseph           FALCONE          ajoute
+21/02/2014 22:53:42 Licencie Erwan            FAMECHON         ajoute
+21/02/2014 22:53:42 Licencie Fabrice          FAMECHON         ajoute
+21/02/2014 22:53:42 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Jean-Philippe    FESTOC           ajoute
+21/02/2014 22:53:42 Licencie Vincent          FILLIASTRE       ajoute
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Sébastien       FRAGNAUD         ajoute
+21/02/2014 22:53:42 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Benoit           GAILLARD         ajoute
+21/02/2014 22:53:42 Licencie Renaud           GANGLOFF         ajoute
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Ronan            GAUGNE           ajoute
+21/02/2014 22:53:42 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Damien           GERARD           ajoute
+21/02/2014 22:53:42 Licencie Thibault         GIGNON           ajoute
+21/02/2014 22:53:42 Licencie Thibault         GIMON            ajoute
+21/02/2014 22:53:42 Licencie Florimond        GIVAUDAN         ajoute
+21/02/2014 22:53:42 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Sébastien       GRAS             ajoute
+21/02/2014 22:53:42 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:42 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Sébastien       GUILLOT          ajoute
+21/02/2014 22:53:42 Licencie Samuel           GUYOMARD         ajoute
+21/02/2014 22:53:42 Licencie Ludovic          GUYONVAR'CH      ajoute
+21/02/2014 22:53:42 Licencie Nicolas          HAFFENER         ajoute
+21/02/2014 22:53:42 Licencie David            HAMELIN          ajoute
+21/02/2014 22:53:42 Licencie Thomas           HARDY            ajoute
+21/02/2014 22:53:42 Licencie Franck           HAROU            ajoute
+21/02/2014 22:53:42 Licencie Vincent          HAYART           ajoute
+21/02/2014 22:53:42 Licencie Caroline         HELBERT          ajoute
+21/02/2014 22:53:42 Licencie Nicolas          HELOU            ajoute
+21/02/2014 22:53:42 Licencie Ophélie         HERVET           ajoute
+21/02/2014 22:53:42 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Ambre            JARASSIER        ajoute
+21/02/2014 22:53:42 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 22:53:42 Licencie Willyam          JULIEN           ajoute
+21/02/2014 22:53:42 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Laëtitia        LAFITTE          ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Simon            LANDABOUROU      ajoute
+21/02/2014 22:53:43 Licencie Laura            LANDRE           ajoute
+21/02/2014 22:53:43 Licencie Thierry          LANGLOIS         ajoute
+21/02/2014 22:53:43 Licencie Stéphane        LANIO            ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Luc              LE DAUPHIN       ajoute
+21/02/2014 22:53:43 Licencie Ronan            LE POUPON        ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Laurent          LECLERC          ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Jean Luc         LEGALL           ajoute
+21/02/2014 22:53:43 Le club JSR
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Didier           LEPIEZ           ajoute
+21/02/2014 22:53:43 Licencie Quentin          LETTY            ajoute
+21/02/2014 22:53:43 Licencie Alexandre        LION             ajoute
+21/02/2014 22:53:43 Licencie Mathias          LOBEL            ajoute
+21/02/2014 22:53:43 Licencie Maxime           MARCAILLOU       ajoute
+21/02/2014 22:53:43 Licencie Titouan          MARCELIN         ajoute
+21/02/2014 22:53:43 Licencie Alan             MARCELLIN        ajoute
+21/02/2014 22:53:43 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Xavier           MARTEL           ajoute
+21/02/2014 22:53:43 Licencie Nathan           MARY             ajoute
+21/02/2014 22:53:43 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Axel             MAUGE            ajoute
+21/02/2014 22:53:43 Licencie Simon            MAUGE            ajoute
+21/02/2014 22:53:43 Licencie Iwan             MELNOTTE         ajoute
+21/02/2014 22:53:43 Licencie Hélène         MENARD           ajoute
+21/02/2014 22:53:43 Licencie Christian        MEUNIER          ajoute
+21/02/2014 22:53:43 Licencie Julien           MICHAUD          ajoute
+21/02/2014 22:53:43 Licencie Olivier          MICHAUD          ajoute
+21/02/2014 22:53:43 Licencie Gaëtan          MICHEL           ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Pascal           MICHEL           ajoute
+21/02/2014 22:53:43 Licencie Sebastien        MINGUY           ajoute
+21/02/2014 22:53:43 Licencie François        MOIGNET          ajoute
+21/02/2014 22:53:43 Licencie Sébastien       MONFREUX         ajoute
+21/02/2014 22:53:43 Licencie Léo             MONTESSINOS      ajoute
+21/02/2014 22:53:43 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Perrine          MOREAU           ajoute
+21/02/2014 22:53:43 Licencie Benjamin         MORIO            ajoute
+21/02/2014 22:53:43 Licencie Sébastien       MUZET            ajoute
+21/02/2014 22:53:43 Licencie Jean-Pierre      NICOLAS          ajoute
+21/02/2014 22:53:43 Licencie Isabelle         NIVAULT          ajoute
+21/02/2014 22:53:43 Le club LIMOGES
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Makiko           OI               ajoute
+21/02/2014 22:53:43 Licencie Salvatore        PALUMBO          ajoute
+21/02/2014 22:53:43 Licencie Brigitte         PALVADEAU        ajoute
+21/02/2014 22:53:43 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Rubens           PERNNES          ajoute
+21/02/2014 22:53:43 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Carine           PICHAUD          ajoute
+21/02/2014 22:53:43 Licencie Jérémy         PIERRE           ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Luc              PLOQUIN          ajoute
+21/02/2014 22:53:43 Licencie Stéphane        PLOQUIN          ajoute
+21/02/2014 22:53:43 Licencie Eugène          POHIN            ajoute
+21/02/2014 22:53:43 Licencie Thierry          PORTANGUEN       ajoute
+21/02/2014 22:53:43 Licencie Fabien           PRAT             ajoute
+21/02/2014 22:53:43 Licencie Pierre-Yvan      QUERE-ROPERS     ajoute
+21/02/2014 22:53:43 Licencie Laurent          RANNOU           ajoute
+21/02/2014 22:53:43 Licencie Antoine          RAULT            ajoute
+21/02/2014 22:53:43 Licencie Malo             RAVELOMANANTSOA  ajoute
+21/02/2014 22:53:43 Licencie Thomas           REGDOZ           ajoute
+21/02/2014 22:53:43 Licencie Clément         REGNACQ          ajoute
+21/02/2014 22:53:43 Licencie François        REGNACQ          ajoute
+21/02/2014 22:53:43 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:43 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Bruno            RICHARD          ajoute
+21/02/2014 22:53:43 Licencie Arnaud           ROBERT           ajoute
+21/02/2014 22:53:43 Licencie Adélie          ROBIN            ajoute
+21/02/2014 22:53:43 Licencie Lucie            ROBINEAU         ajoute
+21/02/2014 22:53:43 Licencie Kévin           ROCARD           ajoute
+21/02/2014 22:53:43 Licencie Therry           ROMMEL           ajoute
+21/02/2014 22:53:43 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Sabrina          ROUSSEAU         ajoute
+21/02/2014 22:53:43 Licencie Laure            RUVOEN           ajoute
+21/02/2014 22:53:43 Licencie Nathalie         SABOUREAU        ajoute
+21/02/2014 22:53:43 Le club HAKUYU KAI
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Aubin            SAUNIER          ajoute
+21/02/2014 22:53:43 Licencie Luc              SENEGAL          ajoute
+21/02/2014 22:53:43 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 22:53:43 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:53:43 Le club LIMOGES
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Benoit           SOULARD          ajoute
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:43 Licencie Coralie          TEXIER           ajoute
+21/02/2014 22:53:43 Licencie Léa             TEXIER           ajoute
+21/02/2014 22:53:43 Licencie Mathieu          TEXIER           ajoute
+21/02/2014 22:53:43 Licencie Franck           THERET           ajoute
+21/02/2014 22:53:44 Licencie Claire           THOMAS           ajoute
+21/02/2014 22:53:44 Licencie Pierre           THOMAS           ajoute
+21/02/2014 22:53:44 Licencie Kamel            TORDJMAN         ajoute
+21/02/2014 22:53:44 Le club BOURGES
+  n'existe pas en base
+21/02/2014 22:53:44 Licencie Gwenaël         TREVEDY          ajoute
+21/02/2014 22:53:44 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 22:53:44 Licencie Nicolas          TRUQUET          ajoute
+21/02/2014 22:53:44 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 22:53:44 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 22:53:44 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 22:53:44 Licencie Gurvan           VIGOUROUX        ajoute
+21/02/2014 22:53:44 Le club JCAS ST JUNIEN
+  n'existe pas en base
+21/02/2014 22:53:44 Licencie Cyril            WEEGER           ajoute
+21/02/2014 22:53:44 Licencie Jenny            YA               ajoute
+21/02/2014 22:53:44 Licencie Paul             YA               ajoute
+21/02/2014 22:53:44 Licencie Manabu           YAMAMOTO         ajoute
+21/02/2014 23:01:10 Licencie anthony coué ajoute
+21/02/2014 23:01:19 Licencie 1 mis a jour
+21/02/2014 23:02:13 Licencie Benjamin         BERNIER          ajoute
+21/02/2014 23:02:13 Licencie Loïc            BILLON           ajoute
+21/02/2014 23:02:13 Licencie Vincent          BIROT            ajoute
+21/02/2014 23:02:13 Licencie Maxime           BLANCHARD        ajoute
+21/02/2014 23:02:13 Licencie François        BOBINET          ajoute
+21/02/2014 23:02:13 Licencie Lucie            ROBINEAU         ajoute
+21/02/2014 23:02:13 Licencie Kévin           ROCARD           ajoute
+21/02/2014 23:06:14 Licencie 3 supprime
+21/02/2014 23:06:15 Licencie 8 supprime
+21/02/2014 23:06:16 Licencie 6 supprime
+21/02/2014 23:06:16 Licencie 7 supprime
+21/02/2014 23:06:17 Licencie 5 supprime
+21/02/2014 23:06:18 Licencie 2 supprime
+21/02/2014 23:06:19 Licencie 4 supprime
+21/02/2014 23:06:29 Licencie Benjamin BERNIER ajoute
+21/02/2014 23:06:29 Licencie Loïc BILLON ajoute
+21/02/2014 23:06:29 Licencie Vincent BIROT ajoute
+21/02/2014 23:06:29 Licencie Maxime BLANCHARD ajoute
+21/02/2014 23:06:29 Licencie François BOBINET ajoute
+21/02/2014 23:06:29 Licencie Lucie ROBINEAU ajoute
+21/02/2014 23:06:29 Licencie Kévin ROCARD ajoute
+21/02/2014 23:08:38 Licencie 15 supprime
+21/02/2014 23:08:39 Licencie 10 supprime
+21/02/2014 23:08:40 Licencie 13 supprime
+21/02/2014 23:08:40 Licencie 14 supprime
+21/02/2014 23:08:40 Licencie 12 supprime
+21/02/2014 23:08:41 Licencie 9 supprime
+21/02/2014 23:08:41 Licencie 11 supprime
+21/02/2014 23:08:49 Licencie Benjamin BERNIER ajoute
+21/02/2014 23:08:49 Licencie Loïc BILLON ajoute
+21/02/2014 23:08:49 Licencie Vincent BIROT ajoute
+21/02/2014 23:08:49 Licencie Maxime BLANCHARD ajoute
+21/02/2014 23:08:49 Licencie François BOBINET ajoute
+21/02/2014 23:08:49 Licencie Lucie ROBINEAU ajoute
+21/02/2014 23:08:49 Licencie Kévin ROCARD ajoute
+21/02/2014 23:11:48 Licencie 20 mis a jour
+21/02/2014 23:12:07 Licencie é àç ajoute
+21/02/2014 23:14:09 Licencie 23 mis a jour
+21/02/2014 23:14:15 Licencie 22 mis a jour
+21/02/2014 23:14:18 Licencie 17 mis a jour
+21/02/2014 23:14:21 Licencie 23 supprime
+21/02/2014 23:14:24 Licencie 20 mis a jour
+21/02/2014 23:20:18 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 23:20:18 Le club BOURGES
+  n'existe pas en base
+21/02/2014 23:20:18 Licencie Paul ALLARD ajoute
+21/02/2014 23:20:18 Licencie Tanguy ALLEE ajoute
+21/02/2014 23:20:18 Licencie Hiromi ANDO ajoute
+21/02/2014 23:20:18 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:18 Licencie Steve BARANTON ajoute
+21/02/2014 23:20:18 Licencie Laure BENTE ajoute
+21/02/2014 23:20:18 Licencie Yann BERGOUGNIOU ajoute
+21/02/2014 23:20:18 Le licencie Benjamin BERNIER existe en base
+21/02/2014 23:20:18 Le licencie Loïc BILLON existe en base
+21/02/2014 23:20:18 Le licencie Vincent BIROT existe en base
+21/02/2014 23:20:18 Licencie Ingrid BLANCHARD ajoute
+21/02/2014 23:20:18 Licencie Léonie BLANCHARD ajoute
+21/02/2014 23:20:18 Le licencie Maxime BLANCHARD existe en base
+21/02/2014 23:20:18 Le licencie François BOBINET existe en base
+21/02/2014 23:20:18 Licencie Pierre-Louis BOBINET ajoute
+21/02/2014 23:20:18 Licencie Arnaud BONNET ajoute
+21/02/2014 23:20:18 Licencie Romain BOUDJADI ajoute
+21/02/2014 23:20:18 Licencie Jonathan BOUHYER ajoute
+21/02/2014 23:20:18 Licencie Sylvain BOUSIQUE ajoute
+21/02/2014 23:20:18 Licencie Léo BOUSIQUES ajoute
+21/02/2014 23:20:18 Licencie Sébastien BOUVET ajoute
+21/02/2014 23:20:18 Licencie Charles BOUYSSOU ajoute
+21/02/2014 23:20:18 Licencie Patrick BRIERE ajoute
+21/02/2014 23:20:18 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 23:20:18 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:18 Licencie Didier BRUNES ajoute
+21/02/2014 23:20:18 Licencie Sébastien CANTIN ajoute
+21/02/2014 23:20:18 Licencie Yves CASBONNE ajoute
+21/02/2014 23:20:18 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 23:20:18 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:18 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 23:20:18 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:18 Licencie Fréderic CHATILLON ajoute
+21/02/2014 23:20:18 Licencie Guillaume CHAUMEIL ajoute
+21/02/2014 23:20:18 Licencie Azeline CHEMIN ajoute
+21/02/2014 23:20:18 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 23:20:18 Licencie Nino CLAIN ajoute
+21/02/2014 23:20:18 Licencie Frédéric COM ajoute
+21/02/2014 23:20:18 Licencie Emmeric CORNIER ajoute
+21/02/2014 23:20:18 Licencie Anthony COUE ajoute
+21/02/2014 23:20:19 Le club BOURGES
+  n'existe pas en base
+21/02/2014 23:20:19 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Paul DEBRAY-DESCHODT ajoute
+21/02/2014 23:20:19 Licencie Stéphanie DECAMPS ajoute
+21/02/2014 23:20:19 Licencie Gilles DELAHAIE ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:19 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Gérald DELMOTTE ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Christophe DESPONDS ajoute
+21/02/2014 23:20:19 Licencie Allan DESROZIERS ajoute
+21/02/2014 23:20:19 Licencie Emilie DION ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Walid EL IDRISSI ajoute
+21/02/2014 23:20:19 Licencie Grégoire EPHREM ajoute
+21/02/2014 23:20:19 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Joseph FALCONE ajoute
+21/02/2014 23:20:19 Licencie Erwan FAMECHON ajoute
+21/02/2014 23:20:19 Licencie Fabrice FAMECHON ajoute
+21/02/2014 23:20:19 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Jean-Philippe FESTOC ajoute
+21/02/2014 23:20:19 Licencie Vincent FILLIASTRE ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Le club BOURGES
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Sébastien FRAGNAUD ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Benoit GAILLARD ajoute
+21/02/2014 23:20:19 Licencie Renaud GANGLOFF ajoute
+21/02/2014 23:20:19 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Ronan GAUGNE ajoute
+21/02/2014 23:20:19 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Damien GERARD ajoute
+21/02/2014 23:20:19 Licencie Thibault GIGNON ajoute
+21/02/2014 23:20:19 Licencie Thibault GIMON ajoute
+21/02/2014 23:20:19 Licencie Florimond GIVAUDAN ajoute
+21/02/2014 23:20:19 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Sébastien GRAS ajoute
+21/02/2014 23:20:19 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:19 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Sébastien GUILLOT ajoute
+21/02/2014 23:20:19 Licencie Samuel GUYOMARD ajoute
+21/02/2014 23:20:19 Licencie Ludovic GUYONVAR'CH ajoute
+21/02/2014 23:20:19 Licencie Nicolas HAFFENER ajoute
+21/02/2014 23:20:19 Licencie David HAMELIN ajoute
+21/02/2014 23:20:19 Licencie Thomas HARDY ajoute
+21/02/2014 23:20:19 Licencie Franck HAROU ajoute
+21/02/2014 23:20:19 Licencie Vincent HAYART ajoute
+21/02/2014 23:20:19 Licencie Caroline HELBERT ajoute
+21/02/2014 23:20:19 Licencie Nicolas HELOU ajoute
+21/02/2014 23:20:19 Licencie Ophélie HERVET ajoute
+21/02/2014 23:20:19 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Ambre JARASSIER ajoute
+21/02/2014 23:20:19 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Willyam JULIEN ajoute
+21/02/2014 23:20:19 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Laëtitia LAFITTE ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Simon LANDABOUROU ajoute
+21/02/2014 23:20:19 Licencie Laura LANDRE ajoute
+21/02/2014 23:20:19 Licencie Thierry LANGLOIS ajoute
+21/02/2014 23:20:19 Licencie Stéphane LANIO ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Luc LE DAUPHIN ajoute
+21/02/2014 23:20:19 Licencie Ronan LE POUPON ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Laurent LECLERC ajoute
+21/02/2014 23:20:19 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Jean Luc LEGALL ajoute
+21/02/2014 23:20:19 Le club JSR
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Didier LEPIEZ ajoute
+21/02/2014 23:20:19 Licencie Quentin LETTY ajoute
+21/02/2014 23:20:19 Licencie Alexandre LION ajoute
+21/02/2014 23:20:19 Licencie Mathias LOBEL ajoute
+21/02/2014 23:20:19 Licencie Maxime MARCAILLOU ajoute
+21/02/2014 23:20:19 Licencie Titouan MARCELIN ajoute
+21/02/2014 23:20:19 Licencie Alan MARCELLIN ajoute
+21/02/2014 23:20:19 Le club BOURGES
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Xavier MARTEL ajoute
+21/02/2014 23:20:19 Licencie Nathan MARY ajoute
+21/02/2014 23:20:19 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:19 Licencie Axel MAUGE ajoute
+21/02/2014 23:20:19 Licencie Simon MAUGE ajoute
+21/02/2014 23:20:19 Licencie Iwan MELNOTTE ajoute
+21/02/2014 23:20:19 Licencie Hélène MENARD ajoute
+21/02/2014 23:20:19 Licencie Christian MEUNIER ajoute
+21/02/2014 23:20:19 Licencie Julien MICHAUD ajoute
+21/02/2014 23:20:20 Licencie Olivier MICHAUD ajoute
+21/02/2014 23:20:20 Licencie Gaëtan MICHEL ajoute
+21/02/2014 23:20:20 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Pascal MICHEL ajoute
+21/02/2014 23:20:20 Licencie Sebastien MINGUY ajoute
+21/02/2014 23:20:20 Licencie François MOIGNET ajoute
+21/02/2014 23:20:20 Licencie Sébastien MONFREUX ajoute
+21/02/2014 23:20:20 Licencie Léo MONTESSINOS ajoute
+21/02/2014 23:20:20 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Perrine MOREAU ajoute
+21/02/2014 23:20:20 Licencie Benjamin MORIO ajoute
+21/02/2014 23:20:20 Licencie Sébastien MUZET ajoute
+21/02/2014 23:20:20 Licencie Jean-Pierre NICOLAS ajoute
+21/02/2014 23:20:20 Licencie Isabelle NIVAULT ajoute
+21/02/2014 23:20:20 Le club LIMOGES
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Makiko OI ajoute
+21/02/2014 23:20:20 Licencie Salvatore PALUMBO ajoute
+21/02/2014 23:20:20 Licencie Brigitte PALVADEAU ajoute
+21/02/2014 23:20:20 Le club ADAKI BLOIS
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Rubens PERNNES ajoute
+21/02/2014 23:20:20 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Carine PICHAUD ajoute
+21/02/2014 23:20:20 Licencie Jérémy PIERRE ajoute
+21/02/2014 23:20:20 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Luc PLOQUIN ajoute
+21/02/2014 23:20:20 Licencie Stéphane PLOQUIN ajoute
+21/02/2014 23:20:20 Licencie Eugène POHIN ajoute
+21/02/2014 23:20:20 Licencie Thierry PORTANGUEN ajoute
+21/02/2014 23:20:20 Licencie Fabien PRAT ajoute
+21/02/2014 23:20:20 Licencie Pierre-Yvan QUERE-ROPERS ajoute
+21/02/2014 23:20:20 Licencie Laurent RANNOU ajoute
+21/02/2014 23:20:20 Licencie Antoine RAULT ajoute
+21/02/2014 23:20:20 Licencie Malo RAVELOMANANTSOA ajoute
+21/02/2014 23:20:20 Licencie Thomas REGDOZ ajoute
+21/02/2014 23:20:20 Licencie Clément REGNACQ ajoute
+21/02/2014 23:20:20 Licencie François REGNACQ ajoute
+21/02/2014 23:20:20 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:20 Le club NBTSGUADA
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Bruno RICHARD ajoute
+21/02/2014 23:20:20 Licencie Arnaud ROBERT ajoute
+21/02/2014 23:20:20 Licencie Adélie ROBIN ajoute
+21/02/2014 23:20:20 Le licencie Lucie ROBINEAU existe en base
+21/02/2014 23:20:20 Le licencie Kévin ROCARD existe en base
+21/02/2014 23:20:20 Licencie Therry ROMMEL ajoute
+21/02/2014 23:20:20 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Sabrina ROUSSEAU ajoute
+21/02/2014 23:20:20 Licencie Laure RUVOEN ajoute
+21/02/2014 23:20:20 Licencie Nathalie SABOUREAU ajoute
+21/02/2014 23:20:20 Le club HAKUYU KAI
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Aubin SAUNIER ajoute
+21/02/2014 23:20:20 Licencie Luc SENEGAL ajoute
+21/02/2014 23:20:20 Le club USORLÉANS
+  n'existe pas en base
+21/02/2014 23:20:20 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 23:20:20 Le club LIMOGES
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Benoit SOULARD ajoute
+21/02/2014 23:20:20 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:20 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Coralie TEXIER ajoute
+21/02/2014 23:20:20 Licencie Léa TEXIER ajoute
+21/02/2014 23:20:20 Licencie Mathieu TEXIER ajoute
+21/02/2014 23:20:20 Licencie Franck THERET ajoute
+21/02/2014 23:20:20 Licencie Claire THOMAS ajoute
+21/02/2014 23:20:20 Licencie Pierre THOMAS ajoute
+21/02/2014 23:20:20 Licencie Kamel TORDJMAN ajoute
+21/02/2014 23:20:20 Le club BOURGES
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Gwenaël TREVEDY ajoute
+21/02/2014 23:20:20 Le club ASGPMHAVRE
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Nicolas TRUQUET ajoute
+21/02/2014 23:20:20 Le club KERKATANA
+  n'existe pas en base
+21/02/2014 23:20:20 Le club KCNIEUL ESPOIR
+  n'existe pas en base
+21/02/2014 23:20:20 Le club LE POINÇONNET
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Gurvan VIGOUROUX ajoute
+21/02/2014 23:20:20 Le club JCAS ST JUNIEN
+  n'existe pas en base
+21/02/2014 23:20:20 Licencie Cyril WEEGER ajoute
+21/02/2014 23:20:20 Licencie Jenny YA ajoute
+21/02/2014 23:20:20 Licencie Paul YA ajoute
+21/02/2014 23:20:20 Licencie Manabu YAMAMOTO ajoute
+21/02/2014 23:20:34 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 23:20:35 Le licencie Léo BOUSIQUES
+ n'existe pas en base
+21/02/2014 23:20:35 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 23:20:35 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 23:20:35 Le licencie Gérald DELMOTTE
+ n'existe pas en base
+21/02/2014 23:20:35 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 23:20:35 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 23:20:36 Le licencie Christophe DESPONDS
+ n'existe pas en base
+21/02/2014 23:20:36 Le licencie Allan DESROZIERS
+ n'existe pas en base
+21/02/2014 23:20:36 Le licencie Emilie DION
+ n'existe pas en base
+21/02/2014 23:20:36 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 23:20:36 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 23:20:37 Le licencie Gurvan VIGOUROUX
+ n'existe pas en base
+21/02/2014 23:20:37 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 23:20:37 Le licencie Cyril WEEGER
+ n'existe pas en base
+21/02/2014 23:20:37 Le licencie Jenny YA
+ n'existe pas en base
+21/02/2014 23:20:37 Le licencie Paul YA
+ n'existe pas en base
+21/02/2014 23:20:37 Le licencie Manabu YAMAMOTO n'existe pas en base
+21/02/2014 23:22:02 Le licencie Jean Baptiste ALBA GARTISER
+ n'existe pas en base
+21/02/2014 23:22:02 Licencie Léo BOUSIQUES
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Le licencie Lucas DELANNE
+ n'existe pas en base
+21/02/2014 23:22:02 Le licencie Thierry DELANNE
+ n'existe pas en base
+21/02/2014 23:22:02 Licencie Gérald DELMOTTE
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Le licencie Christian DERRIEN
+ n'existe pas en base
+21/02/2014 23:22:02 Le licencie Eric DESCOMBES
+ n'existe pas en base
+21/02/2014 23:22:02 Licencie Christophe DESPONDS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Licencie Allan DESROZIERS
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Licencie Emilie DION
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Le licencie François DOUTEMENT
+ n'existe pas en base
+21/02/2014 23:22:02 Le licencie Gilles ROSZYPAL
+ n'existe pas en base
+21/02/2014 23:22:02 Licencie Gurvan VIGOUROUX
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Le licencie Philippe VIREPINTE
+ n'existe pas en base
+21/02/2014 23:22:02 Licencie Cyril WEEGER
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Licencie Jenny YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Licencie Paul YA
+ repartis dans la cat&eacute;gorie 13
+21/02/2014 23:22:02 Licencie Manabu YAMAMOTO repartis dans la cat&eacute;gorie 13
+21/02/2014 23:28:53 Club 2 supprime
+26/02/2014 23:47:37 Repartition supprimee
