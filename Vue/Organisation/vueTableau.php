@@ -16,7 +16,6 @@ if(!empty($categories)) {
 }
 ?>
 </select>
-<p>
 <p align="center"><input type='submit' name='valider' value='G&eacute;n&eacute;rer le tableau' /></p>
 <p>Liste des fichiers tableaux g&eacute;n&eacute;r&eacute;s :
 <?php

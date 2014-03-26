@@ -16,7 +16,6 @@ if(!empty($categories)) {
 }
 ?>
 </select>
-<p>
 <p align="center"><input type='submit' name='valider' value='G&eacute;n&eacute;rer les poules' /></p>
 <p>Liste des fichiers poule g&eacute;n&eacute;r&eacute;s :
 <?php
