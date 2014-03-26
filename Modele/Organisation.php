@@ -289,20 +289,35 @@ class Organisation extends Modele {
 			return null;
 		}
 	}
-	
+
 	public function getLicencieInTableau($categorie) {
 		try {
 			$sql = "select A.idlicencie, A.nom , A.prenom, B.numero_poule, B.classement
 					from licencie A, resultat_poule B
 					where A.idlicencie = B.idlicencie
 					and B.classement < 3
-					and B.idcategorie = ? 
+					and B.idcategorie = ?
 					order by B.numero_poule, B.classement";
 			$result	= $this->executerRequeteToArray($sql, array($categorie));
 			return $result;
 		} catch (Exception $e) {
 			Log::afficherErreur("getLicencieInTableau() : ".$e->getMessage());
 			log::loggerErreur("getLicencieInTableau() : ".$e->getMessage());
+			return null;
+		}
+	}
+	public function getLicencieByClassementPoule($categorie,$poule,$position) {
+		try {
+			$sql = "select nom , prenom
+					from licencie A, resultat_poule B
+					where A.idlicencie = B.idlicencie
+					and B.numero_poule = ? and B.classement = ? and B.idcategorie = ? ";
+			$result	= $this->executerRequete($sql, array($poule,$position,$categorie));	
+			return $result->fetch();
+			
+		} catch (Exception $e) {
+			Log::afficherErreur("getLicencieByClassementPoule() : ".$e->getMessage());
+			log::loggerErreur("getLicencieByClassementPoule() : ".$e->getMessage());
 			return null;
 		}
 	}

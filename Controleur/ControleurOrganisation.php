@@ -314,5 +314,79 @@ class ControleurOrganisation {
    		$vue->generer(array('licenciesTableau'=>$licenciesTableau,'categories'=>$categories,'categorieSelected'=>$categorieSelected,'libCategorieSelected'=>$libCategorieSelected), null);
    		 
    	}
+   	
+
+   	public function imprimerTableau($categorie) {
+   		 
+   		//Recuperation date de la competition
+   		$compet = $this->gestion->getCompetitionSelected();
+   		$competDate = $compet["datecompetition"];
+   		$competLibelle = $compet["libelle"];
+   		//Recuperation categorie
+   		$cat = $this->gestion->getCategorie($categorie);
+   		$categorieLibelle = $cat["libelle"];
+   		
+   		$licenciesTableau = $this->organisation->getLicencieInTableau($categorie);
+   		$nb = count($licenciesTableau);
+   		$nbCompetiteur = 0;
+   		$tabTableau = array(4,8,12,16,24,32,36,48,64,96);
+
+   		for ($i=0; $i<count($tabTableau); $i++) {
+   			if($nb < $tabTableau[$i]) {
+   				$nbCompetiteur = $tabTableau[$i];
+   				break;
+   			}
+   		}
+   		
+   		$objet = PHPExcel_IOFactory::createReader('Excel5');
+   		$excel = $objet->load('Data/tableau'.$nbCompetiteur.'.xls');
+   		$sheet = $excel->getSheet(0);
+   		$sheet->setCellValue("H2", aff_date_court($competDate));
+   		$sheet->setCellValue("H4", $categorieLibelle);
+   		$sheet->setCellValue("D9", $competLibelle);
+   	
+   		for ($row=10; $row<81; $row++) { //nombre de ligne max tableau de 96
+   			$valeur = $sheet->getCell("B".$row)->getValue();
+   			if(!empty($valeur)) {
+   				if(strrpos($valeur, '.')!==false){
+   					$resClassement = explode(".", $valeur);
+   					$poule = $resClassement[0]; 
+   					$position = $resClassement[1];
+   					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position);
+   					if(!empty($tirage)) {
+   						$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+   						$sheet->setCellValue("C".$row, $licencie);
+   					} 
+   				}
+   			}
+   		}
+   	
+   		if($nbCompetiteur > 30) { //Tableau sur 2 colonnes
+   			for ($row=10; $row<81; $row++) { //nombre de ligne max tableau de 96
+   				$valeur = $sheet->getCell("O".$row)->getValue();
+   				if(!empty($valeur)) {
+   					if(strrpos($valeur, '.')!==false){
+   						$resClassement = explode(".", $valeur);
+   						$poule = $resClassement[0];
+   						$position = $resClassement[1];
+   						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position);
+   						if(!empty($tirage)) {
+   							$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+   							$sheet->setCellValue("N".$row, $licencie);
+   						}
+   					}
+   				}
+   			}
+   		}
+   		
+   		$writer = PHPExcel_IOFactory::createWriter($excel, "Excel5");
+   		$writer->save('Ressources/'.$categorieLibelle.'_tableau.xls');
+   	
+   		$categories = $this->gestion->getCategories();
+   		$categorieSelected = $categorie;
+   		$libCategorieSelected = $this->gestion->getCategorie($categorie);
+   		$vue = new Vue("Organisation","Tableau");
+   		$vue->generer(array('licenciesTableau'=>$licenciesTableau,'categories'=>$categories,'categorieSelected'=>$categorieSelected,'libCategorieSelected'=>$libCategorieSelected), null);
+   	}
 }
 

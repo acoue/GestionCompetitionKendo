@@ -237,7 +237,7 @@ class Routeur {
             		$this->ctrlOrganisation->afficherTableau($categorie);
             	} else if ($_GET['action'] == 'impressionTableau') {
             		$categorie = $this->getParametre($_POST, 'categorie');
-            		$this->ctrlOrganisation->imprimerPoule($categorie);
+            		$this->ctrlOrganisation->imprimerTableau($categorie);
             	}
             	
 //Partie Menu Resultat -> poules

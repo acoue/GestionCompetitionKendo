@@ -35,15 +35,29 @@ if(!empty($categorieSelected)) {
 	closedir($dir);
 }
 
-
-
 if(!empty($licenciesTableau)) {
 echo "</p><p>Comp&eacute;titeurs dans le tableau</p>";
+?>
+<table id='csstable' align="center" width="70%">
+	<thead>
+    	<tr>
+			<th width="60%">Licenci&eacute;</th> 
+			<th width="20%">Poule</th>  
+			<th width="20%">Classement</th>  
+		<tr>
+	</thead>
+	<tbody>		
+<?php
 	foreach ($licenciesTableau as $licTab) {
 		$licencie = Securite::decrypteData($licTab[1])." ".Securite::decrypteData($licTab[2]);
-		echo "$licencie (Poule : $licTab[3] -> $licTab[4]) <br />";
-
+		echo "<tr align='center'>";
+		echo "<td>".$licencie."</td>";
+		echo "<td>".$licTab[3]."</td>";
+		echo "<td>".$licTab[4]."</td>";
+		echo "</tr>";
 	}
+	echo "</tbody>";
+	echo "</table>";
 } 
 ?>
 </form>
