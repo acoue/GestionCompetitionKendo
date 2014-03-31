@@ -31,10 +31,10 @@
 			    <li class='last'><a href='index.php?action=importRepartition'>R&eacute;partition<span></span></a></li>
 			</ul>
 		</li>
-		<li class='has-sub'><a href='#'><span>Exportation</span></a>
+		<li class='has-sub'><a href='#'><span>Imprimer / Exporter</span></a>
 			<ul>
-				<li><a href='#'><span>a trouver</span></a></li>
-			    <li class='last'><a href='#'><span>a trouver</span></a></li>
+				<li><a href='#'><span>Poules</span></a></li>
+			    <li class='last'><a href='#'><span>Bilan competition ? </span></a></li>
 			</ul>
 		</li>
 		<li class='last'><a href='index.php?action=afficheJournal'><span>Journaux</span></a></li>
