@@ -125,87 +125,89 @@ class ControleurOrganisation {
 		if($ecartClub == 0 && $ecartTete == 0) { // 1. Pas d'ecartement
 			shuffle($licenciesCategorie);
 		} 
-		else if($ecartClub == 0 && $ecartTete == 0) { // 2. Ecartement des tetes de series
+		else if($ecartClub == 0 && $ecartTete == 1) { // 2. Ecartement des tetes de series
 		}
-		else if($ecartClub == 0 && $ecartTete == 0) { // 3. Ecartement des clubs
+		else if($ecartClub == 1 && $ecartTete == 0) { // 3. Ecartement des clubs
 		}
-		else if($ecartClub == 0 && $ecartTete == 0) { // 4. Ecartement des clubs et des tetes de series
+		else if($ecartClub == 1 && $ecartTete == 1) { // 4. Ecartement des clubs et des tetes de series
 		}
 
     	$nbParticipant = count($licenciesCategorie);
-    	
-    	if( $nbParticipant % $nbInPoule == 0){
-    		for($i=0;$i<$nbParticipant;$i++) {
-    			if ($iNumero <= $nbInPoule) {
-    				$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
-    				$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
-    				$iNumero++;
-    			} else {
-    				$iBoucle++;
-    				$iNumero = 1;
-    				$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
-    				$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
-    				$iNumero++;
-    			}
-    		}
+    	if ($nbInPoule > -1) {
+	    	if( $nbParticipant % $nbInPoule == 0){
+	    		for($i=0;$i<$nbParticipant;$i++) {
+	    			if ($iNumero <= $nbInPoule) {
+	    				$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
+	    				$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
+	    				$iNumero++;
+	    			} else {
+	    				$iBoucle++;
+	    				$iNumero = 1;
+	    				$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
+	    				$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
+	    				$iNumero++;
+	    			}
+	    		}
+	    	} else {
+	    		$quotient = (int) ($nbParticipant / $nbInPoule); // on prend la partie entière du résultat de la division
+	    		//$reste = $nbParticipant - ($quotient * $nbInPoule);
+	    		$reste = $nbParticipant % $nbInPoule;
+	
+	    		$iBoucle = 1;
+	    		$iNumero = 1;
+	    		for($i=0;$i<$nbParticipant;$i++) {
+	    			if ($iBoucle <= ($quotient-$reste)){
+	    				if ($iNumero <= $nbInPoule) {
+	    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
+	    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
+	    					$iNumero++;
+	    				} else {
+	    					$iBoucle++;
+	    					$iNumero = 1;
+	    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
+	    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
+	    					$iNumero++;
+	    				}
+	    			} else {
+	    				if ($iNumero <= $nbInPoule +1) {
+	    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
+	    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
+	    					$iNumero++;
+	    				} else {
+	    					$iBoucle++;
+	    					$iNumero = 1;
+	    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
+	    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
+	    					$iNumero++;
+	    				}
+	    			}
+	    		}
+	    	}
+	    	//Creation combats
+	    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie);
+	    	$tabCombat = array();
+	    	$tmpPoule="";
+	    	$iCpt = 1;
+	    	foreach ($licenciesTirage as $tirage) {
+	    		$tmpPoule1 = $tirage['numero_poule'];
+	    		$lic = $tirage[1];
+	    		if($tmpPoule!="" && $tmpPoule != $tmpPoule1) {
+	    			// Insertion
+	    			$this->createCombat($tabCombat,$categorie,$tmpPoule);
+	    			//vide tableau
+	    			unset($tabCombat);
+	    			$tabCombat = array();
+	    		}
+	    		array_push($tabCombat, $lic);
+	    		$tmpPoule = $tmpPoule1;
+	    	}
+	    	$this->createCombat($tabCombat,$categorie,$tmpPoule);
     	} else {
-    		$quotient = (int) ($nbParticipant / $nbInPoule); // on prend la partie entière du résultat de la division
-    		//$reste = $nbParticipant - ($quotient * $nbInPoule);
-    		$reste = $nbParticipant % $nbInPoule;
-
-    		$iBoucle = 1;
-    		$iNumero = 1;
-    		for($i=0;$i<$nbParticipant;$i++) {
-    			if ($iBoucle <= ($quotient-$reste)){
-    				if ($iNumero <= $nbInPoule) {
-    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
-    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
-    					$iNumero++;
-    				} else {
-    					$iBoucle++;
-    					$iNumero = 1;
-    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
-    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
-    					$iNumero++;
-    				}
-    			} else {
-    				if ($iNumero <= $nbInPoule +1) {
-    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
-    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
-    					$iNumero++;
-    				} else {
-    					$iBoucle++;
-    					$iNumero = 1;
-    					$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero);
-    					$result[] = $licenciesCategorie[$i][0]." - ".Securite::decrypteData($licenciesCategorie[$i]["prenom"])." ".Securite::decrypteData($licenciesCategorie[$i]["nom"])." -> Poule ".$iBoucle." / n&deg; ".$iNumero;
-    					$iNumero++;
-    				}
-    			}
-    		}
+    		//tableau direct
     	}
-    		
     	//Insertion dans la table historique
     	$this->organisation->insertHistoriqueTirage($categorie);
     	
-    	//Creation combat
-    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie);
-    	$tabCombat = array();
-    	$tmpPoule="";
-    	$iCpt = 1;
-    	foreach ($licenciesTirage as $tirage) {
-    		$tmpPoule1 = $tirage['numero_poule'];
-    		$lic = $tirage[1];
-    		if($tmpPoule!="" && $tmpPoule != $tmpPoule1) {
-    			// Insertion
-    			$this->createCombat($tabCombat,$categorie,$tmpPoule);
-    			//vide tableau
-    			unset($tabCombat);
-    			$tabCombat = array();
-    		}
-    		array_push($tabCombat, $lic);
-    		$tmpPoule = $tmpPoule1;
-    	}
-    	$this->createCombat($tabCombat,$categorie,$tmpPoule);
     	$categories = $this->gestion->getCategories();
     	$categorieSelected = $categorie;
 		$vue = new Vue("Organisation","Tirage");
@@ -304,12 +306,13 @@ class ControleurOrganisation {
    	
    		if($categorie > 0) {
    			$licenciesTableau = $this->organisation->getLicencieInTableau($categorie);
+   			$libCategorieSelected = $this->gestion->getCategorie($categorie);
    		} else {
    			$licenciesTableau = null;
+   			$libCategorieSelected = "";
    		}
    		$categories = $this->gestion->getCategories();
    		$categorieSelected = $categorie;
-   		$libCategorieSelected = $this->gestion->getCategorie($categorie);
    		$vue = new Vue("Organisation","Tableau");
    		$vue->generer(array('licenciesTableau'=>$licenciesTableau,'categories'=>$categories,'categorieSelected'=>$categorieSelected,'libCategorieSelected'=>$libCategorieSelected), null);
    		 
@@ -381,7 +384,8 @@ class ControleurOrganisation {
    		
    		$writer = PHPExcel_IOFactory::createWriter($excel, "Excel5");
    		$writer->save('Ressources/'.$categorieLibelle.'_tableau.xls');
-   	
+   		
+   		
    		$categories = $this->gestion->getCategories();
    		$categorieSelected = $categorie;
    		$libCategorieSelected = $this->gestion->getCategorie($categorie);

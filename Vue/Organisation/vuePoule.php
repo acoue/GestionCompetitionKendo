@@ -15,31 +15,11 @@ if(!empty($categories)) {
 	}
 }
 ?>
-</select>
-<p align="center"><input type='submit' name='valider' value='G&eacute;n&eacute;rer les poules' /></p>
-<p>Liste des fichiers poule g&eacute;n&eacute;r&eacute;s :
+</select></p>
+<p align="center"><input type='submit' name='valider' value='G&eacute;n&eacute;rer les poules' /></p><br />
 <?php
-if(!empty($categorieSelected)) {
-	$dirname = 'Ressources/';
-	$dir = opendir($dirname);
-	$cpt = 0;
-	while($file = readdir($dir)) {
-		if($file != '.' && $file != '..' && !is_dir($dirname.$file)) {
-			if (strrpos($file, $libCategorieSelected['libelle']."_poule")!==false) {
-				echo "<p align='center'><a href='".$dirname.$file."'>".$file."</a></p>";
-				$cpt++;
-			}
-		}
-	}
-	if($cpt<1) echo "Pas de fichier g&eacute;n&eacute;r&eacute;s";
-	closedir($dir);
-}
-
-
-echo "</p>";
 if(!empty($licenciesTirage)) {
-	echo "<p>Liste des poules</p>";
-	echo "<p align='center'><table border='1' style='width: 25%;text-align: center;'>";
+	echo "<table border='1' style='width: 40%;text-align: center;'>";
 	$pouletmp = "";
 	$cpt = 1;
 	foreach ($licenciesTirage as $tirage) {
@@ -51,15 +31,24 @@ if(!empty($licenciesTirage)) {
 
 		if($pouletmp == "") echo "<tr><th>Poule $poule</th></tr>";
 
-		if($pouletmp != "" && $poule != $pouletmp) {	
-			echo "</table><br /><table border='1' style='width: 25%;text-align: center;'>";
+		if($pouletmp != "" && $poule != $pouletmp) {
+			
+			if(file_exists("Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
+				echo "<tr><td align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls'><img src='img/site/fichier.png' border='0'></a></td></tr>";
+			}
+			echo "</table><br /><table border='1' style='width: 40%;text-align: center;'>";
 			echo "<tr><th>Poule $poule</th></tr>";
+			$cpt=1;
 		} 
 
-		echo "<tr><td>$licencie <br /><span class='libClub'>$club</span></td></tr>";	
+		echo "<tr><td>$licencie <br /><span class='libClub'>$club</span></td></tr>";
+		$cpt++;
 		$pouletmp = $poule;
 	}
-	echo "</table></p>";
+	if(file_exists("Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
+		echo "<tr><td align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls'><img src='img/site/fichier.png' border='0'></a></td></tr>";
+	}
+	echo "</table>";
 } else {
 	echo "<p>Pas de tirage au sort effectu&eacute; pour cette cat&eacute;gorie</p>";
 }

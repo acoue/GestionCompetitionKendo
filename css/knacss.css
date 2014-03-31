@@ -1140,6 +1140,7 @@ table,
   table-layout: fixed; 
   border-collapse: collapse;
   vertical-align: top;
+  margin: auto;
 }
 
 table {

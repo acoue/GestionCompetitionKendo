@@ -16,27 +16,14 @@ if(!empty($categories)) {
 }
 ?>
 </select>
-<p align="center"><input type='submit' name='valider' value='G&eacute;n&eacute;rer le tableau' /></p>
-<p>Liste des fichiers tableaux g&eacute;n&eacute;r&eacute;s :
+<br />
+<input type='submit' name='valider' value='G&eacute;n&eacute;rer le tableau' /></p>
 <?php
-if(!empty($categorieSelected)) {
-	$dirname = 'Ressources/';
-	$dir = opendir($dirname);
-	$cpt = 0;
-	while($file = readdir($dir)) {
-		if($file != '.' && $file != '..' && !is_dir($dirname.$file)) {
-			if (strrpos($file, $libCategorieSelected['libelle']."_tableau")!==false) {
-				echo "<p align='center'><a href='".$dirname.$file."'>".$file."</a></p>";
-				$cpt++;
-			}
-		}
-	}
-	if($cpt<1) echo "Pas de fichier g&eacute;n&eacute;r&eacute;s";
-	closedir($dir);
+if(file_exists("Ressources/".$libCategorieSelected[0]."_tableau.xls")) {
+	echo "<p align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_tableau.xls'><img src='img/site/fichier.png' border='0'></a></p>";
 }
-
 if(!empty($licenciesTableau)) {
-echo "</p><p>Comp&eacute;titeurs dans le tableau</p>";
+echo "<p>Comp&eacute;titeurs dans le tableau</p>";
 ?>
 <table id='csstable' align="center" width="70%">
 	<thead>
@@ -56,8 +43,8 @@ echo "</p><p>Comp&eacute;titeurs dans le tableau</p>";
 		echo "<td>".$licTab[4]."</td>";
 		echo "</tr>";
 	}
-	echo "</tbody>";
-	echo "</table>";
 } 
 ?>
+	</tbody>
+</table>
 </form>

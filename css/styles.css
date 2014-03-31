@@ -137,6 +137,7 @@
 #csstable {
  	border: 1px solid #ffffff; 
 	background-color: #E9E9E9;
+	margin: auto;
 }
 
 #csstable td, #csstable th {
@@ -163,4 +164,9 @@ div.breakafter {
   color: #595959;
   font-size: 11px;
   font-style: italic;
+}
+
+.blocCenter {
+	margin-left: auto;
+    margin-right: auto;
 }
