@@ -183,6 +183,10 @@ class ControleurOrganisation {
 	    			}
 	    		}
 	    	}
+	    	
+	    	//Suppression des ligne poule = 0
+	    	$this->organisation->deleteTiragePouleNull($categorie);
+	    	
 	    	//Creation combats
 	    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie);
 	    	$tabCombat = array();

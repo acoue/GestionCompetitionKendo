@@ -214,5 +214,15 @@ class ControleurResultat {
     	$vue = new Vue("Resultat","CombatPouleSimple");
     	$vue->generer(array('licenciesTirage'=>$licenciesTirage,'categories'=>$categories,'categorieSelected'=>$categorieSelected), $erreur);
     }
+    
+    public function afficherListePouleImpression($categorie) {
+    	if($categorie > 0) $participant = $this->organisation->getTirageCategorie( $categorie);
+    	else $participant = null;
+    	$categories = $this->gestion->getCategories();
+    	
+    	$categorieSelected = $categorie;
+    	$vue = new Vue("Export","ImpressionPoule");
+    	$vue->generer(array('categories'=>$categories,'participant'=>$participant,'categorieSelected'=>$categorieSelected), null);
+    }
 }
 

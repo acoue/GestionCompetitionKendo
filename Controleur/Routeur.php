@@ -296,6 +296,12 @@ class Routeur {
             		$poule = $this->getParametre($_GET, 'poule');
             		$this->ctrlResultat->razResultatPoule($poule,$categorie);
             	}
+//Partie Imprimer / Exporter
+            	else if ($_GET['action'] == 'impressionPoule'){ 
+            		if(isset($_GET['id'])) $categorie = $this->getParametre($_GET, 'id');
+            		else $categorie = -1;
+            		$this->ctrlResultat->afficherListePouleImpression($categorie);
+            	}
             	
 //Partie Menu Importation -> Club
             	else if ($_GET['action'] == 'importClub') {

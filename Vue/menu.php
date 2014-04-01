@@ -26,7 +26,7 @@
 		</li>
 		<li class='has-sub'><a href='#'><span>Imprimer / Exporter</span></a>
 			<ul>
-				<li><a href='#'><span>Poules</span></a></li>
+				<li><a href='index.php?action=impressionPoule'><span>Poules</span></a></li>
 			    <li class='last'><a href='#'><span>Bilan competition ? </span></a></li>
 			</ul>
 		</li>

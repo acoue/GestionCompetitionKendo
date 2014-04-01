@@ -73,7 +73,7 @@ class Organisation extends Modele {
 		try {
 			$sql = "select 'X' from licencie_categorie where idcategorie = $categorie and idlicencie = $licencie ";
 			$result	= $this->executerRequete($sql);
-			return $result;
+			return $result->fetch();
 		} catch (Exception $e) {
 			Log::afficherErreur("existLicenciesInCategorie() : ".$e->getMessage());
 			log::loggerErreur("existLicenciesInCategorie() : ".$e->getMessage());
@@ -133,6 +133,18 @@ class Organisation extends Modele {
 		} catch (Exception $e) {
 			Log::afficherErreur("deleteTirage() : ".$e->getMessage());
 			log::loggerErreur("deleteTirage() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
+	public function deleteTiragePouleNull($categorie) {
+		try {
+			$sql  = "delete from licencie_categorie where numero_poule = 0 and idcategorie = ? ";
+			$result	= $this->executerRequete($sql, array($categorie));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("deleteTiragePouleNull() : ".$e->getMessage());
+			log::loggerErreur("deleteTiragePouleNull() : ".$e->getMessage());
 			return null;
 		}
 	}
