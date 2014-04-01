@@ -24,7 +24,7 @@ require_once 'Config/fonction.php';
 	   echo "<td align='center'><a href='index.php?action=afficheLicencie&id=".$licencie["idlicencie"]."' target='_self'><img src='img/site/modifier.png' border='0'></a></td>";
 	   echo "<td>".Securite::decrypteData($licencie["prenom"])."</td>";
 	   echo "<td>".Securite::decrypteData($licencie["nom"])."</td>";
-	   echo "<td>".$licencie[5]."</td>";
+	   echo "<td>".$licencie[6]."</td>";
 	   echo "<td>".$licencie[8]."</td>";
 	   echo "</tr>";
 	}

@@ -18,7 +18,7 @@ require_once 'Config/fonction.php';
 	   echo "<tr align='left'>";
 	   echo "<td align='center'><a href='index.php?action=suppressionClub&id=".$club["idclub"]."' target='_self'><img src='img/site/supprimer.png' border='0'></a></td>";
 	   echo "<td align='center'><a href='index.php?action=afficheClub&id=".$club["idclub"]."' target='_self'><img src='img/site/modifier.png' border='0'></a></td>";
-	   echo "<td>".$club[1]."</td>";
+	   echo "<td>".$club[2]."</td>";
 	   echo "<td>".$club[4]."</td>";
 	   echo "</tr>";
 	}

@@ -18,8 +18,8 @@ require_once 'Config/fonction.php';
 			<td>
 				<select id="club" name="club" >
 				<?php foreach ($clubs as $club) {
-					if($club['idclub'] == $licencie['idclub']) echo "<option value='".$club['idclub']."' selected >".$club['1']."</option>";
-					else echo "<option value='".$club['idclub']."' >".$club['1']."</option>";
+					if($club['idclub'] == $licencie['idclub']) echo "<option value='".$club['idclub']."' selected >".$club['2']."</option>";
+					else echo "<option value='".$club['idclub']."' >".$club['2']."</option>";
 				} ?>
 				</select>
 			</td>

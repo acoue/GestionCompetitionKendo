@@ -17,7 +17,7 @@ require_once 'Config/fonction.php';
 			<td>
 				<select id="club" name="club" >
 				<?php foreach ($clubs as $club) {
-					echo "<option value='".$club['idclub']."' >".$club['1']."</option>";
+					echo "<option value='".$club['idclub']."' >".$club['2']."</option>";
 				} ?>
 				</select>
 			</td>
