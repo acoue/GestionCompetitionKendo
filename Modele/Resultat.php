@@ -8,13 +8,16 @@ class Resultat extends Modele {
 	////////////////////////////
 	// Gestion des combats et resultats
 	////////////////////////////
-	public function getParticipantsInPoule($poule,$categorie) {
+	public function getParticipantsInPoule($poule,$categorie,$competition) {
 		try {
 			$sql = "select licencie.idlicencie, nom , prenom, position_poule
 					from licencie_categorie,licencie
 					where licencie_categorie.idlicencie = licencie.idlicencie
-					and licencie_categorie.idcategorie = ? and numero_poule = ? order by position_poule";
-			$result	= $this->executerRequeteToArray($sql, array($categorie,$poule));
+					and licencie_categorie.idcategorie = ? 
+					and numero_poule = ? 
+					and idcompetition = ? 
+					order by position_poule";
+			$result	= $this->executerRequeteToArray($sql, array($categorie,$poule,$competition));
 			return $result;
 		} catch (Exception $e) {
 			Log::afficherErreur("getParticipantInPoule() : ".$e->getMessage());
@@ -23,14 +26,14 @@ class Resultat extends Modele {
 		}
 	}
 
-	public function getParticipantsInPouleWithResultat($poule,$categorie) {
+	public function getParticipantsInPouleWithResultat($poule,$categorie,$competition) {
 		try {
 			$sql = "select idlicencie, prenom, nom , classement, B.idcategorie
 					from licencie A, licencie_categorie B left outer join resultat_poule C on (B.idlicencie = C.idlicencie and B.numero_poule = C.numero_poule and B.idcategorie = C.idcategorie)
 					where A.idlicencie = B.idlicencie
-					and B.idcategorie = ? and B.numero_poule = ?
+					and B.idcategorie = ? and B.numero_poule = ? and idcompetition
 					order by B.numero_poule, B.position_poule ";
-			$result	= $this->executerRequeteToArray($sql, array($categorie,$poule));
+			$result	= $this->executerRequeteToArray($sql, array($categorie,$poule,$competition));
 			return $result;
 		} catch (Exception $e) {
 			Log::afficherErreur("getParticipantInPoule() : ".$e->getMessage());
@@ -39,14 +42,16 @@ class Resultat extends Modele {
 		}
 	}
 	
-	public function getCombatsPoule($idCategorie) {
+	public function getCombatsPoule($idCategorie,$competition) {
 		try {
 			$sql = "select A.idlicencie,A.prenom, A.nom, B.idlicencie,B.prenom, B.nom, poule, ordre, idcombat_poule, resultat_rouge, resultat_blanc
 					from combat_poule,licencie A,licencie B
 					where combat_poule.idlicencie1 = A.idlicencie 
 					and combat_poule.idlicencie2 = B.idlicencie
-					and combat_poule.idcategorie = ? order by poule, ordre";
-			$result	= $this->executerRequeteToArray($sql, array($idCategorie));
+					and combat_poule.idcategorie = ? 
+					and combat_poule.idcompetition = ? 
+					order by poule, ordre";
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
 			return $result;
 		} catch (Exception $e) {
 			Log::afficherErreur("getCombatsPoule() : ".$e->getMessage());
@@ -83,11 +88,11 @@ class Resultat extends Modele {
 		}
 	}
 	
-	public function razResultatCombatPoule($categorie,$poule) {
+	public function razResultatCombatPoule($categorie,$poule,$competition) {
 		try {
 			$sql  = "UPDATE combat_poule SET resultat_rouge = null, resultat_blanc = null , idvainqueur = null 
-					 WHERE idcategorie = ? and poule = ? ";
-			$stmt = $this->executerRequete($sql, array($categorie,$poule));
+					 WHERE idcategorie = ? and poule = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($categorie,$poule,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("razResultatCombatPoule() : ".$e->getMessage());
@@ -96,11 +101,11 @@ class Resultat extends Modele {
 		}
 	}
 	
-	public function getResultatPoule($poule,$categorie,$licencie) {
+	public function getResultatPoule($poule,$categorie,$licencie,$competition) {
 		try {
 			$sql = "Select 'X' from resultat_poule
-					where numero_poule = ? and idcategorie = ? and idlicencie = ?";
-			$result	= $this->executerRequete($sql, array($poule,$categorie, $licencie));			
+					where numero_poule = ? and idcategorie = ? and idlicencie = ? and idcompetition = ? ";
+			$result	= $this->executerRequete($sql, array($poule,$categorie, $licencie,$competition));			
 			return $result->fetch();
 		} catch (Exception $e) {
 	    	Log::afficherErreur("getResultatPoule() : ".$e->getMessage());
@@ -110,10 +115,10 @@ class Resultat extends Modele {
 		
 	}
 	
-	public function setResultatPoule($idPoule, $idLicencie, $classement, $categorie) {
+	public function setResultatPoule($idPoule, $idLicencie, $classement, $categorie,$competition) {
 		try {
-			$sql  = "UPDATE resultat_poule SET idlicencie = ? ,classement = ? WHERE numero_poule = ? and idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($idLicencie,$classement, $idPoule, $categorie));
+			$sql  = "UPDATE resultat_poule SET idlicencie = ? ,classement = ? WHERE numero_poule = ? and idcategorie = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($idLicencie,$classement, $idPoule, $categorie, $competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("setResultatPoule() : ".$e->getMessage());
@@ -122,10 +127,10 @@ class Resultat extends Modele {
 		}
 	}
 
-	public function addResultatPoule($idPoule, $idLicencie, $classement, $categorie) {
+	public function addResultatPoule($idPoule, $idLicencie, $classement, $categorie,$competition) {
 		try {
-			$sql  = "insert into resultat_poule (idlicencie,classement,numero_poule,idcategorie) values ( ? , ? , ? , ? )";
-			$stmt = $this->executerRequete($sql, array($idLicencie,$classement, $idPoule, $categorie));
+			$sql  = "insert into resultat_poule (idlicencie,classement,numero_poule,idcategorie,idcompetition) values ( ? , ? , ? , ? , ? )";
+			$stmt = $this->executerRequete($sql, array($idLicencie,$classement, $idPoule, $categorie,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("addResultatPoule() : ".$e->getMessage());
@@ -134,10 +139,10 @@ class Resultat extends Modele {
 		}
 	}
 
-	public function updateResultatPoule($idPoule, $idLicencie, $classement, $categorie) {
+	public function updateResultatPoule($idPoule, $idLicencie, $classement, $categorie,$competition) {
 		try {
-			$sql  = "UPDATE resultat_poule SET classement = ? WHERE numero_poule = ? and idcategorie = ? and idlicencie = ? ";
-			$stmt = $this->executerRequete($sql, array($classement, $idPoule, $categorie, $idLicencie));
+			$sql  = "UPDATE resultat_poule SET classement = ? WHERE numero_poule = ? and idcategorie = ? and idlicencie = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($classement, $idPoule, $categorie, $idLicencie,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("updateResultatPoule() : ".$e->getMessage());
@@ -145,11 +150,13 @@ class Resultat extends Modele {
 			return null;
 		}
 	}
-	public function existResultatPoule($idPoule, $idLicencie, $categorie) {
+	public function existResultatPoule($idPoule, $idLicencie, $categorie,$competition) {
 		try {
 			$sql  = "select 'X' from resultat_poule where idlicencie = ?
-					 and numero_poule = ? and idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($idLicencie, $idPoule, $categorie));
+					 and numero_poule = ? 
+					 and idcategorie = ?
+					 and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($idLicencie, $idPoule, $categorie,$competition));
 			return $stmt->fetch();
 		} catch (Exception $e) {
 			Log::afficherErreur("existResultatPoule() : ".$e->getMessage());
@@ -157,10 +164,10 @@ class Resultat extends Modele {
 			return null;
 		}
 	}
-	public function deleteResultatPouleByPoule( $categorie,$poule) {
+	public function deleteResultatPouleByPoule( $categorie,$poule,$competition) {
 		try {
-			$sql  = "delete from resultat_poule where idcategorie = ? and numero_poule = ?";
-			$stmt = $this->executerRequete($sql, array($categorie, $poule));
+			$sql  = "delete from resultat_poule where idcategorie = ? and numero_poule = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($categorie, $poule,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("deleteResultatPoule() : ".$e->getMessage());
@@ -169,10 +176,10 @@ class Resultat extends Modele {
 		}
 	}
 	
-	public function deleteResultatPoule( $categorie) {
+	public function deleteResultatPoule( $categorie, $competition) {
 		try {
-			$sql  = "delete from resultat_poule where idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($categorie));
+			$sql  = "delete from resultat_poule where idcategorie = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($categorie,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("deleteResultatPoule() : ".$e->getMessage());
@@ -183,7 +190,9 @@ class Resultat extends Modele {
 	
 	public function getLicencieByCombat($idCombat) {
 		try {
-			$sql  = "select poule, idlicencie1,idlicencie2, idvainqueur from combat_poule where idcombat_poule = ? ";
+			$sql  = "select poule, idlicencie1,idlicencie2, idvainqueur
+					 from combat_poule
+					 where idcombat_poule = ? ";
 			$stmt = $this->executerRequete($sql, array($idCombat));
 			return $stmt->fetch();
 		} catch (Exception $e) {
@@ -193,11 +202,11 @@ class Resultat extends Modele {
 		}
 	}
 	
-	public function getResultatCombatInTirage($idPoule, $idLicencie, $categorie) {
+	public function getResultatCombatInTirage($idPoule, $idLicencie, $categorie,$competition) {
 		try {
 			$sql  = "select resultat_combat , point_combat from licencie_categorie
-					 where idlicencie = ? and numero_poule = ? and idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($idLicencie, $idPoule, $categorie));		
+					 where idlicencie = ? and numero_poule = ? and idcategorie = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($idLicencie, $idPoule, $categorie,$competition));		
 			return $stmt->fetch();
 		} catch (Exception $e) {
 			Log::afficherErreur("getResultatCombatInTirage() : ".$e->getMessage());
@@ -206,11 +215,11 @@ class Resultat extends Modele {
 		}
 	}
 
-	public function setResultatCombatInTirage($idPoule, $idLicencie, $categorie, $valeur, $point) {
+	public function setResultatCombatInTirage($idPoule, $idLicencie, $categorie, $valeur, $point,$competition) {
 		try {
 			$sql  = "update licencie_categorie set resultat_combat = ? , point_combat = ? 
-					 where idlicencie = ? and numero_poule = ? and idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($valeur, $point, $idLicencie, $idPoule, $categorie));
+					 where idlicencie = ? and numero_poule = ? and idcategorie = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($valeur, $point, $idLicencie, $idPoule, $categorie,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("setResultatCombatInTirage() : ".$e->getMessage());
@@ -219,11 +228,11 @@ class Resultat extends Modele {
 		}
 	}
 
-	public function razResultatCombatInTirage($idPoule, $categorie) {
+	public function razResultatCombatInTirage($idPoule, $categorie,$competition) {
 		try {
 			$sql  = "update licencie_categorie set resultat_combat = 0 , point_combat = 0
-					 where numero_poule = ? and idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($idPoule, $categorie));
+					 where numero_poule = ? and idcategorie = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($idPoule, $categorie,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("razResultatCombatInTirage() : ".$e->getMessage());
@@ -232,10 +241,14 @@ class Resultat extends Modele {
 		}
 	}
 	
-	public function getClassementInTirage($idPoule,$categorie) {
+	public function getClassementInTirage($idPoule,$categorie,$competition) {
 		try {
-			$sql  = "select idlicencie from licencie_categorie where numero_poule = ? and idcategorie = ? order by resultat_combat desc,  point_combat asc";
-			$stmt = $this->executerRequete($sql, array($idPoule, $categorie));
+			$sql  = "select idlicencie from licencie_categorie 
+					 where numero_poule = ? 
+					 and idcategorie = ? 
+					 and idcompetition = ? 
+					 order by resultat_combat desc, point_combat asc";
+			$stmt = $this->executerRequete($sql, array($idPoule, $categorie,$competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("getClassementInTirage() : ".$e->getMessage());

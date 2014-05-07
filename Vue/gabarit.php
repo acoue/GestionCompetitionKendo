@@ -13,6 +13,7 @@
 		<![endif]-->
 		<link rel="stylesheet" href="css/knacss.css" media="all">
 		<link rel="stylesheet" href="css/styles.css" media="all">
+		<link rel="stylesheet" type="text/css" href="css/printPoule.css" media="print" />
 		<link rel="stylesheet" href="js/jquery/css/smoothness/jquery-ui-1.10.4.custom.css" />
 		<script src="js/jquery-2.1.0.js"></script>
 		<script src="js/menu_jquery.js"></script>

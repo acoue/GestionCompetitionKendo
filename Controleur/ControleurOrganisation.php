@@ -20,10 +20,10 @@ class ControleurOrganisation {
 
 
     public function afficherRepartition($id) { 
-
+    	$competition = $this->gestion->getIdCompetitionSelected();
     	if($id > 0) {
-    		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($id);
-    		$licencies = $this->organisation->getLicenciesNotInCategorie($id);
+    		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($id,$competition);
+    		$licencies = $this->organisation->getLicenciesNotInCategorie($id,$competition);
     	}
 	    else {
 	    	$licenciesCategorie = null;
@@ -37,8 +37,9 @@ class ControleurOrganisation {
 
 	public function ajouterRepartition($categorie,$licencie) {
 		$erreur = array();
+    	$competition = $this->gestion->getIdCompetitionSelected();
 		foreach($licencie as $elt){
-			$result = $this->organisation->addLicencieInCategorie($categorie,$elt);
+			$result = $this->organisation->addLicencieInCategorie($categorie,$elt,$competition);
 			if(! empty($result)) {
 				$erreur[] = "R&eacute;partition pour la cat&eacute;gorie $categorie : ajout de $elt";
 				Log::loggerInformation("Repartition pour la categorie $categorie : ajout de $elt");
@@ -48,8 +49,8 @@ class ControleurOrganisation {
 			}
 		}
 		
-		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie);
-		$licencies = $this->organisation->getLicenciesNotInCategorie($categorie);
+		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
+		$licencies = $this->organisation->getLicenciesNotInCategorie($categorie,$competition);
 		$categories = $this->gestion->getCategories();
 		$categorieSelected = $categorie;
 		$vue = new Vue("Organisation","Repartition");
@@ -58,6 +59,7 @@ class ControleurOrganisation {
 
 	public function supprimerRepartition($id,$categorie) {
 		$erreur = array();
+    	$competition = $this->gestion->getIdCompetitionSelected();
 		$result = $this->organisation->deleteLicencieInCategorie($id);
 		if(! empty($result)) {
 			$erreur[] = "R&eacute;partition supprim&eacute;e";
@@ -66,8 +68,8 @@ class ControleurOrganisation {
 			$erreur[] = "Erreur dans la suppression de la r&eacute;partition";
 			Log::loggerInformation("Erreur dans la suppression de la repartition ");
 		}
-		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie);
-		$licencies = $this->organisation->getLicenciesNotInCategorie($categorie);
+		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
+		$licencies = $this->organisation->getLicenciesNotInCategorie($categorie,$competition);
 		$categories = $this->gestion->getCategories();
 		$categorieSelected = $categorie;
 		$vue = new Vue("Organisation","Repartition");
@@ -77,11 +79,12 @@ class ControleurOrganisation {
 //Tirage au sort
 	public function afficherTirage($id) {
 		$result = array();
+    	$competition = $this->gestion->getIdCompetitionSelected();
     	if($id > 0) {
-    		$licenciesCategorie = $this->organisation->getLicenciesInCategorieSansClub($id);
+    		$licenciesCategorie = $this->organisation->getLicenciesInCategorieSansClub($id,$competition);
 			// Recuperation des competiteurs
-			$dateTirage = $this->organisation->getDateTirage($id);
-			$resultTmp = $this->organisation->getTirageCategorieOrdonne($id);
+			$dateTirage = $this->organisation->getDateTirage($id,$competition);
+			$resultTmp = $this->organisation->getTirageCategorieOrdonne($id,$competition);
 			
 			foreach ($resultTmp as $res) $result[] = $res[0]." - ".Securite::decrypteData($res["prenom"])." ".Securite::decrypteData($res["nom"])." -> Poule ".$res['numero_poule']." / n&deg; ".$res['position_poule'];
     	}
@@ -97,19 +100,20 @@ class ControleurOrganisation {
    	}
    	
 	public function effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete) {
-		
+
+		$competition = $this->gestion->getIdCompetitionSelected();
 		// Supression table historique tirage 
-		$this->organisation->deleteHistoriqueTirage($categorie);
+		$this->organisation->deleteHistoriqueTirage($categorie,$competition);
 		// Suppression table tirage
-		$this->organisation->deleteTirage($categorie);
+		$this->organisation->deleteTirage($categorie,$competition);
 		// Recuperation des competiteurs
-		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie);
+		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
 		// Recuperation des competiteurs
-		$dateTirage = $this->organisation->getDateTirage($categorie);
+		$dateTirage = $this->organisation->getDateTirage($categorie,$competition);
 		//suppression combats
-		$this->organisation->deleteCombatPoule($categorie);
+		$this->organisation->deleteCombatPoule($categorie,$competition);
 		//Suppression resultat poule
-		$this->resultat->deleteResultatPoule($categorie);
+		$this->resultat->deleteResultatPoule($categorie,$competition);
 		//Suppression des fichiers poule et tableau
 		$dirname = 'Ressources/';
 		$dir = opendir($dirname);
@@ -185,10 +189,10 @@ class ControleurOrganisation {
 	    	}
 	    	
 	    	//Suppression des ligne poule = 0
-	    	$this->organisation->deleteTiragePouleNull($categorie);
+	    	$this->organisation->deleteTiragePouleNull($categorie,$competition);
 	    	
 	    	//Creation combats
-	    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie);
+	    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
 	    	$tabCombat = array();
 	    	$tmpPoule="";
 	    	$iCpt = 1;
@@ -205,7 +209,7 @@ class ControleurOrganisation {
 	    		array_push($tabCombat, $lic);
 	    		$tmpPoule = $tmpPoule1;
 	    	}
-	    	$this->createCombat($tabCombat,$categorie,$tmpPoule);
+	    	$this->createCombat($tabCombat,$categorie,$tmpPoule,$competition);
     	} else {
     		//tableau direct
     	}
@@ -218,38 +222,40 @@ class ControleurOrganisation {
 	 	$vue->generer(array('dateTirage'=>$dateTirage,'categories'=>$categories,'categorieSelected'=>$categorieSelected,'licenciesTirage'=>$result,'licenciesCategorie'=>$licenciesCategorie), null);
    }
    
-	private function createCombat($tabCombat,$categorie,$tmpPoule1) {
+	private function createCombat($tabCombat,$categorie,$tmpPoule1,$competition) {
 
+		$competition = $this->gestion->getIdCompetitionSelected();
 		//Insertion
 		if(count($tabCombat) == 3){ // 1x2 - 1x3 - 2x3
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[1],1,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[2],2,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[2],3,$tmpPoule1);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[1],1,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[2],2,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[2],3,$tmpPoule1,$competition);
 		} else if(count($tabCombat) == 4){ // 1x2 - 3x4 - 1x4 - 1x3 - 2x3 - 2x4
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[1],1,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[3],2,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[3],3,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[2],4,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[2],5,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[3],6,$tmpPoule1);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[1],1,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[3],2,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[3],3,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[2],4,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[2],5,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[3],6,$tmpPoule1,$competition);
 		} else if(count($tabCombat) == 5){ // 1x2 - 3x4 - 1x5 - 2x3 - 4x5 - 1x3 - 2x5 - 1x4 - 3x5 - 2x4
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[1],1,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[3],2,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[4],3,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[2],4,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[3],$tabCombat[4],5,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[2],6,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[4],7,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[3],8,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[4],9,$tmpPoule1);
-			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[3],10,$tmpPoule1);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[1],1,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[3],2,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[4],3,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[2],4,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[3],$tabCombat[4],5,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[2],6,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[4],7,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[0],$tabCombat[3],8,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[2],$tabCombat[4],9,$tmpPoule1,$competition);
+			$this->organisation->insertCombatPoule($categorie,$tabCombat[1],$tabCombat[3],10,$tmpPoule1,$competition);
 		}
 	}
 	
 	public function afficherPoule($id) {
 
 	   	if($id > 0) {
-	   		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($id);
+	   		$competition = $this->gestion->getIdCompetitionSelected();
+	   		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($id,$competition);
 	   	} else {
 	   		$licenciesTirage = null;
 	   	}
@@ -267,14 +273,15 @@ class ControleurOrganisation {
    		$compet = $this->gestion->getCompetitionSelected();
    		$competDate = $compet["datecompetition"];
    		$competLibelle = $compet["libelle"];
+   		$competition = $compet["idcompetition"];
    		//Recuperation categorie
    		$cat = $this->gestion->getCategorie($categorie);
    		$categorieLibelle = $cat["libelle"];
-   		$nbPoule = $this->organisation->getNombrePoule($categorie);
+   		$nbPoule = $this->organisation->getNombrePoule($categorie,$competition);
    		
    		for($i=1;$i<=$nbPoule;$i++) {
-   			$competiteurInPoule = $this->organisation->getCompetiteurInPoule($categorie, $i);
-   			$nbCompetiteur = $this->organisation->getNombreCompetiteurInPoule($categorie, $i);
+   			$competiteurInPoule = $this->organisation->getCompetiteurInPoule($categorie, $i, $competition);
+   			$nbCompetiteur = $this->organisation->getNombreCompetiteurInPoule($categorie, $i, $competition);
  	
    			$objet = PHPExcel_IOFactory::createReader('Excel5');
    			$excel = $objet->load('Data/poule'.$nbCompetiteur.'.xls');
@@ -298,7 +305,7 @@ class ControleurOrganisation {
    			
    		}
    		
-   		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie);
+   		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$compet);
    		$categories = $this->gestion->getCategories();
    		$categorieSelected = $categorie;
 	   	$libCategorieSelected = $this->gestion->getCategorie($categorie);
@@ -307,9 +314,10 @@ class ControleurOrganisation {
    	}
    	
    	public function afficherTableau($categorie) {
-   	
+
+   		$competition = $this->gestion->getIdCompetitionSelected();
    		if($categorie > 0) {
-   			$licenciesTableau = $this->organisation->getLicencieInTableau($categorie);
+   			$licenciesTableau = $this->organisation->getLicencieInTableau($categorie,$competition);
    			$libCategorieSelected = $this->gestion->getCategorie($categorie);
    		} else {
    			$licenciesTableau = null;
@@ -329,11 +337,12 @@ class ControleurOrganisation {
    		$compet = $this->gestion->getCompetitionSelected();
    		$competDate = $compet["datecompetition"];
    		$competLibelle = $compet["libelle"];
+   		$competition = $compet["idcompetition"];
    		//Recuperation categorie
    		$cat = $this->gestion->getCategorie($categorie);
    		$categorieLibelle = $cat["libelle"];
    		
-   		$licenciesTableau = $this->organisation->getLicencieInTableau($categorie);
+   		$licenciesTableau = $this->organisation->getLicencieInTableau($categorie,$competition);
    		$nb = count($licenciesTableau);
    		$nbCompetiteur = 0;
    		$tabTableau = array(4,8,12,16,24,32,36,48,64,96);
@@ -359,7 +368,7 @@ class ControleurOrganisation {
    					$resClassement = explode(".", $valeur);
    					$poule = $resClassement[0]; 
    					$position = $resClassement[1];
-   					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position);
+   					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$compet);
    					if(!empty($tirage)) {
    						$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
    						$sheet->setCellValue("C".$row, $licencie);
@@ -376,7 +385,7 @@ class ControleurOrganisation {
    						$resClassement = explode(".", $valeur);
    						$poule = $resClassement[0];
    						$position = $resClassement[1];
-   						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position);
+   						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$compet);
    						if(!empty($tirage)) {
    							$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
    							$sheet->setCellValue("N".$row, $licencie);
@@ -395,6 +404,33 @@ class ControleurOrganisation {
    		$libCategorieSelected = $this->gestion->getCategorie($categorie);
    		$vue = new Vue("Organisation","Tableau");
    		$vue->generer(array('licenciesTableau'=>$licenciesTableau,'categories'=>$categories,'categorieSelected'=>$categorieSelected,'libCategorieSelected'=>$libCategorieSelected), null);
+   	}
+   	
+
+
+   	public function afficherListePouleImpression($categorie) {
+   		$competition = $this->gestion->getIdCompetitionSelected();
+   		$compet = $this->gestion->getCompetitionSelected();
+   		$competDate = $compet["datecompetition"];
+   		$competLibelle = $compet["libelle"];
+   		//Recuperation categorie
+   		$cat = $this->gestion->getCategorie($categorie);
+   		$categorieLibelle = $cat["libelle"];
+   		
+   		$nbPoule = $this->organisation->getNombrePoule($categorie,$competition);
+   		if($categorie > 0) {
+   			$participant = $this->organisation->getTirageCategorie($categorie,$competition);
+   			$nbByPoule = $this->organisation->getNombreParticipantByPoule($categorie,$competition);
+   			//print_r($nbByPoule);
+   		} else {
+   			$participant = null;
+   			$nbByPoule = null;
+   		}
+   		$categories = $this->gestion->getCategories();
+   		 
+   		$categorieSelected = $categorie;
+   		$vue = new Vue("Organisation","ImpressionPoule");
+   		$vue->generer(array('categories'=>$categories,'participant'=>$participant,'categorieSelected'=>$categorieSelected,'nbByPoule'=>$nbByPoule,'competDate'=>$competDate,'competLibelle'=>$competLibelle,'categorieLibelle'=>$categorieLibelle), null);
    	}
 }
 

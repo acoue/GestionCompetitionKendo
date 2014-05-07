@@ -14,6 +14,7 @@
 			    <li><a href='index.php?action=afficheRepartition'><span>R&eacute;partition</span></a></li>
 			    <li><a href='index.php?action=afficheTirage'><span>Tirage au sort</span></a></li>
 			    <li><a href='index.php?action=affichePoule'><span>G&eacute;n&eacute;ration poules</span></a></li>
+			    <li><a href='index.php?action=impressionPoule'><span>Imprimer poules</span></a></li>
 			    <li class='last'><a href='index.php?action=afficheTableau'>G&eacute;n&eacute;ration tableaux<span></span></a></li>
 			</ul>
 		</li>
@@ -22,12 +23,6 @@
 				<li><a href='index.php?action=resultatPouleSimple'><span>Classement par poules</span></a></li>
 				<li><a href='index.php?action=resultatPoule'><span>R&eacute;sultat combats poules</span></a></li>
 			    <li class='last'><a href='#'><span>R&eacute;sultat combats tableaux</span></a></li>
-			</ul>
-		</li>
-		<li class='has-sub'><a href='#'><span>Imprimer / Exporter</span></a>
-			<ul>
-				<li><a href='index.php?action=impressionPoule'><span>Poules</span></a></li>
-			    <li class='last'><a href='#'><span>Bilan competition ? </span></a></li>
 			</ul>
 		</li>
 		<li class='has-sub'><a href='#'><span>Import via fichier</span></a>

@@ -17,7 +17,8 @@ class ControleurResultat {
 
     public function afficherResultatPoule($id) {
 
-    	if($id > 0) $combats = $this->resultat->getCombatsPoule($id);
+    	$competition = $this->gestion->getIdCompetitionSelected();
+    	if($id > 0) $combats = $this->resultat->getCombatsPoule($id,$competition);
     	else $combats = null;
     	$categories = $this->gestion->getCategories();
     	$categorieSelected = $id;
@@ -26,9 +27,9 @@ class ControleurResultat {
     }
 
     public function afficherResultatPouleSimple($id) {
-
+    	$competition = $this->gestion->getIdCompetitionSelected();
     	if($id > 0) {
-    		$licenciesTirage = $this->organisation->getTirageCategorieOrdonneWithClassement($id);
+    		$licenciesTirage = $this->organisation->getTirageCategorieOrdonneWithClassement($id,$competition);
     	} else {
     		$licenciesTirage = null;
     	}
@@ -46,7 +47,8 @@ class ControleurResultat {
     }
     
     public function afficherCombatPouleSimple ($poule,$categorie) {
-    	$participant = $this->resultat->getParticipantsInPoule($poule, $categorie);
+    	$competition = $this->gestion->getIdCompetitionSelected();
+    	$participant = $this->resultat->getParticipantsInPoule($poule, $categorie,$competition);
     	$categorieSelected = $categorie;
     	$pouleSelected = $poule;
     	$vue = new Vue("Resultat","ResultatPouleSimple");
@@ -54,11 +56,11 @@ class ControleurResultat {
     }
     
     public function razResultatPoule($poule,$categorie){
-
-    	$this->resultat->razResultatCombatInTirage($poule,$categorie);
-    	$this->resultat->razResultatCombatPoule($categorie,$poule);
+    	$competition = $this->gestion->getIdCompetitionSelected();
+    	$this->resultat->razResultatCombatInTirage($poule,$categorie,$competition);
+    	$this->resultat->razResultatCombatPoule($categorie,$poule,$competition);
     	
-    	$combats = $this->resultat->getCombatsPoule($categorie);
+    	$combats = $this->resultat->getCombatsPoule($categorie,$competition);
     	$categories = $this->gestion->getCategories();
     	$categorieSelected = $categorie;
     	$vue = new Vue("Resultat","CombatPoule");
@@ -67,6 +69,7 @@ class ControleurResultat {
     
     
     public function envoyerResultat($idCombat,$vainqueur,$point1,$point2,$point3,$categorie){
+    	$competition = $this->gestion->getIdCompetitionSelected();
     	$pointR = "";
     	$pointB = "";
     	$erreur = array();
@@ -94,7 +97,7 @@ class ControleurResultat {
     	if(strlen($pointB) == 0) $pointB="-";
     	else $nbPointB = strlen($pointB);
     	
-    	$result = $this->resultat->setResultatCombatPoule($idCombat,$pointR,$pointB,$vainqueur);
+    	$result = $this->resultat->setResultatCombatPoule($idCombat,$pointR,$pointB,$vainqueur,$competition);
     	if(! empty($result)) {
     		$erreur[] = "R&eacutesultat renseign&eacute;s pour le combat $idCombat";
     		Log::loggerInformation("Resultat renseigne pour le combat $idCombat");
@@ -140,12 +143,12 @@ class ControleurResultat {
     		
     		$updateInsert = $this->resultat->existResultatPoule($idPoule, $idLicencie, $categorie);
     		if($updateInsert[0] != 'X') {
-    		 	$result = $this->resultat->addResultatPoule($idPoule, $idLicencie, $res, $categorie);
+    		 	$result = $this->resultat->addResultatPoule($idPoule, $idLicencie, $res, $categorie,$competition);
     		} else {
-    			 $result = $this->resultat->updateResultatPoule($idPoule, $idLicencie, $res, $categorie);
+    			 $result = $this->resultat->updateResultatPoule($idPoule, $idLicencie, $res, $categorie,$competition);
     		}
     	}
-    	$combats = $this->resultat->getCombatsPoule($categorie);
+    	$combats = $this->resultat->getCombatsPoule($categorie,$competition);
     	$categories = $this->gestion->getCategories();
     	$categorieSelected = $categorie;
     	$vue = new Vue("Resultat","CombatPoule");
@@ -153,12 +156,13 @@ class ControleurResultat {
     }
 
     public function envoyerResultatSimple($poule,$categorie,$licencie1,$licencie2,$licencie3,$licencie4,$licencie5,$res1,$res2,$res3,$res4,$res5){
+    	$competition = $this->gestion->getIdCompetitionSelected();
     	$erreur = array();
     	
-    	$this->resultat-> deleteResultatPouleByPoule($categorie, $poule);
+    	$this->resultat-> deleteResultatPouleByPoule($categorie, $poule, $competition);
     	
     	if($licencie1 != "-1" ) {
-    		$result = $this->resultat->addResultatPoule($poule, $licencie1, $res1, $categorie);
+    		$result = $this->resultat->addResultatPoule($poule, $licencie1, $res1, $categorie,$competition);
 			if(! empty($result)) {
     			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
@@ -168,7 +172,7 @@ class ControleurResultat {
    			}
     	} //else $erreur[] = "licencie 1 = -1";
     	if($licencie2 != "-1" ) {
-    		$result = $this->resultat->addResultatPoule($poule, $licencie2, $res2, $categorie);
+    		$result = $this->resultat->addResultatPoule($poule, $licencie2, $res2, $categorie,$competition);
 			if(! empty($result)) {
     			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
@@ -178,7 +182,7 @@ class ControleurResultat {
    			}
     	} //else $erreur[] = "licencie 2 = -1";
     	if($licencie3 != "-1" ) {
-    		$result = $this->resultat->addResultatPoule($poule, $licencie3, $res3, $categorie);
+    		$result = $this->resultat->addResultatPoule($poule, $licencie3, $res3, $categorie,$competition);
 			if(! empty($result)) {
     			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
@@ -188,7 +192,7 @@ class ControleurResultat {
    			}
     	} //else $erreur[] = "licencie 3 = -1";
     	if($licencie4 != "-1" ) {
-    		$result = $this->resultat->addResultatPoule($poule, $licencie4, $res4, $categorie);
+    		$result = $this->resultat->addResultatPoule($poule, $licencie4, $res4, $categorie,$competition);
 			if(! empty($result)) {
     			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
@@ -198,7 +202,7 @@ class ControleurResultat {
    			}
     	} //else $erreur[] = "licencie 4 = -1";
     	if($licencie5 != "-1" ) {
-    		$result = $this->resultat->addResultatPoule($poule, $licencie5, $res5, $categorie);
+    		$result = $this->resultat->addResultatPoule($poule, $licencie5, $res5, $categorie,$competition);
 			if(! empty($result)) {
     			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
@@ -208,21 +212,11 @@ class ControleurResultat {
    			}
     	} //else $erreur[] = "licencie 5 = -1";
     	
-    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonneWithClassement($categorie);
+    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonneWithClassement($categorie,$competition);
     	$categories = $this->gestion->getCategories();
     	$categorieSelected = $categorie;
     	$vue = new Vue("Resultat","CombatPouleSimple");
     	$vue->generer(array('licenciesTirage'=>$licenciesTirage,'categories'=>$categories,'categorieSelected'=>$categorieSelected), $erreur);
-    }
-    
-    public function afficherListePouleImpression($categorie) {
-    	if($categorie > 0) $participant = $this->organisation->getTirageCategorie( $categorie);
-    	else $participant = null;
-    	$categories = $this->gestion->getCategories();
-    	
-    	$categorieSelected = $categorie;
-    	$vue = new Vue("Export","ImpressionPoule");
-    	$vue->generer(array('categories'=>$categories,'participant'=>$participant,'categorieSelected'=>$categorieSelected), null);
     }
 }
 

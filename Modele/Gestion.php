@@ -31,7 +31,20 @@ class Gestion extends Modele {
 			return null;
 		}
 	}
-		
+
+	public function getIdCompetitionSelected() {
+		try {
+			$sql = "SELECT idcompetition FROM competition WHERE selected = 1 ";
+			$result	= $this->executerRequete($sql, null);
+			$competition = $result->fetch();
+			return $competition[0];
+		} catch (Exception $e) {
+			Log::afficherErreur("getCompetitionSelected() : ".$e->getMessage());
+			log::loggerErreur("getCompetitionSelected() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
 	public function getCompetition($idCompetition) {
 		try {		
 			$sql = "SELECT * FROM competition WHERE idcompetition = ? "; 

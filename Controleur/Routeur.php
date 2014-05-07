@@ -225,11 +225,17 @@ class Routeur {
             		if(isset($_GET['id'])) $categorie = $this->getParametre($_GET, 'id');
             		else $categorie = -1;
             		$this->ctrlOrganisation->afficherPoule($categorie);
-            	} else if ($_GET['action'] == 'impressionPoule') {
-            		$categorie = $this->getParametre($_POST, 'categorie');
-            		$this->ctrlOrganisation->imprimerPoule($categorie);
+            	} 
+//             	else if ($_GET['action'] == 'impressionPoule') {
+//             		$categorie = $this->getParametre($_POST, 'categorie');
+//             		$this->ctrlOrganisation->imprimerPoule($categorie);
+//             	}
+//Partie Menu Organisation -> Imprimer poule
+            	else if ($_GET['action'] == 'impressionPoule'){
+            		if(isset($_GET['id'])) $categorie = $this->getParametre($_GET, 'id');
+            		else $categorie = -1;
+            		$this->ctrlOrganisation->afficherListePouleImpression($categorie);
             	}
-
 //Partie Menu Organisation -> Generation des tableaux
             	else if ($_GET['action'] == 'afficheTableau') {
             		if(isset($_GET['id'])) $categorie = $this->getParametre($_GET, 'id');
@@ -295,12 +301,6 @@ class Routeur {
             		$categorie = $this->getParametre($_GET, 'categorie'); 
             		$poule = $this->getParametre($_GET, 'poule');
             		$this->ctrlResultat->razResultatPoule($poule,$categorie);
-            	}
-//Partie Imprimer / Exporter
-            	else if ($_GET['action'] == 'impressionPoule'){ 
-            		if(isset($_GET['id'])) $categorie = $this->getParametre($_GET, 'id');
-            		else $categorie = -1;
-            		$this->ctrlResultat->afficherListePouleImpression($categorie);
             	}
             	
 //Partie Menu Importation -> Club
