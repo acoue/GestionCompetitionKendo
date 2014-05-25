@@ -15,15 +15,17 @@ if(!empty($categories)) {
 	}
 }
 ?>
-</select>
-<br />
-<input type='submit' name='valider' value='G&eacute;n&eacute;rer le tableau' /></p>
+</select></p>
+
+
 <?php
-if(file_exists("Ressources/".$libCategorieSelected[0]."_tableau.xls")) {
-	echo "<p align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_tableau.xls'><img src='img/site/fichier.png' border='0'></a></p>";
-}
 if(!empty($licenciesTableau)) {
-echo "<p>Comp&eacute;titeurs dans le tableau</p>";
+	
+	echo "<p align='center'><input type='submit' name='valider' value='G&eacute;n&eacute;rer le tableau' /></p>";
+	if(file_exists("Ressources/".$libCategorieSelected[0]."_tableau.xls")) {
+		echo "<p align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_tableau.xls'><img src='img/site/fichier.png' border='0'></a></p>";
+	}
+	echo "<p>Comp&eacute;titeurs dans le tableau</p>";
 ?>
 <table id='csstable' align="center" width="70%">
 	<thead>

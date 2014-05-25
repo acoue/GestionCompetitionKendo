@@ -44,7 +44,7 @@ class Organisation extends Modele {
 			$sql = "select licencie.idlicencie, nom , prenom, idlicencie_categorie, idcategorie
 					from licencie_categorie,licencie 
 					where licencie_categorie.idlicencie = licencie.idlicencie 
-					and idcategorie = ? and idcompetition = ? order by prenom, nom "; 
+					and idcategorie = ? and idcompetition = ? order by 1 "; 
 			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));			
 			return $result;			
 		} catch (Exception $e) {
@@ -127,7 +127,7 @@ class Organisation extends Modele {
 		try {
 			$sql  = "update licencie_categorie set numero_poule = 0, position_poule = 0,
 					 resultat_combat = 0, point_combat = 0 where idcategorie = ? and idcompetition = ?";
-			$result	= $this->executerRequete($sql, array($categorie));
+			$result	= $this->executerRequete($sql, array($categorie,$competition));
 			return $result;
 				
 		} catch (Exception $e) {
@@ -290,7 +290,7 @@ class Organisation extends Modele {
 					where club.idclub = licencie.idclub and licencie_categorie.idlicencie = licencie.idlicencie
 					and licencie_categorie.idcategorie = ? and licencie_categorie.idcompetition = ?
 					order by licencie_categorie.numero_poule, licencie_categorie.position_poule";
-			$result	= $this->executerRequeteToArray($sql, array($idCategorie));
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
 			return $result;
 		} catch (Exception $e) {
 			Log::afficherErreur("getTirageCategorieOrdonneWithClassement() : ".$e->getMessage());

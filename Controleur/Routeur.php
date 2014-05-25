@@ -217,7 +217,13 @@ class Routeur {
             		$nbInPoule = $this->getParametre($_POST, 'nombre');
             		$ecartClub = $this->getParametre($_POST, 'club'); 
             		$ecartTete = $this->getParametre($_POST, 'tete');
-            		$this->ctrlOrganisation->effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete);
+            		
+            		$tabTete = array($this->getParametre($_POST, 'premier'),
+            						$this->getParametre($_POST, 'deuxieme'),
+            						$this->getParametre($_POST, 'troisieme'),
+            						$this->getParametre($_POST, 'troisiemebis'));
+            		
+            		$this->ctrlOrganisation->effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete,$tabTete);
             	}
 
 //Partie Menu Organisation -> Generation des poules

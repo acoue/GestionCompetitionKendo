@@ -153,6 +153,7 @@ class ControleurImportation {
 // Importation REPARTITION
 ////////////////////////////
     public function importerRepartition($fichier,$categorie) {
+    	$competition = $this->gestion->getIdCompetitionSelected();
     	if ($fichier['error']) {
     		switch ($fichier['error']){
     			case 1: // UPLOAD_ERR_INI_SIZE
@@ -185,9 +186,9 @@ class ControleurImportation {
     			$licencie = $this->gestion->getLicencieByNomPrenom(trim($nom), trim($prenom));
     			if(!empty($licencie)) {
     				$idlicencie = $licencie['idlicencie'];
-    				$repartitionExist = $this->organisation->existLicenciesInCategorie($categorie, $idlicencie);
+    				$repartitionExist = $this->organisation->existLicenciesInCategorie($categorie, $idlicencie,$competition);
     				if(empty($repartitionExist)) {
-	    				$resultAjout = $this->organisation->addLicencieInCategorie($categorie, $idlicencie);
+	    				$resultAjout = $this->organisation->addLicencieInCategorie($categorie, $idlicencie,$competition);
 	    				if(! empty($resultAjout)) {
 	    					$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." r&eacute;partis dans la cat&eacutegorie $categorie";
 	    					Log::loggerInformation("Licencie ".$prenom." ".$nom." repartis dans la cat&eacute;gorie $categorie");
@@ -202,6 +203,24 @@ class ControleurImportation {
     			} else {
     				$erreur[] = "Le licenci&eacute; ".$prenom." ".$nom." n'existe pas en base";
     				Log::loggerInformation("Le licencie ".$prenom." ".$nom." n'existe pas en base");
+
+    				$resultAjout = $this->gestion->addLicencie($prenom, $nom, $idClub);
+    				if(! empty($resultAjout)) {
+    					$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." ajout&eacute;";
+    					Log::loggerInformation("Licencie ".$prenom." ".$nom." ajoute");
+
+    					$resultAjout = $this->organisation->addLicencieInCategorie($categorie, $idlicencie,$competition);
+    					if(! empty($resultAjout)) {
+    						$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." r&eacute;partis dans la cat&eacutegorie $categorie";
+    						Log::loggerInformation("Licencie ".$prenom." ".$nom." repartis dans la cat&eacute;gorie $categorie");
+    					} else {
+    						$erreur[] = "Erreur dans l'ajout de la repartition de ".$prenom." ".$nom." dans la cat&eacute;gorie $categorie";
+    						Log::loggerInformation("Erreur dans l'ajout de la repartition ".$prenom." ".$nom." dans la catégorie $categorie");
+    					}
+    				} else {
+    					$erreur[] = "Erreur dans l'ajout du licenci&eacute; ".$prenom." ".$nom;
+    					Log::loggerInformation("Erreur dans l'ajout du licencie ".$prenom." ".$nom);
+    				}
     			}
     		}
     		fclose($fp);

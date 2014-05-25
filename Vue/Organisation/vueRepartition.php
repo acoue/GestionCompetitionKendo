@@ -16,8 +16,10 @@ if(!empty($categories)) {
 }
 ?>
 </select>
-<p align='center' ><input type="submit" name="valider" /></p>
-<br />
+<?php 
+if($categorieSelected >-1) echo "<p align='center' ><input type='submit' name='valider' /></p>";
+?>
+<p align='center' >
 <table id='csstable' align="center" width="90%">
 	<tr>
 			<th width='50%' align='center'>Liste des comp&eacute;titeurs</th>
@@ -31,8 +33,11 @@ foreach ($licencies as $licencie)
 	echo "<input type='checkbox' name='licencie[]' value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".trim(Securite::decrypteData($licencie['prenom']))." ".trim(Securite::decrypteData($licencie['nom']))."<br />";
 ?>
 		</td>
-		<td valign="top"><ul>
-<?php 
+		<td valign="top">
+<?php		
+		echo "<p align='center' style='color:red; font-weight:bold;'>".count($licenciesCategorie)." participants</p>";
+		echo"<ul>";
+ 
 if(!empty($licenciesCategorie)) 
 foreach ($licenciesCategorie as $licencieCategorie) {
 	echo "<li><a href='index.php?action=suppressionRepartition&id=".$licencieCategorie["idlicencie_categorie"]."&categorie=".$licencieCategorie["idcategorie"]."' target='_self'><img src='img/site/supprimer.png' border='0'></a>";
@@ -42,5 +47,5 @@ foreach ($licenciesCategorie as $licencieCategorie) {
 		</ul></td>
 	</tr>
 </table>
-
+</p>
 </form>
