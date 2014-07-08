@@ -91,10 +91,31 @@ class ControleurOrganisation {
 	    	$dateTirage = "-";
 	    	$licenciesTirage = null;
 	    }
-    	$categories = $this->gestion->getCategories();
+    	$categories = $this->gestion->getCategoriesIndividuel();
     	$categorieSelected = $id;
 		$vue = new Vue("Organisation","Tirage");
 	 	$vue->generer(array('licenciesTirage'=>$licenciesTirage,'dateTirage'=>$dateTirage,'licenciesCategorie'=>$licenciesCategorie,'categories'=>$categories,'categorieSelected'=>$categorieSelected), null);
+   	}
+   	
+   	public function afficherTirageEquipe($id) {
+   		$result = array();
+   		$competition = $this->gestion->getIdCompetitionSelected();
+   		if($id > 0) {
+   			$licenciesCategorie = $this->organisation->getLicenciesInCategorie($id,$competition);
+   			// Recuperation des competiteurs
+   			$dateTirage = $this->organisation->getDateTirage($id,$competition);
+   			$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($id,$competition);
+   		}
+   		else {
+   			$licenciesCategorie = null;
+   			$result = null;
+   			$dateTirage = "-";
+   			$licenciesTirage = null;
+   		}
+   		$categories = $this->gestion->getCategoriesEquipes();
+   		$categorieSelected = $id;
+   		$vue = new Vue("Organisation","TirageEquipe");
+   		$vue->generer(array('licenciesTirage'=>$licenciesTirage,'dateTirage'=>$dateTirage,'licenciesCategorie'=>$licenciesCategorie,'categories'=>$categories,'categorieSelected'=>$categorieSelected), null);
    	}
    	
 	public function effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete,$tabTete) {

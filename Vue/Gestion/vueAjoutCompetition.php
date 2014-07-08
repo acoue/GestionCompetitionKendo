@@ -40,6 +40,14 @@ require_once 'Config/fonction.php';
 			<td><input type='text' id='lieux' name='lieux' value='' size='100px' /></td>
 		</tr>
 		<tr>
+			<td>Type</td>
+			<td><SELECT name='type' size='1'>
+					<option value='0' selected >INDIVIDUEL</OPTION>
+					<option value='1' >EQUIPE</option>
+				</SELECT>
+			</td>
+		</tr>
+		<tr>
 			<td>Description</td>
 			<td><input type='text' id='description' name='description' value='' size='100px' /></td>
 		</tr>

@@ -8,6 +8,14 @@ require_once 'Config/fonction.php';
 			<td>Libell&eacute;</td>
 			<td><input type='text' id='libelle' name='libelle' value='' size='100px' /></td>
 		</tr>
+		<tr>
+			<td>Type</td>
+			<td><SELECT name='type' size='1'>
+					<option value='0' selected >INDIVIDUEL</OPTION>
+					<option value='1' >EQUIPE</option>
+				</SELECT>
+			</td>
+		</tr>
 	</table>
 	<p align='center' ><input type="submit" name="valider" /></p>
 </form>	

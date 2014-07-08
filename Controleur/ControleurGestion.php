@@ -27,11 +27,11 @@ class ControleurGestion {
         $vue->generer(array('competition' => $competition), null);
     }
     
-    public function modifierCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected) {    
+    public function modifierCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected,$type) {    
     	if($selected == 1) {
     		$resultRaz = $this->gestion->razSelectedCompetition();
     	}	
-    	$result = $this->gestion->setCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected);						
+    	$result = $this->gestion->setCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected,$type);						
 		if(! empty($result)) {
 			$erreur[] = "Comp&eacute;tition mise &agrave; jour"; 
 			Log::loggerInformation("Competition ".$idCompetition." mise a jour");
@@ -64,7 +64,7 @@ class ControleurGestion {
         $vue->generer("", null);
     }
     
-    public function ajouterCompetition($libelle,$datecompetition,$lieux,$description,$selected) {
+    public function ajouterCompetition($libelle,$datecompetition,$lieux,$description,$selected,$type) {
     	
     	if($selected == 1) {
     		$resultRaz = $this->gestion->razSelectedCompetition();
@@ -74,7 +74,7 @@ class ControleurGestion {
     		Log::loggerInformation("Competition ".$datecompetition."-".$libelle." ajoutee");
     	} 
     	
-    	$result = $this->gestion->addCompetition($libelle,$datecompetition,$lieux,$description,$selected);
+    	$result = $this->gestion->addCompetition($libelle,$datecompetition,$lieux,$description,$selected,$type);
     	if(! empty($result)) {
     		$erreur[] = "Comp&eacute;tition ajout&eacute;e";
     		Log::loggerInformation("Competition ".$datecompetition."-".$libelle." ajoutee");
@@ -102,8 +102,8 @@ class ControleurGestion {
     	$vue->generer(array('categorie' => $categorie), null);
     }
     
-    public function modifierCategorie($idCategorie,$libelle) {
-    	$result = $this->gestion->setCategorie($idCategorie,$libelle);
+    public function modifierCategorie($idCategorie,$libelle,$type) {
+    	$result = $this->gestion->setCategorie($idCategorie,$libelle,$type);
     	if(! empty($result)) {
     		$erreur[] = "Cat&eacute;gorie mise &agrave; jour";
     		Log::loggerInformation("Categorie ".$idCategorie." mise a jour");
@@ -136,8 +136,8 @@ class ControleurGestion {
     	$vue->generer("", null);
     }
     
-    public function ajouterCategorie($libelle) {
-    	$result = $this->gestion->addCategorie($libelle);
+    public function ajouterCategorie($libelle,$type) {
+    	$result = $this->gestion->addCategorie($libelle,$type);
     	if(! empty($result)) {
     		$erreur[] = "Cat&eacute;gorie ajout&eacute;e";
     		Log::loggerInformation("Categorie ".$libelle." ajoutee");

@@ -74,17 +74,19 @@ class Routeur {
             	    $datecompetition = $this->getParametre($_POST, 'datecompetition');
             	    $lieux = $this->getParametre($_POST, 'lieux');
             	    $description = $this->getParametre($_POST, 'description');
+            	    $type = $this->getParametre($_POST, 'type');
             	    $selected = $this->getParametre($_POST, 'selected');
-            		$this->ctrlGestion->ajouterCompetition($libelle, $datecompetition, $lieux, $description, $selected);            		
+            		$this->ctrlGestion->ajouterCompetition($libelle, $datecompetition, $lieux, $description, $selected,$type);            		
             	}
                 else if($_GET['action'] == 'modificationCompetition') { 
                 	$idCompetition = $this->getParametre($_POST, 'idCompetition');
             	    $libelle = $this->getParametre($_POST, 'libelle');
             	    $datecompetition = $this->getParametre($_POST, 'datecompetition');
             	    $lieux = $this->getParametre($_POST, 'lieux');
+            	    $type = $this->getParametre($_POST, 'type');
             	    $description = $this->getParametre($_POST, 'description');
             	    $selected = $this->getParametre($_POST, 'selected');
-            		$this->ctrlGestion->modifierCompetition($idCompetition,$libelle, $datecompetition, $lieux, $description, $selected);            		
+            		$this->ctrlGestion->modifierCompetition($idCompetition,$libelle, $datecompetition, $lieux, $description, $selected, $type);            		
             	}
 //Partie Menu Gestion -> Categorie
             	else if ($_GET['action'] == 'gestionCategorie') {
@@ -103,12 +105,14 @@ class Routeur {
             	}
             	else if($_GET['action'] == 'ajoutCategorie') {
             		$libelle = $this->getParametre($_POST, 'libelle');
-            		$this->ctrlGestion->ajouterCategorie($libelle);
+            	    $type = $this->getParametre($_POST, 'type');
+            		$this->ctrlGestion->ajouterCategorie($libelle,$type);
             	}
             	else if($_GET['action'] == 'modificationCategorie') {
             		$idCategorie = $this->getParametre($_POST, 'idCategorie');
             		$libelle = $this->getParametre($_POST, 'libelle');
-            		$this->ctrlGestion->modifierCategorie($idCategorie,$libelle);
+            	    $type = $this->getParametre($_POST, 'type');
+            		$this->ctrlGestion->modifierCategorie($idCategorie,$libelle,$type);
             	} 
 //Partie Menu Gestion -> Regions 
                 else if ($_GET['action'] == 'gestionRegion') {
@@ -224,6 +228,11 @@ class Routeur {
             						$this->getParametre($_POST, 'troisiemebis'));
             		
             		$this->ctrlOrganisation->effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete,$tabTete);
+            	}
+            	else if ($_GET['action'] == 'afficheTirageEquipe') {
+            		if(isset($_GET['id'])) $id = $this->getParametre($_GET, 'id');
+            		else $id = -1;
+            		$this->ctrlOrganisation->afficherTirageEquipe($id);
             	}
 
 //Partie Menu Organisation -> Generation des poules

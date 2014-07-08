@@ -57,10 +57,10 @@ class Gestion extends Modele {
 		}	
 	}
 	
-	public function setCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected) {
+	public function setCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected,$type) {
 		try {
-			$sql  = "UPDATE competition SET libelle = ?, datecompetition = ? , lieux = ? ,description = ? , selected = ? WHERE idcompetition = ? ";
-			$stmt = $this->executerRequete($sql, array($libelle,$datecompetition,$lieux, $description,$selected, $idCompetition));		
+			$sql  = "UPDATE competition SET libelle = ?, datecompetition = ? , lieux = ? ,description = ? , selected = ? , type = ? WHERE idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($libelle,$datecompetition,$lieux, $description,$selected, $type, $idCompetition));		
 			return $stmt;
 		} catch (Exception $e) {
 	    	Log::afficherErreur("setCompetition() : ".$e->getMessage());
@@ -81,10 +81,10 @@ class Gestion extends Modele {
 		}	
 	}	
 	
-	public function addCompetition($libelle,$datecompetition,$lieux,$description,$selected) {
+	public function addCompetition($libelle,$datecompetition,$lieux,$description,$selected,$type) {
 		try {
-			$sql  = "INSERT INTO competition (libelle,datecompetition,lieux,description,selected) VALUES (? , ? , ? , ? , ? ) ";
-			$stmt = $this->executerRequete($sql, array($libelle,$datecompetition,$lieux,$description,$selected));		
+			$sql  = "INSERT INTO competition (libelle,datecompetition,lieux,description,selected,type) VALUES (? , ? , ? , ? , ? , ?) ";
+			$stmt = $this->executerRequete($sql, array($libelle,$datecompetition,$lieux,$description,$selected,$type));		
 			return $stmt;
 		} catch (Exception $e) {
 	    	Log::afficherErreur("addCompetition() : ".$e->getMessage());
@@ -118,6 +118,29 @@ class Gestion extends Modele {
 	    	return null;
 		}	
 	}
+	public function getCategoriesIndividuel() {
+		try {		
+			$sql = "select * from categorie where type = 0 order by libelle asc"; 
+			$result	= $this->executerRequete($sql);			
+			return $result;			
+		} catch (Exception $e) {
+	    	Log::afficherErreur("getCategories() : ".$e->getMessage());
+	    	log::loggerErreur("getCategories() : ".$e->getMessage());
+	    	return null;
+		}	
+	}
+	
+	public function getCategoriesEquipes() {
+		try {		
+			$sql = "select * from categorie where type = 1 order by libelle asc"; 
+			$result	= $this->executerRequete($sql);			
+			return $result;			
+		} catch (Exception $e) {
+	    	Log::afficherErreur("getCategories() : ".$e->getMessage());
+	    	log::loggerErreur("getCategories() : ".$e->getMessage());
+	    	return null;
+		}	
+	}
 		
 	public function getCategorie($idCategorie) {
 		try {		
@@ -131,10 +154,10 @@ class Gestion extends Modele {
 		}	
 	}
 	
-	public function setCategorie($idCategorie,$libelle) {
+	public function setCategorie($idCategorie,$libelle,$type) {
 		try {
-			$sql  = "UPDATE categorie SET libelle = UPPER( ? ) WHERE idcategorie = ? ";
-			$stmt = $this->executerRequete($sql, array($libelle, $idCategorie));		
+			$sql  = "UPDATE categorie SET libelle = UPPER( ? ) , type = ? WHERE idcategorie = ? ";
+			$stmt = $this->executerRequete($sql, array($libelle, $type, $idCategorie));		
 			return $stmt;
 		} catch (Exception $e) {
 	    	Log::afficherErreur("setCategorie() : ".$e->getMessage());
@@ -155,10 +178,10 @@ class Gestion extends Modele {
 		}	
 	}
 	
-	public function addCategorie($libelle) {
+	public function addCategorie($libelle, $type) {
 		try {
-			$sql  = "INSERT INTO categorie (libelle) VALUES (UPPER( ? )) ";
-			$stmt = $this->executerRequete($sql, array($libelle));		
+			$sql  = "INSERT INTO categorie (libelle,type) VALUES (UPPER( ? ), ? ) ";
+			$stmt = $this->executerRequete($sql, array($libelle,$type));		
 			return $stmt;
 		} catch (Exception $e) {
 	    	Log::afficherErreur("addCategorie() : ".$e->getMessage());

@@ -9,7 +9,8 @@ require_once 'Config/fonction.php';
     	<tr>
 			<th width="10%"></th>
 			<th width="10%"></th>
-			<th>Libell&eacute;</th>  
+			<th width="50%">Libell&eacute;</th>  
+			<th width="30%">type</th>  
 		<tr>
 	</thead>
 	<tbody>		
@@ -18,6 +19,8 @@ require_once 'Config/fonction.php';
 	   echo "<td align='center'><a href='index.php?action=suppressionCategorie&id=".$categorie["idcategorie"]."' target='_self'><img src='img/site/supprimer.png' border='0'></a></td>";
 	   echo "<td align='center'><a href='index.php?action=afficheCategorie&id=".$categorie["idcategorie"]."' target='_self'><img src='img/site/modifier.png' border='0'></a></td>";
 	   echo "<td>".$categorie["libelle"]."</td>";
+	   if($categorie["type"] === '0') echo "<td>INDIVIDUEL</td>";
+	   else echo "<td>EQUIPE</td>";
 	   echo "</tr>";
 	}
 	?>

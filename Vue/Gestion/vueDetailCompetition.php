@@ -40,6 +40,19 @@ require_once 'Config/fonction.php';
 			<td><input type='text' id='lieux' name='lieux' value='<?php echo $competition['lieux'] ?>' size='100px' /></td>
 		</tr>
 		<tr>
+			<td>Type</td>
+			<td><SELECT name='type' size='1'><?php
+				if ($competition['type'] == 1) {
+					echo "<option value='1' selected >EQUIPE</OPTION> ";
+					echo "<option value='0' >INDIVIDUEL</option>";
+				} else {
+					echo "<option value='0' selected >INDIVIDUEL</option>";
+					echo "<option value='1' >EQUIPE</option> ";
+				}
+?>
+				</SELECT></td>
+		</tr>
+		<tr>
 			<td>Description</td>
 			<td><input type='text' id='description' name='description' value='<?php echo $competition['description'] ?>' size='100px' /></td>
 		</tr>

@@ -9,8 +9,9 @@ require_once 'Config/fonction.php';
     	<tr>
          	<th width="10%"></th>
          	<th width="10%"></th>
-         	<th width="35%">Libell&eacute;</th>
-         	<th width="35%">Date</th>
+         	<th width="30%">Libell&eacute;</th>
+         	<th width="20%">Type</th>
+         	<th width="20%">Date</th>
          	<th width="10%">S&eacute;lectionn&eacute;e</th>
       	</tr>
 	</thead>
@@ -20,6 +21,10 @@ require_once 'Config/fonction.php';
 	   echo "<td align='center'><a href='index.php?action=suppressionCompetition&id=".$competition["idcompetition"]."' target='_self'><img src='img/site/supprimer.png' border='0'></a></td>";
 	   echo "<td align='center'><a href='index.php?action=afficheCompetition&id=".$competition["idcompetition"]."' target='_self'><img src='img/site/modifier.png' border='0'></a></td>";
 	   echo "<td>".$competition["libelle"]."</td>";
+	   
+	   if($competition["type"] === '0') echo "<td>INDIVIDUEL</td>";
+	   else echo "<td>EQUIPE</td>";
+	   
 	   echo "<td align='center'>".dateCompleteFR($competition["datecompetition"])."</td>";
 	   if($competition["selected"] === "1") echo "<td align='center'>Oui</td>";
 	   else echo "<td align='center'>Non</td>";
