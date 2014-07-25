@@ -12,6 +12,11 @@ class ControleurAccueil {
 // Affiche le message d'accueuil
     public function accueil() {        
     	$competition = $this->gestion->getCompetitionSelected();
+    	
+    	//Nom competition ne session
+    	if(!empty($competition)) {
+    		$_SESSION['competition'] = $competition["libelle"]." ".dateFR($competition["datecompetition"]);
+    	}
         $vue = new Vue("Accueil","Accueil");
         $vue->generer(array('competition' => $competition), null);
     }

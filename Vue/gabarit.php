@@ -43,6 +43,7 @@
 <body>
 	<header id="header" role="banner" class="line pam">
 		<img src="img/site/header.png" border="0" alt="Retour ˆ l'accueil" align="left" />Gestion Comp&eacute;tition Kendo
+		<p class="titreHeader"><?php  echo $_SESSION['competition']; ?></p>
 	</header>
 	<aside id="letf-side" class="mod left mrs pam w20 aside">
 		<?php 

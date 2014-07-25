@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+body { 
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    background-color: #FFFFFF; 
+  	color: #000;
+  	-webkit-print-color-adjust: exact;
+}
+
+@page { size:landscape; } 
+
+#page { /* Modifications : suppression de la bordure - marges */
+  margin :0;
+  border :none;
+  size: landscape;
+}
+
+#cssmenu, #footer, #header, #erreur, #letf-side, #impressionNull { /* Les éléments qui ne seront pas affichés  */
+  display :none;
+}

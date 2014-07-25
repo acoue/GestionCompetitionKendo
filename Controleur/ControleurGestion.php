@@ -30,6 +30,8 @@ class ControleurGestion {
     public function modifierCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected,$type) {    
     	if($selected == 1) {
     		$resultRaz = $this->gestion->razSelectedCompetition();
+			//Competition en session
+			$_SESSION['competition'] = $libelle." ".$datecompetition;
     	}	
     	$result = $this->gestion->setCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected,$type);						
 		if(! empty($result)) {
@@ -68,6 +70,8 @@ class ControleurGestion {
     	
     	if($selected == 1) {
     		$resultRaz = $this->gestion->razSelectedCompetition();
+			//Competition en session
+			$_SESSION['competition'] = $libelle." ".$datecompetition;
     	}
     	if(! empty($resultRaz)) {
     		$erreur[] = "Comp&eacute;tition raz selected";

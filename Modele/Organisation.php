@@ -41,7 +41,7 @@ class Organisation extends Modele {
 	
 	public function getLicenciesInCategorieSansClub($idCategorie,$competition) {
 		try {		
-			$sql = "select licencie.idlicencie, nom , prenom, idlicencie_categorie, idcategorie
+			$sql = "select licencie.idlicencie licencie, nom , prenom, idlicencie_categorie, idcategorie
 					from licencie_categorie,licencie 
 					where licencie_categorie.idlicencie = licencie.idlicencie 
 					and idcategorie = ? and idcompetition = ? order by 1 "; 
@@ -54,6 +54,83 @@ class Organisation extends Modele {
 		}	
 	}
 
+	public function getTriClubForTirage($idCategorie,$competition) {
+		try {
+			$sql = "select licencie.idclub club, count(idlicencie_categorie) nbCompetiteur
+					 from licencie_categorie,licencie
+					 where licencie_categorie.idlicencie = licencie.idlicencie
+					 and idcategorie = ? and idcompetition = ? 
+					 group by licencie.idclub 
+					 order by nbCompetiteur desc";
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getTriClubForTirage() : ".$e->getMessage());
+			log::loggerErreur("getTriClubForTirage() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
+	public function getLicenciesForTirageTete($idCategorie,$competition,$tete) {
+		try {
+			$sql = "select concat(idlicencie_categorie,'_',licencie.idclub) licencie
+					from licencie_categorie,licencie
+					where licencie_categorie.idlicencie = licencie.idlicencie
+					and idcategorie = ? and idcompetition = ? and licencie.idlicencie = ? ";
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition,$tete));
+			return $result->fetch();
+		} catch (Exception $e) {
+			Log::afficherErreur("getLicenciesInCategorieForTirage() : ".$e->getMessage());
+			log::loggerErreur("getLicenciesInCategorieForTirage() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
+	public function getLicenciesInCategorieForTirageClub($idCategorie,$competition,$club) {
+		try {
+			$sql = "select concat(idlicencie_categorie,'_',licencie.idclub) licencie
+					from licencie_categorie,licencie
+					where licencie_categorie.idlicencie = licencie.idlicencie
+					and idcategorie = ? and idcompetition = ? and licencie.idclub = ? ";
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition,$club));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getLicenciesInCategorieForTirageClub() : ".$e->getMessage());
+			log::loggerErreur("getLicenciesInCategorieForTirageClub() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
+	public function getLicenciesInCategorieForTirage($idCategorie,$competition) {
+		try {
+			$sql = "select concat(idlicencie_categorie,'_',licencie.idclub) licencie
+					from licencie_categorie,licencie
+					where licencie_categorie.idlicencie = licencie.idlicencie
+					and idcategorie = ? and idcompetition = ?";
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getLicenciesInCategorieForTirage() : ".$e->getMessage());
+			log::loggerErreur("getLicenciesInCategorieForTirage() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
+	public function getInformationByLicencies($id) {
+		try {
+			$sql = "select club.libelle, licencie.idlicencie, nom , prenom, idlicencie_categorie, idcategorie
+					from licencie_categorie,licencie,club
+					where club.idclub = licencie.idclub and licencie_categorie.idlicencie = licencie.idlicencie
+					and and licencie_categorie.idlicencie = ? ";
+			$result	= $this->executerRequeteToArray($sql, array($id));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getInformationByLicencies() : ".$e->getMessage());
+			log::loggerErreur("getInformationByLicencies() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
 	public function getLicenciesInCategorie($idCategorie,$competition) {
 		try {
 			$sql = "select club.libelle, licencie.idlicencie, nom , prenom, idlicencie_categorie, idcategorie
