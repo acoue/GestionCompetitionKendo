@@ -308,8 +308,10 @@ class ControleurOrganisation {
     	$listeFinaleCompetiteur = array();
     	$listeTravail = array();
     	foreach ($tabTete as $tete) {
-    		$listeTravail = $this->organisation->getLicenciesForTirageTete($categorie,$competition,$tete);
-    		array_push($listeFinaleCompetiteur,$listeTravail['licencie']);
+    		if($tete > -1) {
+    			$listeTravail = $this->organisation->getLicenciesForTirageTete($categorie,$competition,$tete);
+    			array_push($listeFinaleCompetiteur,$listeTravail['licencie']);
+    		} else array_push($listeFinaleCompetiteur,-1);
     	}
     	return $listeFinaleCompetiteur;
     }
@@ -329,7 +331,15 @@ class ControleurOrganisation {
 		
 		//Tirage suivant l'algo club
 		$listeFinale = repartitionClub($resteCompetiteur,$listeFinale,$nbInPoule);
-   		return $listeFinale;
+   		
+   		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = array();
+   		foreach ($listeFinale as $utilisateur) {
+   			$licencie = $this->repartition->getInformationByLicencies($utilisateur);
+   			$idLicencie = substr($licencie,0,strpos($licencie, "_"));
+   			array_push($listeTravail, $idLicencie);
+   		}
+   		return $listeTravail;
    	}
 
    	private function makeTirageClubSansTete($listeCompetiteur,$nbInPoule) {
@@ -342,8 +352,15 @@ class ControleurOrganisation {
 		
 		//Tirage suivant l'algo club
 		$listeFinale = repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule);
-
-		return $listeFinale;
+		
+   		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = array();
+   		foreach ($listeFinale as $utilisateur) {
+   			$licencie = $this->repartition->getInformationByLicencies($utilisateur);
+   			$idLicencie = substr($licencie,0,strpos($licencie, "_"));
+   			array_push($listeTravail, $idLicencie);
+   		}
+   		return $listeTravail;
    	}
 
    	private function makeTirageTeteSansClub($listeCompetiteur,$tabTete,$nbInPoule) {
@@ -357,10 +374,17 @@ class ControleurOrganisation {
    		//Retirer tete de la liste
    		$resteCompetiteur = array_values(array_diff($listeCompetiteur, $listeFinale));
    		
-   		//Tirage suivant
+   		//Tirage simple
    		$listeFinale = repartitionSimple($resteCompetiteur,$listeFinale);
 
-   		return $listeFinale;
+   		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = array();
+   		foreach ($listeFinale as $utilisateur) {
+   			$licencie = $this->repartition->getInformationByLicencies($utilisateur);
+   			$idLicencie = substr($licencie,0,strpos($licencie, "_"));
+   			array_push($listeTravail, $idLicencie);
+   		}
+   		return $listeTravail;
    	}
    	
 	private function createCombat($tabCombat,$categorie,$tmpPoule1,$competition) {
