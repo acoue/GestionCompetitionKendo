@@ -14,7 +14,7 @@
 			    <li><a href='index.php?action=afficheRepartition'><span>R&eacute;partition</span></a></li>
 			    <li><a href='index.php?action=afficheTirage'><span>Tirage au sort</span></a></li>
 			    <li><a href='index.php?action=afficheTirageEquipe'><span>Tirage au sort EQUIPE</span></a></li>
-			    <li><a href='index.php?action=affichePoule'><span>G&eacute;n&eacute;ration poules</span></a></li>
+<!-- 			    <li><a href='index.php?action=affichePoule'><span>G&eacute;n&eacute;ration poules</span></a></li> -->
 			    <li><a href='index.php?action=impressionPoule'><span>Imprimer poules</span></a></li>
 			    <li class='last'><a href='index.php?action=afficheTableau'>G&eacute;n&eacute;ration tableaux<span></span></a></li>
 			</ul>
