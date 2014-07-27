@@ -24,6 +24,7 @@ if($categorieSelected >-1) {
 		echo "<table border='1' style='width: 40%;text-align: center;'>";
 		$pouletmp = "";
 		$cpt = 1;
+		$idCompetition = $_SESSION['idcompetition'];
 		foreach ($licenciesTirage as $tirage) {
 			
 			$club = $tirage[0];
@@ -35,8 +36,8 @@ if($categorieSelected >-1) {
 	
 			if($pouletmp != "" && $poule != $pouletmp) {
 				
-				if(file_exists("Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
-					echo "<tr><td align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls'><img src='img/site/fichier.png' border='0'></a></td></tr>";
+				if(file_exists("Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
+					echo "<tr><td align='center' ><a href='Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls'><img src='img/site/fichier.png' border='0'></a></td></tr>";
 				}
 				echo "</table><br /><table border='1' style='width: 40%;text-align: center;'>";
 				echo "<tr><th>Poule $poule</th></tr>";

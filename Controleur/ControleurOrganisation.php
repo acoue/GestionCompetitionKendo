@@ -122,6 +122,7 @@ class ControleurOrganisation {
 	public function effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete,$tabTete) {
 
 		$competition = $this->gestion->getIdCompetitionSelected();
+		$idCompetition = $competition['idcompetition'];
 		// Supression table historique tirage 
 		$this->organisation->deleteHistoriqueTirage($categorie,$competition);
 		// Suppression table tirage
@@ -138,7 +139,7 @@ class ControleurOrganisation {
 		$libCategorieSelected = $this->gestion->getCategorie($categorie);
 		while($file = readdir($dir)) {
 			if($file != '.' && $file != '..' && !is_dir($dirname.$file)) {
-				if (strrpos($file, $libCategorieSelected['libelle'])!==false) unlink($dirname.$file);
+				if (strrpos($file, $idCompetition.'_'.$libCategorieSelected['libelle'])!==false) unlink($dirname.$file);
 			}
 		}
 		closedir($dir);
@@ -469,7 +470,7 @@ class ControleurOrganisation {
    			}
    			
    			$writer = PHPExcel_IOFactory::createWriter($excel, "Excel5");
-   			$writer->save('Ressources/'.$categorieLibelle.'_poule_'.$i.'.xls');
+   			$writer->save('Ressources/'.$competition.'_'.$categorieLibelle.'_poule_'.$i.'.xls');
    			
    		}
    		
@@ -535,9 +536,9 @@ class ControleurOrganisation {
    					$resClassement = explode(".", $valeur);
    					$poule = $resClassement[0]; 
    					$position = $resClassement[1];
-   					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$compet);
+   					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$competition);
    					if(!empty($tirage)) {
-   						$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+   						$licencie = Securite::decrypteData($tirage['prenom'])." ".Securite::decrypteData($tirage['nom']);
    						$sheet->setCellValue("C".$row, $licencie);
    					} 
    				}
@@ -554,7 +555,7 @@ class ControleurOrganisation {
    						$position = $resClassement[1];
    						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$compet);
    						if(!empty($tirage)) {
-   							$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+   							$licencie = Securite::decrypteData($tirage['prenom'])." ".Securite::decrypteData($tirage['nom']);
    							$sheet->setCellValue("N".$row, $licencie);
    						}
    					}
@@ -563,7 +564,7 @@ class ControleurOrganisation {
    		}
    		
    		$writer = PHPExcel_IOFactory::createWriter($excel, "Excel5");
-   		$writer->save('Ressources/'.$categorieLibelle.'_tableau.xls');
+   		$writer->save('Ressources/'.$competition.'_'.$categorieLibelle.'_tableau.xls');
    		
    		
    		$categories = $this->gestion->getCategories();

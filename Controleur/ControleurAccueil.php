@@ -16,6 +16,7 @@ class ControleurAccueil {
     	//Nom competition ne session
     	if(!empty($competition)) {
     		$_SESSION['competition'] = $competition["libelle"]." ".dateFR($competition["datecompetition"]);
+			$_SESSION['idcompetition'] = $competition['idcompetition'];
     	}
         $vue = new Vue("Accueil","Accueil");
         $vue->generer(array('competition' => $competition), null);

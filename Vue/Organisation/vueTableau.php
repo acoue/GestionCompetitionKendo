@@ -20,10 +20,10 @@ if(!empty($categories)) {
 
 <?php
 if(!empty($licenciesTableau)) {
-	
+	$idCompetition = $_SESSION['idcompetition'];
 	echo "<p align='center'><input type='submit' name='valider' value='G&eacute;n&eacute;rer le tableau' /></p>";
-	if(file_exists("Ressources/".$libCategorieSelected[0]."_tableau.xls")) {
-		echo "<p align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_tableau.xls'><img src='img/site/fichier.png' border='0'></a></p>";
+	if(file_exists("Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_tableau.xls")) {
+		echo "<p align='center' ><a href='Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_tableau.xls'><img src='img/site/fichier.png' border='0'></a></p>";
 	}
 	echo "<p>Comp&eacute;titeurs dans le tableau</p>";
 ?>
@@ -45,6 +45,8 @@ if(!empty($licenciesTableau)) {
 		echo "<td>".$licTab[4]."</td>";
 		echo "</tr>";
 	}
+} else {
+echo "Pas de licenci&eacute;s";
 } 
 ?>
 	</tbody>

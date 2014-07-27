@@ -32,6 +32,7 @@ class ControleurGestion {
     		$resultRaz = $this->gestion->razSelectedCompetition();
 			//Competition en session
 			$_SESSION['competition'] = $libelle." ".$datecompetition;
+			$_SESSION['idcompetition'] = $idCompetition;
     	}	
     	$result = $this->gestion->setCompetition($idCompetition,$libelle,$datecompetition,$lieux,$description,$selected,$type);						
 		if(! empty($result)) {
@@ -72,6 +73,7 @@ class ControleurGestion {
     		$resultRaz = $this->gestion->razSelectedCompetition();
 			//Competition en session
 			$_SESSION['competition'] = $libelle." ".$datecompetition;
+			$_SESSION['idcompetition'] = $idCompetition;
     	}
     	if(! empty($resultRaz)) {
     		$erreur[] = "Comp&eacute;tition raz selected";
