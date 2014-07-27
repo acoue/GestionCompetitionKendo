@@ -182,6 +182,7 @@ class ControleurOrganisation {
 
     	if ($nbInPoule > -1) { //Tirage par poule
 	    	$iNumero = 1;
+	    	$iBoucle=1;
 	    	if( $nbParticipantInCategorie % $nbInPoule == 0){
 	    		for($i=0;$i<$nbParticipantInCategorie;$i++) {
 	    			if ($iNumero <= $nbInPoule) {
@@ -197,7 +198,7 @@ class ControleurOrganisation {
 	    			}
 	    		}
 	    	} else {
-	    		$quotient = (int) ($nbParticipantInCategorie / $nbInPoule); // on prend la partie entire du rŽsultat de la division
+	    		$quotient = (int) ($nbParticipantInCategorie / $nbInPoule); // on prend la partie entiere du resultat de la division
 	    		//$reste = $nbParticipant - ($quotient * $nbInPoule);
 	    		$reste = $nbParticipantInCategorie % $nbInPoule;
 	
@@ -233,10 +234,7 @@ class ControleurOrganisation {
 	    	}
 	    	
 	    	//Suppression des ligne poule = 0
-	    	/*
-	    	 * A decommenter
-	    	 */
-//	    	$this->organisation->deleteTiragePouleNull($categorie,$competition);
+	    	$this->organisation->deleteTiragePouleNull($categorie,$competition);
 	    	
 	    	//Creation combats
 	    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
@@ -256,6 +254,8 @@ class ControleurOrganisation {
 	    		array_push($tabCombat, $lic);
 	    		$tmpPoule = $tmpPoule1;
 	    	}
+	    	
+	    	//Generation des combat dans la table combat
 	    	$this->createCombat($tabCombat,$categorie,$tmpPoule,$competition);
     	} else {
     		//tableau direct
@@ -266,13 +266,13 @@ class ControleurOrganisation {
     	}
     	//Insertion dans la table historique
     	$this->organisation->insertHistoriqueTirage($categorie,$competition);
-    	
+
     	
 		$result = array();
-    		$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
-			// Recuperation des competiteurs
-			$dateTirage = $this->organisation->getDateTirage($categorie,$competition);
-			$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
+    	$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
+		// Recuperation des competiteurs
+		$dateTirage = $this->organisation->getDateTirage($categorie,$competition);
+		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
     	
     	$categories = $this->gestion->getCategories();
     	$categorieSelected = $categorie;
@@ -289,12 +289,13 @@ class ControleurOrganisation {
     	
     	return $listeFinaleCompetiteur;
     }
+    
     private function constructListeCompetiteurTirageClub($categorie,$competition) {
     	$licenciesTirage = $this->organisation->getTriClubForTirage($categorie,$competition);
     	$listeFinaleCompetiteur = array();
     	$listeTravail = array();
     	foreach ($licenciesTirage as $tmpLicencie) {
-    		$listeFinaleCompetiteur = $this->organisation->getLicenciesInCategorieForTirageClub($categorie,$competition,$tmpLicencie['club']);
+    		$listeTravail = $this->organisation->getLicenciesInCategorieForTirageClub($categorie,$competition,$tmpLicencie['club']);
     		foreach ($listeTravail as $tmpTravail) {
     			array_push($listeFinaleCompetiteur,$tmpTravail['licencie']);
     		}
@@ -333,19 +334,15 @@ class ControleurOrganisation {
 		$listeFinale = repartitionClub($resteCompetiteur,$listeFinale,$nbInPoule);
    		
    		//on retrouve les information pour la suite : constitution poule, ....
-   		$listeTravail = array();
-   		foreach ($listeFinale as $utilisateur) {
-   			$licencie = $this->repartition->getInformationByLicencies($utilisateur);
-   			$idLicencie = substr($licencie,0,strpos($licencie, "_"));
-   			array_push($listeTravail, $idLicencie);
-   		}
+   		$listeTravail = $this->getInformationLicencie($listeFinale);
+   
    		return $listeTravail;
    	}
 
    	private function makeTirageClubSansTete($listeCompetiteur,$nbInPoule) {
    		$nbCompetiteur = count($listeCompetiteur);
 		//Shuffle
-		shuffle($listeCompetiteur);
+		//shuffle($listeCompetiteur);
 		
 		//creation liste finale
 		$listeFinale = createListeFinale($nbCompetiteur);
@@ -354,12 +351,8 @@ class ControleurOrganisation {
 		$listeFinale = repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule);
 		
    		//on retrouve les information pour la suite : constitution poule, ....
-   		$listeTravail = array();
-   		foreach ($listeFinale as $utilisateur) {
-   			$licencie = $this->repartition->getInformationByLicencies($utilisateur);
-   			$idLicencie = substr($licencie,0,strpos($licencie, "_"));
-   			array_push($listeTravail, $idLicencie);
-   		}
+   		$listeTravail = $this->getInformationLicencie($listeFinale);
+   
    		return $listeTravail;
    	}
 
@@ -378,11 +371,21 @@ class ControleurOrganisation {
    		$listeFinale = repartitionSimple($resteCompetiteur,$listeFinale);
 
    		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = $this->getInformationLicencie($listeFinale);
+   
+   		return $listeTravail;
+   	}
+   	
+   	private function getInformationLicencie($listeUtilisateur) {
+   		//on retrouve les information pour la suite : constitution poule, ....
    		$listeTravail = array();
-   		foreach ($listeFinale as $utilisateur) {
-   			$licencie = $this->repartition->getInformationByLicencies($utilisateur);
-   			$idLicencie = substr($licencie,0,strpos($licencie, "_"));
-   			array_push($listeTravail, $idLicencie);
+   		foreach ($listeUtilisateur as $utilisateur) {
+   			$idLicencie = substr($utilisateur,0,strpos($utilisateur, "_"));
+   			$licencie = $this->organisation->getInformationByLicencies($idLicencie);
+   			
+   			
+   			
+   			array_push($listeTravail, $licencie);
    		}
    		return $listeTravail;
    	}
@@ -432,7 +435,7 @@ class ControleurOrganisation {
    	 
    	}
    	
-   	public function imprimerPoule($categorie) {
+   	public function genererExcelPoule($categorie) {
    		
    		//Recuperation date de la competition
    		$compet = $this->gestion->getCompetitionSelected();
@@ -470,7 +473,7 @@ class ControleurOrganisation {
    			
    		}
    		
-   		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$compet);
+   		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
    		$categories = $this->gestion->getCategories();
    		$categorieSelected = $categorie;
 	   	$libCategorieSelected = $this->gestion->getCategorie($categorie);

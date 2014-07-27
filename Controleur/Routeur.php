@@ -241,10 +241,10 @@ class Routeur {
             		else $categorie = -1;
             		$this->ctrlOrganisation->afficherPoule($categorie);
             	} 
-//             	else if ($_GET['action'] == 'genererPoule') {
-//             		$categorie = $this->getParametre($_POST, 'categorie');
-//             		$this->ctrlOrganisation->genererPoule($categorie);
-//             	}
+            	else if ($_GET['action'] == 'genererPoule') {
+            		$categorie = $this->getParametre($_POST, 'categorie');
+            		$this->ctrlOrganisation->genererExcelPoule($categorie);
+            	}
 //Partie Menu Organisation -> Imprimer poule
             	else if ($_GET['action'] == 'impressionPoule'){
             		if(isset($_GET['id'])) $categorie = $this->getParametre($_GET, 'id');

@@ -2,7 +2,7 @@
 require_once 'Config/fonction.php';
 ?>
 <p><h3>R&eacute;sultats des poules</h3></p>
-<form action="index.php?action=impressionPoule" method="post" id="imprimerPoule">
+<form>
 <p align='center'>
 <label for="categorie">S&eacute;lectionner la cat&eacute;gorie</label>
 <select name="categorie" id="categorie" onchange="window.location = 'index.php?action=resultatPouleSimple&id='+this.options[this.selectedIndex].value;" >

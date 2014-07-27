@@ -16,15 +16,19 @@ function getClub($competiteur) {
 }
 
 function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur) {
+	//1er => poule 1
 	if($tabTete[0] > -1 ) $listeFinale[0] = $tabTete[0];
-	//2eme
+	
+	//2eme => derniere poule
 	$place2 = $nbCompetiteur - $nbInPoule;
 	if($tabTete[1] > -1 ) $listeFinale[$place2] = $tabTete[1];
-	//3eme
-	$place3 = (int)($nbCompetiteur/2);
+	
+	//3eme => 2eme poule
+	$place3 = $nbInPoule;
 	if($tabTete[2] > -1 ) $listeFinale[$place3] = $tabTete[2];
-	//3eme ex-aequo
-	$place3Bis = ((int)($nbCompetiteur/2))-$nbInPoule;
+	
+	//3eme ex-aequo => avant dernière poule
+	$place3Bis = $place2-$nbInPoule;
 	if($tabTete[3] > -1 ) $listeFinale[$place3Bis] = $tabTete[3];
 	
 	return $listeFinale;

@@ -77,7 +77,7 @@ class Organisation extends Modele {
 					from licencie_categorie,licencie
 					where licencie_categorie.idlicencie = licencie.idlicencie
 					and idcategorie = ? and idcompetition = ? and licencie.idlicencie = ? ";
-			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition,$tete));
+			$result	= $this->executerRequete($sql, array($idCategorie,$competition,$tete));
 			return $result->fetch();
 		} catch (Exception $e) {
 			Log::afficherErreur("getLicenciesInCategorieForTirage() : ".$e->getMessage());
@@ -121,9 +121,9 @@ class Organisation extends Modele {
 			$sql = "select club.libelle, licencie.idlicencie, nom , prenom, idlicencie_categorie, idcategorie
 					from licencie_categorie,licencie,club
 					where club.idclub = licencie.idclub and licencie_categorie.idlicencie = licencie.idlicencie
-					and and licencie_categorie.idlicencie = ? ";
-			$result	= $this->executerRequeteToArray($sql, array($id));
-			return $result;
+					AND licencie_categorie.idlicencie_categorie = ? ";
+			$result	= $this->executerRequete($sql, array($id));
+			return $result->fetch();
 		} catch (Exception $e) {
 			Log::afficherErreur("getInformationByLicencies() : ".$e->getMessage());
 			log::loggerErreur("getInformationByLicencies() : ".$e->getMessage());
@@ -272,7 +272,7 @@ class Organisation extends Modele {
 					where licencie_categorie.idlicencie = licencie.idlicencie and club.idclub = licencie.idclub 
 					and licencie_categorie.idcategorie = ? and numero_poule = ? and idcompetition = ?
 					order by position_poule";
-			$result	= $this->executerRequete($sql, array($idCategorie,$numPoule,$competition));
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$numPoule,$competition));
 			return $result;
 		} catch (Exception $e) {
 			Log::afficherErreur("getCompetiteurInPoule() : ".$e->getMessage());
