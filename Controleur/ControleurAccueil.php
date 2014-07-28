@@ -10,7 +10,7 @@ class ControleurAccueil {
     }
 
 // Affiche le message d'accueuil
-    public function accueil() {        
+    public function accueil() { 
     	$competition = $this->gestion->getCompetitionSelected();
     	
     	//Nom competition ne session
