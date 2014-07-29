@@ -19,7 +19,6 @@ if(!empty($categories)) {
 </p>
 <?php
 if(!empty($licenciesTirage)) {
-	echo "<p align='center'>Tirage au sort - R&eacute;partition des Comp&eacute;titeurs</p>";
 	echo "<p align='center'><table border='1' style='width: 90%;text-align: center;'>";
 	$pouletmp = "";
 	foreach ($licenciesTirage as $tirage) {

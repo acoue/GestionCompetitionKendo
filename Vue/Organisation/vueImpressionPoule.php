@@ -16,7 +16,6 @@ if(!empty($categories)) {
 }
 ?>
 </select>
-A FAIRE LISTING POULE
 </p>
 
 <?php
