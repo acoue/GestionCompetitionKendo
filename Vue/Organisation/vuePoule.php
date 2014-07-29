@@ -48,7 +48,7 @@ if($categorieSelected >-1) {
 			$cpt++;
 			$pouletmp = $poule;
 		}
-		if(file_exists("Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
+		if(file_exists("Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
 			echo "<tr><td align='center' ><a href='Ressources/".$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls'><img src='img/site/fichier.png' border='0'></a></td></tr>";
 		}
 		echo "</table>";

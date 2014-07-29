@@ -121,8 +121,7 @@ class ControleurOrganisation {
    	
 	public function effectuerTirage($categorie,$nbInPoule,$ecartClub,$ecartTete,$tabTete) {
 
-		$competition = $this->gestion->getIdCompetitionSelected();
-		$idCompetition = $competition['idcompetition'];
+		$competition = $this->gestion->getIdCompetitionSelected();	
 		// Supression table historique tirage 
 		$this->organisation->deleteHistoriqueTirage($categorie,$competition);
 		// Suppression table tirage
@@ -139,7 +138,7 @@ class ControleurOrganisation {
 		$libCategorieSelected = $this->gestion->getCategorie($categorie);
 		while($file = readdir($dir)) {
 			if($file != '.' && $file != '..' && !is_dir($dirname.$file)) {
-				if (strrpos($file, $idCompetition.'_'.$libCategorieSelected['libelle'])!==false) unlink($dirname.$file);
+				if (strrpos($file, $competition.'_'.$libCategorieSelected['libelle'])!==false) unlink($dirname.$file);
 			}
 		}
 		closedir($dir);

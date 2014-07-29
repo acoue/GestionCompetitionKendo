@@ -27,7 +27,7 @@ function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur) {
 	$place3 = $nbInPoule;
 	if($tabTete[2] > -1 ) $listeFinale[$place3] = $tabTete[2];
 	
-	//3eme ex-aequo => avant dernière poule
+	//3eme ex-aequo => avant derniï¿½re poule
 	$place3Bis = $place2-$nbInPoule;
 	if($tabTete[3] > -1 ) $listeFinale[$place3Bis] = $tabTete[3];
 	
@@ -48,6 +48,7 @@ function repartitionSimple($listeCompetiteur,$listeFinale) {
 }
 
 function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
+	$nbCompetiteur = count($listeCompetiteur);
 	foreach ($listeCompetiteur as $competiteur) {
 		$bOkPlacement = false;
 		$posFinale = 0;
@@ -70,8 +71,15 @@ function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 							$bOkPlacement = true;
 						} else {
 							$posFinale = $finPoule+1;
-							$bOkPlacement = false;
-							break;
+							if($posFinale >= $nbCompetiteur){
+								$posFinale = 0;
+								while($listeFinale[$posFinale] !== "#") $posFinale++;
+								$bOkPlacement = true;
+								break;
+							} else {
+								$bOkPlacement = false;
+								break;
+							}
 						}
 					}
 				}
