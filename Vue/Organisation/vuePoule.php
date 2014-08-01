@@ -21,7 +21,7 @@ if(!empty($categories)) {
 if($categorieSelected >-1) {
 	if(!empty($licenciesTirage)) {
 		echo "<p align='center'><input type='submit' name='valider' value='G&eacute;n&eacute;rer les poules' /></p><br />";
-		echo "<table border='1' style='width: 40%;text-align: center;'>";
+		echo "<table id='tableListe' border='1' style='width: 20%;text-align: center;'>";
 		$pouletmp = "";
 		$cpt = 1;
 		$idCompetition = $_SESSION['idcompetition'];
@@ -39,7 +39,7 @@ if($categorieSelected >-1) {
 				if(file_exists("Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls")) {
 					echo "<tr><td align='center' ><a href='Ressources/".$idCompetition.'_'.$libCategorieSelected['libelle']."_poule_".$pouletmp.".xls'><img src='img/site/fichier.png' border='0'></a></td></tr>";
 				}
-				echo "</table><br /><table border='1' style='width: 40%;text-align: center;'>";
+				echo "</table><table id='tableListe' border='1' style='width: 20%;text-align: center;'>";
 				echo "<tr><th>Poule $poule</th></tr>";
 				$cpt=1;
 			} 

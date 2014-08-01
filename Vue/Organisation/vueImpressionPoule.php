@@ -21,11 +21,49 @@ if(!empty($categories)) {
 <?php
 if($categorieSelected >-1) {
 	if(!empty($participant)) {
+		$participantAffichage = array();
 		echo "<p align='center'><input type='button' name='imprimer' value='Imprimer les poules' onClick='window.print()'/></p></div><br />";
 		
+		echo "<p><table style='width: 100%;text-align: left;'>
+				<tr><td width='30%'><b>Comit&eacute; National de Kendo F.F.J.D.A.</b></td><td width='30%'></td><td width='10%'><b>Date : </b></td><td width='20%'>".aff_date_court($competDate)."</td></tr>
+						<tr><td><b>Commission sportive</b></td><td></td><td></td><td></td></tr>
+						<tr><td><b>Nom et visa du commissaire de table : </b></td><td></td><td><b>Cat&eacute;gorie : </b></td><td>$categorieLibelle</td></tr>
+						<tr height='100px'><td colspan='4' align='center'><h2>$competLibelle</h2></td></tr>
+						<tr></table>";
+		
+		echo "<table id='tableListe' border='1' style='width: 20%;text-align: center;'>";
 		$pouletmp = "";
 		$cpt = 1;
 		foreach ($participant as $tirage) {
+			
+			$club = $tirage[0];
+			$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+			$poule = $tirage['numero_poule'];
+			$position = $tirage['position_poule'];
+	
+			if($pouletmp == "") echo "<tr><th>Poule $poule</th></tr>";
+	
+			if($pouletmp != "" && $poule != $pouletmp) {
+				
+				echo "</table><table id='tableListe' border='1' style='width: 20%;text-align: center;'>";
+				echo "<tr><th>Poule $poule</th></tr>";
+				$cpt=1;
+			} 
+	
+			echo "<tr><td>$licencie <br /><span class='libClub'>$club</span></td></tr>";
+			$cpt++;
+			$pouletmp = $poule;
+			
+			array_push($participantAffichage, $tirage);
+		}
+		echo "</table><br />";
+		
+		echo"</p><div class='breakafter'></div>";
+		
+		
+		$pouletmp = "";
+		$cpt = 1;
+		foreach ($participantAffichage as $tirage) {
 		
 			$club = $tirage[0];
 			$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
@@ -35,7 +73,7 @@ if($categorieSelected >-1) {
 			
 	
 			if($pouletmp == "") {
-				echo "<p><table style='width: 100%;text-align: left;'>
+				echo "<p><table style='width: 100%;text-align: left;' >
 				<tr><td width='30%'><b>Comit&eacute; National de Kendo F.F.J.D.A.</b></td><td width='30%'></td><td width='10%'><b>Date : </b></td><td width='20%'>".aff_date_court($competDate)."</td></tr>
 				<tr><td><b>Commission sportive</b></td><td></td><td></td><td></td></tr>
 				<tr><td><b>Nom et visa du commissaire de table : </b></td><td></td><td><b>Cat&eacute;gorie : </b></td><td>$categorieLibelle</td></tr>
