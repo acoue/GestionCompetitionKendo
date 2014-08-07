@@ -345,6 +345,7 @@ class ControleurOrganisation {
     	$listeTravail = array();
     	foreach ($licenciesTirage as $tmpLicencie) {
     		$listeTravail = $this->organisation->getLicenciesInCategorieForTirageClub($categorie,$competition,$tmpLicencie['club']);
+    		shuffle($listeTravail);
     		foreach ($listeTravail as $tmpTravail) {
     			array_push($listeFinaleCompetiteur,$tmpTravail['licencie']);
     		}
