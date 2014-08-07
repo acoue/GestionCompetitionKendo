@@ -113,11 +113,11 @@ class ControleurResultat {
     	$idCbt2=$combattant['idlicencie2'];
     	$idCbtVainqueur=$combattant['idvainqueur'];
     	
-    	$resCbt1 = $this->resultat->getResultatCombatInTirage($idPoule, $idCbt1, $categorie);
+    	$resCbt1 = $this->resultat->getResultatCombatInTirage($idPoule, $idCbt1, $categorie,$competition);
     	$resCombattant1 = $resCbt1[0];
     	$nbPointR += $resCbt1[1];
     	
-    	$resCbt2 = $this->resultat->getResultatCombatInTirage($idPoule, $idCbt2, $categorie);
+    	$resCbt2 = $this->resultat->getResultatCombatInTirage($idPoule, $idCbt2, $categorie,$competition);
     	$resCombattant2 = $resCbt2[0];
     	$nbPointB += $resCbt2[1];
     	
@@ -130,18 +130,18 @@ class ControleurResultat {
     			$resCombattant1 -= 1;
     		}
 
-    		$this->resultat->setResultatCombatInTirage($idPoule, $idCbt1, $categorie, $resCombattant1, $nbPointR);
-    		$this->resultat->setResultatCombatInTirage($idPoule, $idCbt2, $categorie, $resCombattant2, $nbPointB);
+    		$this->resultat->setResultatCombatInTirage($idPoule, $idCbt1, $categorie, $resCombattant1, $nbPointR,$competition);
+    		$this->resultat->setResultatCombatInTirage($idPoule, $idCbt2, $categorie, $resCombattant2, $nbPointB,$competition);
     	} 
 
     	//Mise a jour resultat_poule
-    	$resultatTirage = $this->resultat->getClassementInTirage($idPoule, $categorie);
+    	$resultatTirage = $this->resultat->getClassementInTirage($idPoule, $categorie,$competition);
     	$res = 0;
     	foreach ($resultatTirage as $resTirage) {
     		$res++;
     		$idLicencie = $resTirage['idlicencie'];
     		
-    		$updateInsert = $this->resultat->existResultatPoule($idPoule, $idLicencie, $categorie);
+    		$updateInsert = $this->resultat->existResultatPoule($idPoule, $idLicencie, $categorie,$competition);
     		if($updateInsert[0] != 'X') {
     		 	$result = $this->resultat->addResultatPoule($idPoule, $idLicencie, $res, $categorie,$competition);
     		} else {

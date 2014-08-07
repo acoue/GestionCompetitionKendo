@@ -76,10 +76,10 @@ class Resultat extends Modele {
 		}	
 	}
 	
-	public function setResultatCombatPoule($idCombat,$pointR,$pointB,$vainqueur) {
+	public function setResultatCombatPoule($idCombat,$pointR,$pointB,$vainqueur,$competition) {
 		try {
-			$sql  = "UPDATE combat_poule SET resultat_rouge = ?, resultat_blanc = ? , idvainqueur = ? WHERE idcombat_poule = ? ";
-			$stmt = $this->executerRequete($sql, array($pointR,$pointB, $vainqueur, $idCombat));
+			$sql  = "UPDATE combat_poule SET resultat_rouge = ?, resultat_blanc = ? , idvainqueur = ? WHERE idcombat_poule = ? and idcompetition = ? ";
+			$stmt = $this->executerRequete($sql, array($pointR,$pointB, $vainqueur, $idCombat, $competition));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("setResultatCombatPoule() : ".$e->getMessage());

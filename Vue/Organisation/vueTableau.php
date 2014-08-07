@@ -46,7 +46,7 @@ if(!empty($licenciesTableau)) {
 		echo "</tr>";
 	}
 } else {
-echo "Pas de licenci&eacute;s";
+echo "Pas de r&eacute;sultats";
 } 
 ?>
 	</tbody>

@@ -145,42 +145,41 @@ class ControleurOrganisation {
 		
 		//Variables
 		$typeTirage = "Type de tirage : ";
-		$nbPlaceDansTableau = 0;
-		//Tirage au sort
-		if($ecartClub == 0 && $ecartTete == 0) { // 1. Pas d'ecartement
-			// Recuperation des competiteurs
-			$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
-			$nbParticipantInCategorie = count($licenciesCategorie);
-			shuffle($licenciesCategorie);
-			$typeTirage .= "Pas d'ecart des clubs et des tetes de series";
-		} 
-		else if($ecartClub == 0 && $ecartTete == 1) { // 2. Ecartement des tetes de series
-			// Recuperation des competiteurs
-			$licenciesCategorie = $this->constructListeCompetiteurTirage($categorie,$competition);
-			$nbParticipantInCategorie = count($licenciesCategorie);
-			//Recuperation des information pour les tete de serie
-			$teteForTirage = $this->constructListeCompetiteurTirageTete($categorie,$competition,$tabTete);
-			$licenciesCategorie = $this->makeTirageTeteSansClub($licenciesCategorie,$teteForTirage,$nbInPoule);
-			$typeTirage .= "Pas d'ecart des clubs, mais ecart des tetes de series";
-		}
-		else if($ecartClub == 1 && $ecartTete == 0) { // 3. Ecartement des clubs
-			// Recuperation des competiteurs
-			$licenciesCategorie = $this->constructListeCompetiteurTirageClub($categorie,$competition);
-			$nbParticipantInCategorie = count($licenciesCategorie);
-			$licenciesCategorie = $this->makeTirageClubSansTete($licenciesCategorie,$nbInPoule);
-			$typeTirage .= "Ecart des clubs et mais pas d'ecart des tetes de series";
-		}
-		else if($ecartClub == 1 && $ecartTete == 1) { // 4. Ecartement des clubs et des tetes de series
-			// Recuperation des competiteurs
-			$licenciesCategorie = $this->constructListeCompetiteurTirageClub($categorie,$competition);
-			$nbParticipantInCategorie = count($licenciesCategorie);
-			//Recuperation des information pour les tete de serie
-			$teteForTirage = $this->constructListeCompetiteurTirageTete($categorie,$competition,$tabTete);
-			$licenciesCategorie = $this->makeTirageClubAndTete($licenciesCategorie,$teteForTirage,$nbInPoule);
-			$typeTirage .= "Ecart des clubs et des tetes de series";
-		}
-
     	if ($nbInPoule > -1) { //Tirage par poule
+    		//Tirage au sort
+    		if($ecartClub == 0 && $ecartTete == 0) { // 1. Pas d'ecartement
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			shuffle($licenciesCategorie);
+    			$typeTirage .= "Pas d'ecart des clubs et des tetes de series";
+    		}
+    		else if($ecartClub == 0 && $ecartTete == 1) { // 2. Ecartement des tetes de series
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->constructListeCompetiteurTirage($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			//Recuperation des information pour les tete de serie
+    			$teteForTirage = $this->constructListeCompetiteurTirageTete($categorie,$competition,$tabTete);
+    			$licenciesCategorie = $this->makeTirageTeteSansClub($licenciesCategorie,$teteForTirage,$nbInPoule);
+    			$typeTirage .= "Pas d'ecart des clubs, mais ecart des tetes de series";
+    		}
+    		else if($ecartClub == 1 && $ecartTete == 0) { // 3. Ecartement des clubs
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->constructListeCompetiteurTirageClub($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			$licenciesCategorie = $this->makeTirageClubSansTete($licenciesCategorie,$nbInPoule);
+    			$typeTirage .= "Ecart des clubs et mais pas d'ecart des tetes de series";
+    		}
+    		else if($ecartClub == 1 && $ecartTete == 1) { // 4. Ecartement des clubs et des tetes de series
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->constructListeCompetiteurTirageClub($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			//Recuperation des information pour les tete de serie
+    			$teteForTirage = $this->constructListeCompetiteurTirageTete($categorie,$competition,$tabTete);
+    			$licenciesCategorie = $this->makeTirageClubAndTete($licenciesCategorie,$teteForTirage,$nbInPoule);
+    			$typeTirage .= "Ecart des clubs et des tetes de series";
+    		}
+    		//Répartition dans la table licencie_categorie -> tirage
 	    	$iNumero = 1;
 	    	$iBoucle=1;
 	    	if( $nbParticipantInCategorie % $nbInPoule == 0){
@@ -259,10 +258,60 @@ class ControleurOrganisation {
 	    	$this->createCombat($tabCombat,$categorie,$tmpPoule,$competition);
     	} else {
     		//tableau direct
+    		//Tirage au sort
+    		if($ecartClub == 0 && $ecartTete == 0) { // 1. Pas d'ecartement
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			shuffle($licenciesCategorie);
+    			$typeTirage .= "Pas d'ecart des clubs et des tetes de series";
+    		}
+    		else if($ecartClub == 0 && $ecartTete == 1) { // 2. Ecartement des tetes de series
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->constructListeCompetiteurTirage($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			//Recuperation des information pour les tete de serie
+    			$teteForTirage = $this->constructListeCompetiteurTirageTete($categorie,$competition,$tabTete);
+    			$licenciesCategorie = $this->makeTirageTeteSansClubTableau($licenciesCategorie,$teteForTirage);
+    			$typeTirage .= "Pas d'ecart des clubs, mais ecart des tetes de series";
+    		}
+    		else if($ecartClub == 1 && $ecartTete == 0) { // 3. Ecartement des clubs
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->constructListeCompetiteurTirageClub($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			$licenciesCategorie = $this->makeTirageClubSansTete($licenciesCategorie,2);
+    			$typeTirage .= "Ecart des clubs et mais pas d'ecart des tetes de series";
+    		}
+    		else if($ecartClub == 1 && $ecartTete == 1) { // 4. Ecartement des clubs et des tetes de series
+    			// Recuperation des competiteurs
+    			$licenciesCategorie = $this->constructListeCompetiteurTirageClub($categorie,$competition);
+    			$nbParticipantInCategorie = count($licenciesCategorie);
+    			//Recuperation des information pour les tete de serie
+    			$teteForTirage = $this->constructListeCompetiteurTirageTete($categorie,$competition,$tabTete);
+    			$licenciesCategorie = $this->makeTirageClubAndTeteTableau($licenciesCategorie,$teteForTirage);
+    			$typeTirage .= "Ecart des clubs et des tetes de series";
+    		}
     		
+    		//On parcours la poule -> insertion dans resultat_poule
+    		//1er = 1er poule 1
+    		//2eme = 2eme poule 1
+    		//....
+    		$iBoucle = 1;
+    		$iNumero = 0;
+    		for($i=0;$i<$nbParticipantInCategorie;$i++) {
+    			
+    			//Insertion du tirage
+    			if($iNumero == 2){
+    				$iBoucle++;
+    				$iNumero = 1;
+    			} else $iNumero++;
+    			$this->organisation->insertTirage($licenciesCategorie[$i]['idlicencie'], $categorie, $iBoucle, $iNumero,$competition);
+    			//Insertion dans resultat_poule
+    			$this->organisation->insertResultatTableau($iBoucle, $licenciesCategorie[$i]['idlicencie'], $iNumero, $categorie,$competition);
+    		}
     		
-    		
-    		
+    		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
+    		$result[] = "Tirage en tableau effectué";
     	}
     	//Insertion dans la table historique
     	$this->organisation->insertHistoriqueTirage($categorie,$competition);
@@ -305,7 +354,6 @@ class ControleurOrganisation {
     }
 
     private function constructListeCompetiteurTirageTete($categorie,$competition,$tabTete) {
-    	
     	$listeFinaleCompetiteur = array();
     	$listeTravail = array();
     	foreach ($tabTete as $tete) {
@@ -339,6 +387,28 @@ class ControleurOrganisation {
    		return $listeTravail;
    	}
 
+   	private function makeTirageClubAndTeteTableau($listeCompetiteur,$tabTete) {
+   		$nbCompetiteur = count($listeCompetiteur);
+   		//creation liste finale
+   		$listeFinale = createListeFinale($nbCompetiteur);
+   	
+   		//repartition tete
+   		$listeFinale = repartitionTeteTableau($tabTete, $listeFinale);
+   	
+   		//Retirer tete de la liste
+   		$resteCompetiteur = array_values(array_diff($listeCompetiteur, $listeFinale));
+   		//Shuffle
+   		//shuffle($resteCompetiteur);
+   	
+   		//Tirage suivant l'algo club
+   		$listeFinale = repartitionClub($resteCompetiteur,$listeFinale,2);
+   		 
+   		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = $this->getInformationLicencie($listeFinale);
+   		 
+   		return $listeTravail;
+   	}
+   	
    	private function makeTirageClubSansTete($listeCompetiteur,$nbInPoule) {
    		$nbCompetiteur = count($listeCompetiteur);
 		//Shuffle
@@ -373,6 +443,26 @@ class ControleurOrganisation {
    		//on retrouve les information pour la suite : constitution poule, ....
    		$listeTravail = $this->getInformationLicencie($listeFinale);
    
+   		return $listeTravail;
+   	}
+
+   	private function makeTirageTeteSansClubTableau($listeCompetiteur,$tabTete) { //A FAIRE
+   		$nbCompetiteur = count($listeCompetiteur);
+   		//creation liste finale
+   		$listeFinale = createListeFinale($nbCompetiteur);
+   		 
+   		//repartition tete
+   		$listeFinale = repartitionTeteTableau($tabTete, $listeFinale);
+   		 
+   		//Retirer tete de la liste
+   		$resteCompetiteur = array_values(array_diff($listeCompetiteur, $listeFinale));
+   		 
+   		//Tirage simple
+   		$listeFinale = repartitionSimple($resteCompetiteur,$listeFinale);
+   	
+   		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = $this->getInformationLicencie($listeFinale);
+   		 
    		return $listeTravail;
    	}
    	
@@ -461,7 +551,7 @@ class ControleurOrganisation {
    			$row = 18;
    			foreach ($competiteurInPoule as $tirage) {
    				$club = $tirage[2];
-   				$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+   				$licencie = trim(rtrim(Securite::decrypteData($tirage["prenom"])))." ".trim(rtrim(Securite::decrypteData($tirage["nom"])));
    				$sheet->setCellValue("B".$row, $licencie);
    				$row = $row + 2;
    				$sheet->setCellValue("B".$row, $club);
@@ -515,7 +605,7 @@ class ControleurOrganisation {
    		$tabTableau = array(4,8,12,16,24,32,36,48,64,96);
 
    		for ($i=0; $i<count($tabTableau); $i++) {
-   			if($nb < $tabTableau[$i]) {
+   			if($nb <= $tabTableau[$i]) {
    				$nbCompetiteur = $tabTableau[$i];
    				break;
    			}
@@ -537,24 +627,24 @@ class ControleurOrganisation {
    					$position = $resClassement[1];
    					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$competition);
    					if(!empty($tirage)) {
-   						$licencie = Securite::decrypteData($tirage['prenom'])." ".Securite::decrypteData($tirage['nom']);
+   						$licencie = trim(rtrim(Securite::decrypteData($tirage['prenom'])))." ".trim(rtrim(Securite::decrypteData($tirage['nom'])));
    						$sheet->setCellValue("C".$row, $licencie);
    					} 
    				}
    			}
    		}
-   	
+   		$row = 0;
    		if($nbCompetiteur > 30) { //Tableau sur 2 colonnes
-   			for ($row=10; $row<81; $row++) { //nombre de ligne max tableau de 96
+   			for ($row=10; $row<81; $row++) { //nombre de lignes max tableau de 96
    				$valeur = $sheet->getCell("O".$row)->getValue();
    				if(!empty($valeur)) {
    					if(strrpos($valeur, '.')!==false){
    						$resClassement = explode(".", $valeur);
    						$poule = $resClassement[0];
    						$position = $resClassement[1];
-   						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$compet);
+   						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$competition);
    						if(!empty($tirage)) {
-   							$licencie = Securite::decrypteData($tirage['prenom'])." ".Securite::decrypteData($tirage['nom']);
+   							$licencie = trim(rtrim(Securite::decrypteData($tirage['prenom'])))." ".trim(rtrim(Securite::decrypteData($tirage['nom'])));
    							$sheet->setCellValue("N".$row, $licencie);
    						}
    					}

@@ -240,6 +240,18 @@ class Organisation extends Modele {
 		}
 	}
 	
+	public function insertResultatTableau($idPoule, $idLicencie, $classement, $categorie,$competition) {
+		try {
+			$sql  = "insert into resultat_poule (idlicencie,classement,numero_poule,idcategorie,idcompetition) values ( ? , ? , ? , ? , ? )";
+			$stmt = $this->executerRequete($sql, array($idLicencie,$classement, $idPoule, $categorie,$competition));
+			return $stmt;
+		} catch (Exception $e) {
+			Log::afficherErreur("insertResultatTableau() : ".$e->getMessage());
+			log::loggerErreur("insertResultatTableau() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
 	public function insertHistoriqueTirage($categorie,$competition) {
 		try {
 			$sql  = "INSERT INTO HISTORIQUE_TIRAGE (idcategorie,idcompetition,date_tirage) values ( ? , ? , now()) ";
