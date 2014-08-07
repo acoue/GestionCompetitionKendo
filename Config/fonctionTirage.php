@@ -34,6 +34,22 @@ function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur) {
 	return $listeFinale;
 }
 
+function repartitionTeteTableau($tabTete,$listeFinale) {
+	//1er => poule 1 - 1er
+	if($tabTete[0] > -1 ) $listeFinale[0] = $tabTete[0];
+
+	//2eme => poule 2 - 1er
+	if($tabTete[1] > -1 ) $listeFinale[2] = $tabTete[1];
+
+	//3eme => poule 3 - 1er
+	if($tabTete[2] > -1 ) $listeFinale[4] = $tabTete[2];
+
+	//3eme => poule 4 - 1er
+	if($tabTete[3] > -1 ) $listeFinale[6] = $tabTete[3];
+
+	return $listeFinale;
+}
+
 function repartitionSimple($listeCompetiteur,$listeFinale) {
 	//Shuffle
 	shuffle($listeCompetiteur);
@@ -51,9 +67,12 @@ function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 	$nbCompetiteur = count($listeCompetiteur);
 	foreach ($listeCompetiteur as $competiteur) {
 		$bOkPlacement = false;
-		$posFinale = 0;
-	
+		//$posFinale = 0;
+		$posFinale = rand(0,$nbCompetiteur);
+		$nbTour = 0;
+		
 		while(! $bOkPlacement) {
+			$nbTour++;
 			// On se positionne sur un emplacement libre
 			while($listeFinale[$posFinale] !== "#") $posFinale++;
 	
@@ -72,10 +91,14 @@ function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 						} else {
 							$posFinale = $finPoule+1;
 							if($posFinale >= $nbCompetiteur){
+
 								$posFinale = 0;
-								while($listeFinale[$posFinale] !== "#") $posFinale++;
-								$bOkPlacement = true;
-								break;
+									
+								if ($nbTour == 2){
+									while($listeFinale[$posFinale] !== "#") $posFinale++;
+									$bOkPlacement = true;
+									break;
+								} 
 							} else {
 								$bOkPlacement = false;
 								break;
