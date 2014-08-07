@@ -63,11 +63,12 @@ function repartitionSimple($listeCompetiteur,$listeFinale) {
 	return $listeFinale;
 }
 
-function repartitionClubTest($listeCompetiteur,$listeFinale,$nbInPoule) {
+function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 	$nbCompetiteur = count($listeCompetiteur);
 	foreach ($listeCompetiteur as $competiteur) {
 		$bOkPlacement = false;
 		$posFinale = 0;
+		//$posFinale = rand(0,$nbCompetiteur-$nbInPoule);
 	
 		while(! $bOkPlacement) {
 			// On se positionne sur un emplacement libre
@@ -107,7 +108,7 @@ function repartitionClubTest($listeCompetiteur,$listeFinale,$nbInPoule) {
 	return $listeFinale;
 }
 
-function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
+function repartitionClubTest($listeCompetiteur,$listeFinale,$nbInPoule) {
 	$nbCompetiteur = count($listeCompetiteur);
 	foreach ($listeCompetiteur as $competiteur) {
 		$bOkPlacement = false;
