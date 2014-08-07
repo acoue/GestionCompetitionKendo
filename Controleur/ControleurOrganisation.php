@@ -233,7 +233,7 @@ class ControleurOrganisation {
 	    	}
 	    	
 	    	//Suppression des ligne poule = 0
-	    	$this->organisation->deleteTiragePouleNull($categorie,$competition);
+	    	//$this->organisation->deleteTiragePouleNull($categorie,$competition);
 	    	
 	    	//Creation combats
 	    	$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
