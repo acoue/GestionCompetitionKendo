@@ -20,14 +20,14 @@ function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur) {
 	if($tabTete[0] > -1 ) $listeFinale[0] = $tabTete[0];
 	
 	//2eme => derniere poule
-	$place2 = $nbCompetiteur - $nbInPoule;
+	$place2 = $nbCompetiteur - 1;
 	if($tabTete[1] > -1 ) $listeFinale[$place2] = $tabTete[1];
 	
 	//3eme => 2eme poule
 	$place3 = $nbInPoule;
 	if($tabTete[2] > -1 ) $listeFinale[$place3] = $tabTete[2];
 	
-	//3eme ex-aequo => avant derni�re poule
+	//3eme ex-aequo => avant derniere poule
 	$place3Bis = $place2-$nbInPoule;
 	if($tabTete[3] > -1 ) $listeFinale[$place3Bis] = $tabTete[3];
 	
@@ -65,19 +65,34 @@ function repartitionSimple($listeCompetiteur,$listeFinale) {
 
 function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 	$nbCompetiteur = count($listeCompetiteur);
+	//$posFinale = 0;
+	//$posFinale = rand(0,$nbCompetiteur-1);
+	$nbTour = 0;
+	
 	foreach ($listeCompetiteur as $competiteur) {
 		$bOkPlacement = false;
-		$posFinale = 0;
-		//$posFinale = rand(0,$nbCompetiteur-$nbInPoule);
-	
+		$posFinale = rand(0,$nbCompetiteur-1);
+		$nbTour = 0;
+		
 		while(! $bOkPlacement) {
+			$nbTour++;
 			// On se positionne sur un emplacement libre
-			while($listeFinale[$posFinale] !== "#") $posFinale++;
-	
+
+			
+			
+			while($listeFinale[$posFinale] !== "#") {
+				if($posFinale >= $nbCompetiteur-1) $posFinale = 0;
+				else $posFinale++;
+			}
+			
 			//Position debut et fin de poule pour la comparaison des clubs
 			$debutPoule = ((int)($posFinale/$nbInPoule))*$nbInPoule;
 			$finPoule = $debutPoule + $nbInPoule - 1;
-	
+			//Si poule de 4
+			if(($finPoule+$nbInPoule) > $nbCompetiteur ) $finPoule = $nbCompetiteur - 1;
+			if($debutPoule == $finPoule) $debutPoule = $debutPoule -$nbInPoule;
+			
+			
 			//Verification si meme club dans la poule
 			for($j = $debutPoule;$j <= $finPoule;$j++) {
 				if($j != $posFinale) {
@@ -88,10 +103,15 @@ function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 							$bOkPlacement = true;
 						} else {
 							$posFinale = $finPoule+1;
-							if($posFinale >= $nbCompetiteur){
+							if($posFinale >= $nbCompetiteur-1){
 								$posFinale = 0;
-								while($listeFinale[$posFinale] !== "#") $posFinale++;
-								$bOkPlacement = true;
+								
+								if($nbTour>1) {
+									while($listeFinale[$posFinale] !== "#") $posFinale++;
+									$bOkPlacement = true;
+								} else {
+									$bOkPlacement = false;
+								}
 								break;
 							} else {
 								$bOkPlacement = false;
@@ -102,7 +122,11 @@ function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 				}
 			}
 			//Si $bOkPlacement = true => pas de club identique on place dans la listeFinale
-			if($bOkPlacement) $listeFinale[$posFinale] = $competiteur;
+			if($bOkPlacement) { 
+				$listeFinale[$posFinale] = $competiteur;
+				if($posFinale >= $nbCompetiteur-1) $posFinale = 0;
+				else $posFinale++;
+			}
 		}
 	}
 	return $listeFinale;

@@ -366,27 +366,88 @@ class ControleurOrganisation {
     	return $listeFinaleCompetiteur;
     }
     
+ 
    	private function makeTirageClubAndTete($listeCompetiteur,$tabTete,$nbInPoule) {
    		$nbCompetiteur = count($listeCompetiteur);
-   		//creation liste finale
-		$listeFinale = createListeFinale($nbCompetiteur);
-		
-		//repartition tete 
-		$listeFinale = repartitionTete($tabTete, $listeFinale,$nbInPoule,$nbCompetiteur);
-		
-		//Retirer tete de la liste
-		$resteCompetiteur = array_values(array_diff($listeCompetiteur, $listeFinale));
-		//Shuffle
-		//shuffle($resteCompetiteur);
-		
-		//Tirage suivant l'algo club
-		$listeFinale = repartitionClub($resteCompetiteur,$listeFinale,$nbInPoule);
+   		//test si poule de 4 quand tirage de 3
+   		if($nbCompetiteur % $nbInPoule == 0) { //que des poules de 3
+   			//creation liste finale
+   			$listeFinale = createListeFinale($nbCompetiteur);
+   			//repartition tete
+   			$listeFinale = repartitionTete($tabTete, $listeFinale,$nbInPoule,$nbCompetiteur);
+   			//Retirer tete de la liste
+   			$resteCompetiteur = array_values(array_diff($listeCompetiteur, $listeFinale));
+   			//Tirage suivant l'algo club
+   			$listeFinale = repartitionClub($resteCompetiteur,$listeFinale,$nbInPoule);
+   		} else {
+   			$retrait = 0;
+   			while($nbCompetiteur % $nbInPoule !=  0) {
+   				$retrait++;
+   				$nbCompetiteur--;
+   			}
+   			//creation liste finale
+   			$listeFinale = createListeFinale($nbCompetiteur);
+   			//repartition tete
+   			$listeFinale = repartitionTete($tabTete, $listeFinale,$nbInPoule,$nbCompetiteur);
+   			//Retirer tete de la liste
+   			$resteCompetiteur = array_values(array_diff($listeCompetiteur, $listeFinale));
+   			//On retire les $retrait competiteurs
+   			$complementAjout = array();
+   			
+   			for($i=0;$i<$retrait;$i++){
+   				$emplDernier=count($listeCompetiteur)-1;
+   				array_push($complementAjout,$emplDernier);
+   				array_pop($listeCompetiteur[$emplDernier]);
+   			}
+   			//Tirage suivant l'algo club
+   			$listeFinale = repartitionClub($resteCompetiteur,$listeFinale,$nbInPoule);
+   			
+   			//On remet les $retrait competiteur
+   			for($i=0;$i<count($complementAjout);$i++) array_push($listeFinale,$complementAjout[$i]);
+   		}
+   		//on retrouve les information pour la suite : constitution poule, ....
+   		$listeTravail = $this->getInformationLicencie($listeFinale);
+   
+   		return $listeTravail;
+   	}
+
+   	private function makeTirageClubSansTete($listeCompetiteur,$nbInPoule) {
+   		$nbCompetiteur = count($listeCompetiteur);
+   		//test si poule de 4 quand tirage de 3
+   		if($nbCompetiteur % $nbInPoule == 0) { //que des poules de 3
+			//creation liste finale
+			$listeFinale = createListeFinale($nbCompetiteur);
+			//Tirage suivant l'algo club
+			$listeFinale = repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule);
+   		} else {
+   			$retrait = 0;
+   			while($nbCompetiteur % $nbInPoule !=  0) {
+   				$retrait++;
+   				$nbCompetiteur--;
+   			}
+   			//creation liste finale
+   			$listeFinale = createListeFinale($nbCompetiteur);
+   			//On retire les $retrait competiteurs
+   			$complementAjout = array();
+   			
+   			for($i=0;$i<$retrait;$i++){
+   				$emplDernier=count($listeCompetiteur)-1;
+   				array_push($complementAjout,$listeCompetiteur[$emplDernier]);
+   				array_pop($listeCompetiteur);
+   			}
+   			//Tirage suivant l'algo club
+   			$listeFinale = repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule);
+   			
+   			//On remet les $retrait competiteur
+   			for($i=0;$i<count($complementAjout);$i++) array_push($listeFinale,$complementAjout[$i]);
+   		}   		
    		
    		//on retrouve les information pour la suite : constitution poule, ....
    		$listeTravail = $this->getInformationLicencie($listeFinale);
    
    		return $listeTravail;
    	}
+
 
    	private function makeTirageClubAndTeteTableau($listeCompetiteur,$tabTete) {
    		$nbCompetiteur = count($listeCompetiteur);
@@ -407,23 +468,6 @@ class ControleurOrganisation {
    		//on retrouve les information pour la suite : constitution poule, ....
    		$listeTravail = $this->getInformationLicencie($listeFinale);
    		 
-   		return $listeTravail;
-   	}
-   	
-   	private function makeTirageClubSansTete($listeCompetiteur,$nbInPoule) {
-   		$nbCompetiteur = count($listeCompetiteur);
-		//Shuffle
-		//shuffle($listeCompetiteur);
-		
-		//creation liste finale
-		$listeFinale = createListeFinale($nbCompetiteur);
-		
-		//Tirage suivant l'algo club
-		$listeFinale = repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule);
-		
-   		//on retrouve les information pour la suite : constitution poule, ....
-   		$listeTravail = $this->getInformationLicencie($listeFinale);
-   
    		return $listeTravail;
    	}
 
