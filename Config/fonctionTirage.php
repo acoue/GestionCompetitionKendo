@@ -64,9 +64,7 @@ function repartitionSimple($listeCompetiteur,$listeFinale) {
 }
 
 function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
-	$nbCompetiteur = count($listeCompetiteur);
-	//$posFinale = 0;
-	//$posFinale = rand(0,$nbCompetiteur-1);
+	$nbCompetiteur = count($listeFinale);
 	$nbTour = 0;
 	
 	foreach ($listeCompetiteur as $competiteur) {
@@ -77,9 +75,6 @@ function repartitionClub($listeCompetiteur,$listeFinale,$nbInPoule) {
 		while(! $bOkPlacement) {
 			$nbTour++;
 			// On se positionne sur un emplacement libre
-
-			
-			
 			while($listeFinale[$posFinale] !== "#") {
 				if($posFinale >= $nbCompetiteur-1) $posFinale = 0;
 				else $posFinale++;
