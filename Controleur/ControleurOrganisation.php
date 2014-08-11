@@ -277,7 +277,7 @@ class ControleurOrganisation {
     		$result[] = "Tirage en tableau effectué";
     	}
     	//Insertion dans la table historique
-    	$this->organisation->insertHistoriqueTirage($categorie,$competition);
+    	$this->organisation->insertHistoriqueTirage($categorie,$competition,$typeTirage);
     	
 		$result = array();
     	$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
@@ -379,7 +379,7 @@ class ControleurOrganisation {
     	//Répartition dans la table licencie_categorie -> tirage
     	$this->insertIntoTableTirage($categorie,$competition,$nbParticipantInCategorie,$nbInPoule,$licenciesCategorie);
     	//Insertion dans la table historique
-    	$this->organisation->insertHistoriqueTirage($categorie,$competition);
+    	$this->organisation->insertHistoriqueTirage($categorie,$competition,$typeTirage);
 		//Creation des combats
 		$this->creationCombat($categorie, $competition);
     	

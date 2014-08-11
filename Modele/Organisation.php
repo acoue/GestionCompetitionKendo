@@ -267,10 +267,10 @@ class Organisation extends Modele {
 		}
 	}
 	
-	public function insertHistoriqueTirage($categorie,$competition) {
+	public function insertHistoriqueTirage($categorie,$competition,$type) {
 		try {
-			$sql  = "INSERT INTO HISTORIQUE_TIRAGE (idcategorie,idcompetition,date_tirage) values ( ? , ? , now()) ";
-			$result	= $this->executerRequete($sql, array($categorie,$competition));
+			$sql  = "INSERT INTO HISTORIQUE_TIRAGE (idcategorie,idcompetition,date_tirage,type) values ( ? , ? , now() , ?) ";
+			$result	= $this->executerRequete($sql, array($categorie,$competition,$type));
 			return $result;
 	
 		} catch (Exception $e) {
