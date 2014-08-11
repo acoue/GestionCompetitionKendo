@@ -14,8 +14,18 @@ function getClub($competiteur) {
 	} else $retour = -1;
 	return $retour;
 }
-
-function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur) {
+/*
+ * 	Total 12 poules
+1	poule 1
+2	poule 12
+3	poule 2
+4	Poule 11
+5	Poule 5
+5	poule 3
+5	poule 6
+5	Poule 4
+ */
+function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur,$equipe) {
 	//1er => poule 1
 	if($tabTete[0] > -1 ) $listeFinale[0] = $tabTete[0];
 	
@@ -31,6 +41,18 @@ function repartitionTete($tabTete,$listeFinale,$nbInPoule,$nbCompetiteur) {
 	$place3Bis = $place2-$nbInPoule;
 	if($tabTete[3] > -1 ) $listeFinale[$place3Bis] = $tabTete[3];
 	
+	if($equipe){ 
+		//5eme
+		$place5 = 2*$nbInPoule;
+		if($tabTete[4] > -1 ) $listeFinale[$place5] = $tabTete[4];
+		$place5 = 3*$nbInPoule;
+		if($tabTete[5] > -1 ) $listeFinale[$place5] = $tabTete[5];
+		$place5 = ($nbCompetiteur - 1)-(2*$nbInPoule);
+		if($tabTete[6] > -1 ) $listeFinale[$place5] = $tabTete[6];
+		$place5 = ($nbCompetiteur - 1)-(3*$nbInPoule);
+		if($tabTete[7] > -1 ) $listeFinale[$place5] = $tabTete[7];
+		
+	}
 	return $listeFinale;
 }
 

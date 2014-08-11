@@ -26,60 +26,79 @@ if(!empty($licenciesCategorie)) {
 	
 ?>
 		<p>
-		<table id='csstable' align="center" width="90%" >
+		<table id='csstable' align="center" width="90%" border='1px'>
 			<tbody>
 				<tr>
-					<td>Nombre de comp&eacute;titeurs dans la poule :</td>
+					<td>Nombre d'&eacute;quipes :</td>
 					<td colspan='2'>
 						<INPUT type= "radio" name="nombre" value="3" checked> 3<br />
-						<INPUT type= "radio" name="nombre" value="4"> 4<br />
-						<INPUT type= "radio" name="nombre" value="5"> 5<br />
-						<INPUT type= "radio" name="nombre" value="-1" >Taleau direct
+						<INPUT type= "radio" name="nombre" value="4" > 4<br />
 					</td>
 				</tr>
 				<tr>
-					<td width='30%' >Eloignement :</td>
+					<td width='30%' >Eloignement des 5&egrave;me et des descentes :</td>
 					<td width='20%' >
 						<INPUT type= "radio" name="tete" value="1"> Oui<br />
 						<INPUT type= "radio" name="tete" value="0" checked> Non
 					</td>
 					<td width='50%' >
-		<label for="premier">1er</label>
+		<label for="premier">1&egrave;re &eacute;quipe descendante </label>
 		<select name="premier" id="premier"><option value='-1' selected>--</option>
 		<?php 
 		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
 		?>
 		</select>
 		<br />
-		<label for="deuxieme">2&egrave;me</label>
+		<label for="deuxieme">2&egrave;me &eacute;quipe descendante </label>
 		<select name="deuxieme" id="deuxieme"><option value='-1' selected>--</option>
 		<?php 
 		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
 		?>
 		</select>
 		<br />
-		<label for="troisieme">3&egrave;me</label>
+		<label for="troisieme">3&egrave;me &eacute;quipe descendante </label>
 		<select name="troisieme" id="troisieme"><option value='-1' selected>--</option>
 		<?php 
 		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
 		?>
 		</select>
 		<br />
-		<label for="troisiemebis">3&egrave;me</label>
-		<select name="troisiemebis" id="troisiemebis"><option value='-1' selected>--</option>
+		<label for="quatrieme">4&egrave;me &eacute;quipe descendante </label>
+		<select name="quatrieme" id="quatrieme"><option value='-1' selected>--</option>
+		<?php 
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		?>
+		</select>
+		<br />
+		<label for="cinq_1">1&egrave;re &eacute;quipe 5&egrave;me </label>
+		<select name="cinq_1" id="cinq_1"><option value='-1' selected>--</option>
+		<?php 
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		?>
+		</select>
+		<br />
+		<label for="cinq_2">2&egrave;me &eacute;quipe 5&egrave;me</label>
+		<select name="cinq_2" id="cinq_2"><option value='-1' selected>--</option>
+		<?php 
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		?>
+		</select>
+		<br />
+		<label for="cinq_3">3&egrave;me &eacute;quipe 5&egrave;me</label>
+		<select name="cinq_3" id="cinq_3"><option value='-1' selected>--</option>
+		<?php 
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		?>
+		</select>
+		<br />
+		<label for="cinq_4">4&egrave;me &eacute;quipe 5&egrave;me</label>
+		<select name="cinq_4" id="cinq_4"><option value='-1' selected>--</option>
 		<?php 
 		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
 		?>
 		</select>
 					</td>
 				</tr>
-			<!-- 	<tr>
-					<td>Eloignement des r&eacute;gions :</td>
-					<td>
-						<INPUT type= "radio" name="region" value="oui"> Oui<br />
-						<INPUT type= "radio" name="region" value="non" checked> Non
-					</td>
-				</tr> -->
 				<tr>
 					<td>Eloignement des clubs :</td>
 					<td colspan='2'>

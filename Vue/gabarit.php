@@ -53,7 +53,6 @@
 	</aside> 
 	<div id="main" role="main" class="mod pam">
 		<div id="erreur">TO DO : <br />
-		 - Tirage équipe<br />
 		 - Remontée des résultats des combats dans l'impression des poules<br />
 		 - Dessiner tableau<br />
 		 - Résultats des combats du tableau<br />		

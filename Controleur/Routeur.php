@@ -233,6 +233,22 @@ class Routeur {
             		if(isset($_GET['id'])) $id = $this->getParametre($_GET, 'id');
             		else $id = -1;
             		$this->ctrlOrganisation->afficherTirageEquipe($id);
+            	} else if ($_GET['action'] == 'effectuerTirageEquipe') {
+            		$categorie = $this->getParametre($_POST, 'categorie');
+            		$nbInPoule = $this->getParametre($_POST, 'nombre');
+            		$ecartClub = $this->getParametre($_POST, 'club'); 
+            		$ecartTete = $this->getParametre($_POST, 'tete');
+            		
+            		$tabTete = array($this->getParametre($_POST, 'premier'),
+            						$this->getParametre($_POST, 'deuxieme'),
+            						$this->getParametre($_POST, 'troisieme'),
+            						$this->getParametre($_POST, 'quatrieme'),
+            						$this->getParametre($_POST, 'cinq_1'),
+            						$this->getParametre($_POST, 'cinq_2'),
+            						$this->getParametre($_POST, 'cinq_3'),
+            						$this->getParametre($_POST, 'cinq_4'));
+            		
+            		$this->ctrlOrganisation->effectuerTirageEquipe($categorie,$nbInPoule,$ecartClub,$ecartTete,$tabTete);
             	}
 
 //Partie Menu Organisation -> Generation des poules
