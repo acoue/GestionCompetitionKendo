@@ -129,6 +129,7 @@ CREATE TABLE `historique_tirage` (
   `idcompetition` int(10) NOT NULL,
   `idcategorie` int(10) NOT NULL,
   `date_tirage` date NOT NULL,
+  `type` VARCHAR( 100 ) NULL ,
   PRIMARY KEY (`idhistorique`),
   UNIQUE KEY `idcategorie` (`idcategorie`,`date_tirage`,`idcompetition`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

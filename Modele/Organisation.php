@@ -282,7 +282,7 @@ class Organisation extends Modele {
 
 	public function getDateTirage($idCategorie,$competition) {
 		try {
-			$sql = "select date_tirage from HISTORIQUE_TIRAGE where idcategorie = ? and idcompetition = ? ";
+			$sql = "select date_tirage,type from HISTORIQUE_TIRAGE where idcategorie = ? and idcompetition = ? ";
 			$result	= $this->executerRequete($sql, array($idCategorie,$competition));
 			return $result->fetch(); 
 		} catch (Exception $e) {
