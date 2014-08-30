@@ -47,28 +47,28 @@ if(!empty($licenciesCategorie)) {
 		<label for="premier">1er</label>
 		<select name="premier" id="premier"><option value='-1' selected>--</option>
 		<?php 
-		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".$licencie["prenom"]." ".$licencie["nom"]."</option>";
 		?>
 		</select>
 		<br />
 		<label for="deuxieme">2&egrave;me</label>
 		<select name="deuxieme" id="deuxieme"><option value='-1' selected>--</option>
 		<?php 
-		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".$licencie["prenom"]." ".$licencie["nom"]."</option>";
 		?>
 		</select>
 		<br />
 		<label for="troisieme">3&egrave;me</label>
 		<select name="troisieme" id="troisieme"><option value='-1' selected>--</option>
 		<?php 
-		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".$licencie["prenom"]." ".$licencie["nom"]."</option>";
 		?>
 		</select>
 		<br />
 		<label for="troisiemebis">3&egrave;me</label>
 		<select name="troisiemebis" id="troisiemebis"><option value='-1' selected>--</option>
 		<?php 
-		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".Securite::decrypteData($licencie["prenom"])." ".Securite::decrypteData($licencie["nom"])."</option>";
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".$licencie["prenom"]." ".$licencie["nom"]."</option>";
 		?>
 		</select>
 					</td>
@@ -99,7 +99,7 @@ if(!empty($licenciesCategorie)) {
 				echo "<thead><tr><th width='60%'>Licenci&eacute;</th><th width='20%'>Poule</th><th width='20%'>Position</th><tr></thead>";
 				echo "<tbody>";
 				foreach ($licenciesTirage as $licTab) {
-					$licencie = $licTab[0]." - ".Securite::decrypteData($licTab["prenom"])." ".Securite::decrypteData($licTab["nom"]);
+					$licencie = $licTab[0]." - ".$licTab["prenom"]." ".$licTab["nom"];
 					echo "<tr align='center'>";
 					echo "<td>".$licencie."</td>";
 					echo "<td>".$licTab['numero_poule']."</td>";

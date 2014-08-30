@@ -7,11 +7,11 @@ require_once 'Config/fonction.php';
 	<table id="csstable" align="center">
 		<tr>
 			<td>Pr&eacute;nom</td>
-			<td><input type='text' id='prenom' name='prenom' value='<?php echo trim(Securite::decrypteData($licencie['prenom'])) ?>' size='100px' /></td>
+			<td><input type='text' id='prenom' name='prenom' value='<?php echo trim($licencie['prenom']) ?>' size='100px' /></td>
 		</tr>
 		<tr>
 			<td>Nom</td>
-			<td><input type='text' id='nom' name='nom' value='<?php echo trim(Securite::decrypteData($licencie['nom'])) ?>' size='100px' /></td>
+			<td><input type='text' id='nom' name='nom' value='<?php echo trim($licencie['nom']) ?>' size='100px' /></td>
 		</tr>
 		<tr>
 			<td>Club</td>

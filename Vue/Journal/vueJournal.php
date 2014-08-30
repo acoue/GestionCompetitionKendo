@@ -17,7 +17,7 @@ if(!empty($journaux)) { ?>
 	echo "<tr>";
 	echo "<td align='center' bgcolor='$bgcolor'>".$journal['typelog']."</td>";
 	echo "<td align='center'>".$journal['datelog']."</td>";
-	echo "<td align='left'>".traitementAccent(Securite::decrypteData($journal['texte']))."</td>";
+	echo "<td align='left'>".traitementAccent($journal['texte'])."</td>";
 	echo "</tr>";
 }
 ?>

@@ -25,6 +25,27 @@ class Organisation extends Modele {
 		}
 	}
 	
+	public function getLicenciesNotInCategorieRecherche($idCategorie,$competition,$texte) {
+		try {
+			$texteCrypt = mb_strtoupper($texte, 'UTF-8');
+			$sql = "select club.libelle, idlicencie, nom , prenom 
+					from licencie,club 
+					where club.idclub = licencie.idclub 
+					and idlicencie not in (select idlicencie from licencie_categorie where idcategorie = ? and idcompetition = ?) and idlicencie > 3 
+					and (nom like '%".$texteCrypt."%' or prenom like '%".$texteCrypt."%' )
+					order by 1,2,3 ";
+			
+		//Log::afficherErreur($sql);
+					
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getLicenciesNotInCategorie() : ".$e->getMessage());
+			log::loggerErreur("getLicenciesNotInCategorie() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
 	public function getLicenciesClub() {
 		try {
 			$sql = "select club.libelle, idlicencie, nom , prenom
@@ -383,6 +404,29 @@ class Organisation extends Modele {
 		} catch (Exception $e) {
 			Log::afficherErreur("getTirageCategorieOrdonne() : ".$e->getMessage());
 			log::loggerErreur("getTirageCategorieOrdonne() : ".$e->getMessage());
+			return null;
+		}
+	}
+
+	public function getTirageCategorieOrdonneWithResultat($idCategorie,$competition) {
+		try {
+			$sql = "select A.libelle, B.idlicencie, nom , prenom, C.numero_poule,C.position_poule,
+					 (select classement from resultat_poule D where C.idlicencie = D.idlicencie and C.numero_poule = D.numero_poule and D.idcategorie = $idCategorie and D.idcompetition = $competition) res,
+					 (select resultat_rouge from combat_poule E where (E.idlicencie1 = C.idlicencie or E.idlicencie2 = C.idlicencie) and E.poule = C.numero_poule and E.idcategorie = $idCategorie and E.idcompetition = $competition and ordre = 1) cbt1,
+					(select resultat_rouge from combat_poule E where (E.idlicencie1 = C.idlicencie or E.idlicencie2 = C.idlicencie) and E.poule = C.numero_poule and E.idcategorie = $idCategorie and E.idcompetition = $competition and ordre = 2) cbt2,
+					(select resultat_rouge from combat_poule E where (E.idlicencie1 = C.idlicencie or E.idlicencie2 = C.idlicencie) and E.poule = C.numero_poule and E.idcategorie = $idCategorie and E.idcompetition = $competition and ordre = 3) cbt3
+					from club A,licencie B, licencie_categorie C
+					where A.idclub = B.idclub 
+					and C.idlicencie = B.idlicencie
+					and C.idcategorie = ? 
+					and C.idcompetition = ?
+					order by C.numero_poule, C.position_poule";
+
+			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getTirageCategorieOrdonneWithClassement() : ".$e->getMessage());
+			log::loggerErreur("getTirageCategorieOrdonneWithClassement() : ".$e->getMessage());
 			return null;
 		}
 	}

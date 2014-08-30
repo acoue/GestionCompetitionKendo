@@ -200,6 +200,11 @@ class Routeur {
             		else $id = -1;
             		$this->ctrlOrganisation->afficherRepartition($id);
             	} 
+				else if ($_GET['action'] == 'afficheRepartitionRecherche') {
+            		$id = $this->getParametre($_GET, 'id');
+					$recherche = $this->getParametre($_GET, 'rech');
+            		$this->ctrlOrganisation->afficherRepartitionRecherche($id,$recherche);
+            	} 
             	else if ($_GET['action'] == 'ajoutRepartition') {
             		$categorie = $this->getParametre($_POST, 'categorie');
             		$licencie = $this->getParametre($_POST, 'licencie');

@@ -382,7 +382,7 @@ class Gestion extends Modele {
 	public function setLicencie($idLicencie,$prenom, $nom, $club) {
 		try {
 			$sql  = "UPDATE licencie SET prenom = ? , nom = ? , idclub = ? WHERE idlicencie = ? ";
-			$stmt = $this->executerRequete($sql, array(Securite::crypteData(mb_strtoupper($prenom, 'UTF-8')), Securite::crypteData(mb_strtoupper($nom, 'UTF-8')), $club, $idLicencie));
+			$stmt = $this->executerRequete($sql, array(mb_strtoupper($prenom, 'UTF-8'), mb_strtoupper($nom, 'UTF-8'), $club, $idLicencie));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("setLicencie() : ".$e->getMessage());
@@ -406,7 +406,7 @@ class Gestion extends Modele {
 	public function addLicencie($prenom, $nom, $club) {
 		try {
 			$sql  = "INSERT INTO licencie (prenom,nom,idclub) VALUES ( ? , ? , ?) ";
-			$stmt = $this->executerRequete($sql, array(Securite::crypteData(mb_strtoupper ($prenom, 'UTF-8')), Securite::crypteData(mb_strtoupper ($nom, 'UTF-8')), $club));
+			$stmt = $this->executerRequete($sql, array(mb_strtoupper ($prenom, 'UTF-8'), mb_strtoupper ($nom, 'UTF-8'), $club));
 			return $stmt;
 		} catch (Exception $e) {
 			Log::afficherErreur("addLicencie() : ".$e->getMessage());
@@ -417,7 +417,7 @@ class Gestion extends Modele {
 	
 	public function existLicencieByNomPrenomClub($nom,$prenom,$club) {
 		try {
-			$sql = "select 'X' from licencie where upper(nom) = '".Securite::crypteData(mb_strtoupper ($nom, 'UTF-8'))."' and upper(prenom) = '".Securite::crypteData(mb_strtoupper($prenom, 'UTF-8'))."' and idclub = $club";
+			$sql = "select 'X' from licencie where upper(nom) = '".mb_strtoupper ($nom, 'UTF-8')."' and upper(prenom) = '".mb_strtoupper($prenom, 'UTF-8')."' and idclub = $club";
 			$result	= $this->executerRequete($sql);
 			return $result->fetch();
 		} catch (Exception $e) {
@@ -429,7 +429,7 @@ class Gestion extends Modele {
 	
 	public function getLicencieByNomPrenom($nom,$prenom) {
 		try {
-			$sql = "select * from licencie where upper(nom) = '".Securite::crypteData(mb_strtoupper ($nom, 'UTF-8'))."' and upper(prenom) = '".Securite::crypteData(mb_strtoupper ($prenom, 'UTF-8'))."' ";
+			$sql = "select * from licencie where upper(nom) = '".mb_strtoupper ($nom, 'UTF-8')."' and upper(prenom) = '".mb_strtoupper ($prenom, 'UTF-8')."' ";
 			$result	= $this->executerRequete($sql);
 			return $result->fetch();
 		} catch (Exception $e) {

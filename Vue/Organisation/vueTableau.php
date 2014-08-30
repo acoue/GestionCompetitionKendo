@@ -38,7 +38,7 @@ if(!empty($licenciesTableau)) {
 	<tbody>		
 <?php
 	foreach ($licenciesTableau as $licTab) {
-		$licencie = Securite::decrypteData($licTab[1])." ".Securite::decrypteData($licTab[2]);
+		$licencie = $licTab[1]." ".$licTab[2];
 		echo "<tr align='center'>";
 		echo "<td>".$licencie."</td>";
 		echo "<td>".$licTab[3]."</td>";

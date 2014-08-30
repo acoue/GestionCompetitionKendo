@@ -37,7 +37,7 @@ if($categorieSelected >-1) {
 		foreach ($participant as $tirage) {
 			
 			$club = $tirage[0];
-			$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+			$licencie = $tirage["prenom"]." ".$tirage["nom"];
 			$poule = $tirage['numero_poule'];
 			$position = $tirage['position_poule'];
 	
@@ -66,7 +66,7 @@ if($categorieSelected >-1) {
 		foreach ($participantAffichage as $tirage) {
 		
 			$club = $tirage[0];
-			$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+			$licencie = $tirage["prenom"]." ".$tirage["nom"];
 			$poule = $tirage['numero_poule'];
 			$position = $tirage['position_poule'];
 			$nbPoule = $nbByPoule[$poule-1][1];
@@ -120,7 +120,7 @@ if($categorieSelected >-1) {
 			}
 			echo "<td>IPPON</td>";
 			echo "<td></td>";
-			echo "<td rowspan='3'></td>";
+			echo "<td rowspan='3'></td>"; //cbt1 : ".$tirage['cbt1']." - Cbt2 : ".$tirage['cbt2']." - Cbt3 : ".$tirage['cbt3'].$tirage['res']
 			echo "</tr>";
 			echo "<tr>";
 			echo "<td>Nb de victoires</td>";

@@ -28,7 +28,7 @@ if($categorieSelected >-1) {
 		foreach ($licenciesTirage as $tirage) {
 			
 			$club = $tirage[0];
-			$licencie = Securite::decrypteData($tirage["prenom"])." ".Securite::decrypteData($tirage["nom"]);
+			$licencie = $tirage["prenom"]." ".$tirage["nom"];
 			$poule = $tirage['numero_poule'];
 			$position = $tirage['position_poule'];
 	

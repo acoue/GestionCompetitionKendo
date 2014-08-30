@@ -235,12 +235,4 @@ class ControleurImportation {
     	$vue = new Vue("Importation","ImportRepartition");
     	$vue->generer(array('categories'=>$categories), null);
     }
-        
-    
-    
-    
-    
-
-    
 }
-

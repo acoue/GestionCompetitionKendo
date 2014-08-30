@@ -59,14 +59,14 @@ class Log {
 	    
 	    //base
 	    self::$journal = new Journal();
-		self::$journal->insertJournaux('Information',Securite::crypteData($msgInfo));
+		self::$journal->insertJournaux('Information',$msgInfo);
 	}
 	
 	// Ecrire une information en log en base + fichier
 	public static function loggerInformationInBdd($msgInfo) {
 		//base
 	    self::$journal = new Journal();
-		self::$journal->insertJournaux('Information',Securite::crypteData($msgInfo));
+		self::$journal->insertJournaux('Information',$msgInfo);
 	}
 	
 	// Ecrire une erreur en log en base + fichier
@@ -75,15 +75,13 @@ class Log {
 	    self::$logger->log('Erreur', 'erreurs', $msgInfo, Logger::GRAN_MONTH);
 	    //base
 	    self::$journal = new Journal();
-		self::$journal->insertJournaux('Erreur',Securite::crypteData($msgInfo));
+		self::$journal->insertJournaux('Erreur',$msgInfo);
 	}
 	
 	// Ecrire une erreur en log en base + fichier
 	public static function loggerErreurInBdd($msgInfo) {
 		//base
 	    self::$journal = new Journal();
-		self::$journal->insertJournaux('Erreur',Securite::crypteData($msgInfo));
+		self::$journal->insertJournaux('Erreur',$msgInfo);
 	}
-
 }
-

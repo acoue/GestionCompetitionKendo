@@ -31,8 +31,8 @@ if(!empty($combat)) { ?>
 <?php 
 		$pouletmp="";
 		foreach ($combat as $cbt) {
-			$licencie1 = Securite::decrypteData($cbt[1])." ".Securite::decrypteData($cbt[2]);
-			$licencie2 = Securite::decrypteData($cbt[4])." ".Securite::decrypteData($cbt[5]);
+			$licencie1 = $cbt[1]." ".$cbt[2];
+			$licencie2 = $cbt[4]." ".$cbt[5];
 			$poule = $cbt['poule'];
 			$resRouge = $cbt['resultat_rouge'];
 			$resBlanc = $cbt['resultat_blanc'];

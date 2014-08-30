@@ -21,7 +21,7 @@ require_once 'Config/fonction.php';
 	$nb = count($participant);
 	foreach ($participant as $part) { 
 		echo "<tr>";
-		echo "	<td><input type='hidden' id='licencie".$part['position_poule']."' name='licencie".$part['position_poule']."' value='".$part[0]."'>".Securite::decrypteData($part['prenom'])." ".Securite::decrypteData($part['nom'])."</td>";
+		echo "	<td><input type='hidden' id='licencie".$part['position_poule']."' name='licencie".$part['position_poule']."' value='".$part[0]."'>".$part['prenom']." ".$part['nom']."</td>";
 		echo "	<td><select id='res".$part['position_poule']."' name='res".$part['position_poule']."' >
 					<option value='1' >1er</option>
 					<option value='2' >2&egrave;me</option>

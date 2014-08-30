@@ -11,8 +11,8 @@ require_once 'Config/fonction.php';
 		<tr>
 			<td style='width: 20%;' ></td>
 <?php 
-echo "<td style='width: 40%; text-align: center; background-color: red; color: white;'>".Securite::decrypteData($combat[1])." ".Securite::decrypteData($combat[2])."</td>";
-echo "<td style='width: 40%; text-align: center;'>".Securite::decrypteData($combat[4])." ".Securite::decrypteData($combat[5])."</td>";
+echo "<td style='width: 40%; text-align: center; background-color: red; color: white;'>".$combat[1]." ".$combat[2]."</td>";
+echo "<td style='width: 40%; text-align: center;'>".$combat[4]." ".$combat[5]."</td>";
 ?>
 		</tr>
 	</thead>
