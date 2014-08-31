@@ -4,7 +4,7 @@ require_once 'Config/fonction.php';
 <p><h3>Repartition licenci&eacute; par cat&eacute;gorie</h3></p>
 
 <script type="text/javascript">
-	function rechercheLicencie(categorie,valTexte) {
+	function rechercheLicencieRepartition(categorie,valTexte) {
 	//alert(categorie + '-' +valTexte.value);
 	window.location.href="index.php?action=afficheRepartitionRecherche&id=" + categorie + "&rech=" + valTexte.value;
 	}
@@ -26,9 +26,10 @@ if(!empty($categories)) {
 <?php 
 if($categorieSelected >-1) {
 	echo "<p align='center' ><input type='submit' name='valider' /></p>";
-	echo "<label for='recherche'>Chercher un licenci&eacute; :  </label>&nbsp;&nbsp;";
-	echo "<input type='text' id='recherche' onChange='rechercheLicencie(\"".$categorieSelected."\",this);'\">&nbsp;(Pressez la touche tabulation pour lancer la recherche)";
-	echo "<br /><input type='button' id='afficheAll' value='Afficher tout' onClick=\"window.location='index.php?action=afficheRepartition&id=".$categorieSelected."'\" >";
+	echo "<p align='center' ><label for='recherche'>Chercher un licenci&eacute; :  </label>&nbsp;&nbsp;";
+	echo "<input type='text' id='recherche' size='40px' onChange='rechercheLicencieRepartition(\"".$categorieSelected."\",this);'\">&nbsp;&nbsp;";
+	echo "<input type='button' id='recherche' value='Rechercher' onClick='rechercheLicencieRepartition(\"".$categorieSelected."\",this);' >&nbsp; Ou pressez la touche tabulation pour lancer la recherche</p>";
+	echo "<p align='center' ><input type='button' id='afficheAll' value='Afficher tout' onClick=\"window.location='index.php?action=afficheRepartition&id=".$categorieSelected."'\" ></P>";
 }
 ?>
 <p align='center' >

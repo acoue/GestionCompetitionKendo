@@ -14,7 +14,7 @@ class Organisation extends Modele {
 			$sql = "select club.libelle, idlicencie, nom , prenom 
 					from licencie,club 
 					where club.idclub = licencie.idclub 
-					and idlicencie not in (select idlicencie from licencie_categorie where idcategorie = ? and idcompetition = ?) and idlicencie > 3
+					and idlicencie not in (select idlicencie from licencie_categorie where idcategorie = ? and idcompetition = ?) and idlicencie > 2 
 					order by 1,2,3 ";
 			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
 			return $result;
@@ -31,7 +31,7 @@ class Organisation extends Modele {
 			$sql = "select club.libelle, idlicencie, nom , prenom 
 					from licencie,club 
 					where club.idclub = licencie.idclub 
-					and idlicencie not in (select idlicencie from licencie_categorie where idcategorie = ? and idcompetition = ?) and idlicencie > 3 
+					and idlicencie not in (select idlicencie from licencie_categorie where idcategorie = ? and idcompetition = ?) and idlicencie > 2 
 					and (nom like '%".$texteCrypt."%' or prenom like '%".$texteCrypt."%' )
 					order by 1,2,3 ";
 			
@@ -50,7 +50,7 @@ class Organisation extends Modele {
 		try {
 			$sql = "select club.libelle, idlicencie, nom , prenom
 					from licencie,club
-					where club.idclub = licencie.idclub  and idlicencie > 3 order by 1,2,3 ";
+					where club.idclub = licencie.idclub  and idlicencie > 2 order by 1,2,3 ";
 			$result	= $this->executerRequete($sql);	
 			return $result;
 		} catch (Exception $e) {
@@ -157,7 +157,7 @@ class Organisation extends Modele {
 			$sql = "select club.libelle, licencie.idlicencie, nom , prenom, idlicencie_categorie, idcategorie
 					from licencie_categorie,licencie,club
 					where club.idclub = licencie.idclub and licencie_categorie.idlicencie = licencie.idlicencie
-					and idcategorie = ? and idcompetition = ?  and licencie.idlicencie > 3 order by 1,2,3";
+					and idcategorie = ? and idcompetition = ?  and licencie.idlicencie > 2 order by 1,2,3";
 			$result	= $this->executerRequeteToArray($sql, array($idCategorie,$competition));
 			return $result;
 		} catch (Exception $e) {

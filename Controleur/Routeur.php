@@ -167,7 +167,10 @@ class Routeur {
 
 //Partie Menu Gestion -> Licencies
             	else if ($_GET['action'] == 'gestionLicencie') {
-            		$this->ctrlGestion->afficherListeLicencies();
+            		if(isset($_GET['rech'])) {
+            			$rech = $this->getParametre($_GET, 'rech');
+            			$this->ctrlGestion->afficherListeLicenciesRecherche($rech);
+            		} else $this->ctrlGestion->afficherListeLicencies();
             	}
             	else if ($_GET['action'] == 'afficheLicencie') {
             		$idLicencie = $this->getParametre($_GET, 'id');

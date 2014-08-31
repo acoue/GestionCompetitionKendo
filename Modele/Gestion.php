@@ -195,7 +195,7 @@ class Gestion extends Modele {
 ////////////////////////////
 	public function getClubs() {
 		try {
-			$sql = "select * from club, region where club.idregion = region.idregion order by club.libelle asc";
+			$sql = "select * from club, region where club.idregion = region.idregion and club.idclub > 1 order by club.libelle asc";
 			$result	= $this->executerRequete($sql);
 			return $result;
 		} catch (Exception $e) {
@@ -357,7 +357,23 @@ class Gestion extends Modele {
 ////////////////////////////
 	public function getLicencies() {
 		try {
-			$sql = "select * from licencie,club,region where club.idclub = licencie.idclub and club.idregion = region.idregion order by licencie.prenom asc";
+			$sql = "select * from licencie,club,region where club.idclub = licencie.idclub and club.idregion = region.idregion and licencie.idlicencie > 2 order by licencie.prenom asc";
+			$result	= $this->executerRequete($sql);
+			return $result;
+		} catch (Exception $e) {
+			Log::afficherErreur("getLicencies() : ".$e->getMessage());
+			log::loggerErreur("getLicencies() : ".$e->getMessage());
+			return null;
+		}
+	}
+	
+	public function getLicenciesRecherche($rech) {
+		try {
+			$sql = "select * 
+					from licencie,club,region 
+					where club.idclub = licencie.idclub and club.idregion = region.idregion 
+					and licencie.idlicencie > 2 
+					and (nom like '%".$rech."%' or prenom like '%".$rech."%') order by licencie.prenom asc";
 			$result	= $this->executerRequete($sql);
 			return $result;
 		} catch (Exception $e) {

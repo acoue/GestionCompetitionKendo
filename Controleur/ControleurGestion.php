@@ -292,6 +292,12 @@ class ControleurGestion {
     	$vue->generer(array('licencies' => $Licencies), null);
     }
     
+    public function afficherListeLicenciesRecherche($rech) {
+    	$Licencies = $this->gestion->getLicenciesRecherche($rech);
+    	$vue = new Vue("Gestion","ListeLicencies");
+    	$vue->generer(array('licencies' => $Licencies), null);
+    }
+    
     public function afficherLicencie($idLicencie) {
     	$Licencie = $this->gestion->getLicencie($idLicencie);
     	$clubs = $this->gestion->getClubs();
