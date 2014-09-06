@@ -1,6 +1,6 @@
 <nav id="cssmenu" role="navigation">
 	<ul>
-		<li><a href='index.php'><span>Accueil</span></a></li>
+		<li><a href='index.php?action=accueil'><span>Accueil</span></a></li>
 		<li class='has-sub'><a href='#'><span>Gestion</span></a>
 			<ul>
 				<li><a href='index.php?action=gestionCompetition'><span>Comp&eacute;tition</span></a></li>

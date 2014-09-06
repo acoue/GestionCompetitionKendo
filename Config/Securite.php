@@ -9,10 +9,10 @@ require_once 'Config/Log.php';
  *  - Methode pour eviter le XSS 
 **/
 class Securite {
-
-	private static $cipher  = MCRYPT_RIJNDAEL_128;                 // Algorithme utilisŽ pour le cryptage des blocs
-    private static $key     = 'miG742NCWwi5d3h5Wzn3VWBw2Q66Vs';    // ClŽ de cryptage
-    private static $mode    = 'cbc';                               // Mode opŽratoire (traitement des blocs)
+	
+	private static $cipher  = MCRYPT_RIJNDAEL_128;                 // Algorithme utilisï¿½ pour le cryptage des blocs
+    private static $key     = 'miG742NCWwi5d3h5Wzn3VWBw2Q66Vs';    // Cle de cryptage
+    private static $mode    = 'cbc';                               // Mode opï¿½ratoire (traitement des blocs)
  
     public static function crypteData($data){
         $keyHash = md5(self::$key);
@@ -46,5 +46,10 @@ class Securite {
 	// Donnees sortantes
 	public static function securiseHtml($string) {
 		return htmlentities($string);
+	}
+	
+	public static function utilisateurConnected() {
+		if(empty($_SESSION['connected'])) return $retour = "-1";
+		else return $_SESSION['connected'];
 	}
 }

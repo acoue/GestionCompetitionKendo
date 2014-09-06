@@ -45,8 +45,8 @@ if(!empty($licenciesCategorie)) {
 		<label for="premier">1&egrave;re &eacute;quipe descendante </label>
 		<select name="premier" id="premier"><option value='-1' selected>--</option>
 		<?php 
-		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".$licencie["prenom"])." ".$licencie["nom"]."</option>";
-		?>
+		foreach ($licenciesCategorie as $licencie) echo "<option value='".$licencie["idlicencie"]."' >".$licencie[0]." - ".$licencie["prenom"]." ".$licencie["nom"]."</option>";
+		?>		
 		</select>
 		<br />
 		<label for="deuxieme">2&egrave;me &eacute;quipe descendante </label>
