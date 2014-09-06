@@ -21,7 +21,7 @@ if(!empty($categories)) {
 if(!empty($licenciesCategorie)) {
 	if($categorieSelected >-1) {
 
-		if(!empty($dateTirage)) echo "<p align='center' style='color:orange; font-weight:bold;'>Date/Heure du tirage pour cette cat&eacute;gorie : ".aff_date_court($dateTirage[0])." - Type : $dateTirage[1]</p>";
+		if(!empty($dateTirage)) echo "<p align='center' style='color:orange; font-weight:bold;'>Date/Heure du tirage pour cette cat&eacute;gorie : ".aff_date_court($dateTirage[0])." - ".$dateTirage[1]."</p>";
 		else echo "<p>Aucun tirage pour cette cat&eacute;gorie</p>";
 	
 ?>

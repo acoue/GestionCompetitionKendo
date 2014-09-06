@@ -290,7 +290,7 @@ class Organisation extends Modele {
 	
 	public function insertHistoriqueTirage($categorie,$competition,$type) {
 		try {
-			$sql  = "INSERT INTO HISTORIQUE_TIRAGE (idcategorie,idcompetition,date_tirage,type) values ( ? , ? , now() , ?) ";
+			$sql  = "INSERT INTO historique_tirage (idcategorie,idcompetition,date_tirage,type) values ( ? , ? , now() , ?) ";
 			$result	= $this->executerRequete($sql, array($categorie,$competition,$type));
 			return $result;
 	
@@ -303,7 +303,7 @@ class Organisation extends Modele {
 
 	public function getDateTirage($idCategorie,$competition) {
 		try {
-			$sql = "select date_tirage,type from HISTORIQUE_TIRAGE where idcategorie = ? and idcompetition = ? ";
+			$sql = "select date_tirage,type from historique_tirage where idcategorie = ? and idcompetition = ? ";
 			$result	= $this->executerRequete($sql, array($idCategorie,$competition));
 			return $result->fetch(); 
 		} catch (Exception $e) {

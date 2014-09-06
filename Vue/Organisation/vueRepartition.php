@@ -25,7 +25,7 @@ if(!empty($categories)) {
 </select>
 <?php 
 if($categorieSelected >-1) {
-	echo "<p align='center' ><input type='submit' name='valider' /></p>";
+	echo "<p align='center' ><input type='submit' id='valider' value='Ajouter &agrave; la cat&eacute;gorie'/></p>";
 	echo "<p align='center' ><label for='recherche'>Chercher un licenci&eacute; :  </label>&nbsp;&nbsp;";
 	echo "<input type='text' id='recherche' size='40px' onChange='rechercheLicencieRepartition(\"".$categorieSelected."\",this);'\">&nbsp;&nbsp;";
 	echo "<input type='button' id='recherche' value='Rechercher' onClick='rechercheLicencieRepartition(\"".$categorieSelected."\",this);' >&nbsp; Ou pressez la touche tabulation pour lancer la recherche</p>";

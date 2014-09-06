@@ -1,4 +1,6 @@
 <?php
+require_once 'Modele/Parametre.php';
+require_once 'Config/Log.php';
 
 /**
  * Classe de gestion des parametres de configuration
@@ -13,12 +15,13 @@ class Configuration {
 
     /** Tableau des parametres de configuration */
     private static $parametres;
-
+    private static $param;
+    
     /**
      * Renvoie la valeur d'un parametre de configuration
      * 
      * @param string $nom Nom du parametre
-     * @param string $valeurParDefaut Valeur a renvoyer par defaut
+     * @param string $valeurParDefaut Valeur a renvoyer par defaut
      * @return string Valeur du parametre
      */
     public static function get($nom, $valeurParDefaut = null) {
@@ -52,6 +55,10 @@ class Configuration {
         }
         return self::$parametres[$param];
     }
-
+    
+    public static function getParametreInBdd($code) {
+	    self::$param = new Parametre();
+    	return self::$param->getParamBdd($code);
+    }
 }
 

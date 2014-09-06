@@ -6,7 +6,7 @@
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-		<title>GCK - Gestion Comp&eacute;tition Kendo</title>
+		<title><?php echo Configuration::getParametreInBdd("titreSite") ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,12 +42,12 @@
 </head>
 <body>
 	<header id="header" role="banner" class="line pam">
-		<img src="img/site/header.png" border="0" alt="Retour &agrave; l'accueil" align="left" />Gestion Comp&eacute;tition Kendo
+		<img src="img/site/header.png" border="0" alt="Retour &agrave; l'accueil" align="left" /><img src='img/site/logo_gc4k_mini.png' border='0'/><?php echo Configuration::getParametreInBdd("titreSite") ?>
 		<p class="titreHeader"><?php  if(isset($_SESSION['competition']))echo $_SESSION['competition']; else echo "";?></p>
 	</header>
 	<aside id="letf-side" class="mod left mrs pam w20 aside">
 <?php 
-	Log::loggerInformationInFile("LogInUser -> crypt data : ".Securite::crypteData("cnk2014"));
+	//Log::loggerInformationInFile("LogInUser -> crypt data : ".Securite::crypteData("cnk2014"));
 	if (Securite::utilisateurConnected() === '1') {
 		require_once 'Config/fonction.php';
 		require_once Configuration::get("chemin_vue").'menu.php';
@@ -80,12 +80,10 @@
 	<table>
 		<tr>
 			<td width='10%' align='center'><img alt="Licence Creative Commons" src="img/site/by-nc-nd.eu.png" /></td>
-			<td>Gestion Comp&eacute;tition Kendo de Anthony COUE est mis &agrave; disposition selon les termes de la licence 
-	Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International.<br /> 
-	(Pour acc&eacute;der &agrave; une copie de cette licence, merci de vous rendre &agrave; l'adresse suivante http://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr)</td>
+			<td><?php echo Configuration::getParametreInBdd("piedSite") ?></td>
 			<td width='20%' align='right'><a href='index.php?action=deconnexion'>
 			<?php 
-			if (Securite::utilisateurConnected() === '1') echo "<span><img src='img/site/logout.png' border='0'></span></a>";
+			if (Securite::utilisateurConnected() === '1') echo "<span><img src='img/site/logout.png' border='0' /></span></a>";
 			?>
 			</td>
 		</tr>

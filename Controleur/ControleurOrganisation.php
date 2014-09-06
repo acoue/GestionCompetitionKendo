@@ -792,7 +792,7 @@ class ControleurOrganisation {
    	}
    	
    	public function genererExcelPoule($categorie) {
-   		
+   		//Configuration::getParametreInBdd("titreSite")
    		//Recuperation date de la competition
    		$compet = $this->gestion->getCompetitionSelected();
    		$competDate = $compet["datecompetition"];
@@ -810,22 +810,24 @@ class ControleurOrganisation {
    			$objet = PHPExcel_IOFactory::createReader('Excel5');
    			$excel = $objet->load('Data/poule'.$nbCompetiteur.'.xls');
    			$sheet = $excel->getSheet(0);
-   			$sheet->setCellValue("H1", aff_date_court($competDate));
-   			$sheet->setCellValue("H3", $categorieLibelle);
-   			$sheet->setCellValue("C6", $competLibelle);
+   			
+   			$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleDateCompetition"), aff_date_court($competDate));
+   			$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleCategorie"), $categorieLibelle);
+   			$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleLibelleCompetition"), $competLibelle);
+   			$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleTitre"), "Poule ".$i);
    			
    			$row = 18;
    			foreach ($competiteurInPoule as $tirage) {
    				$club = $tirage[2];
    				$licencie = trim(rtrim($tirage["prenom"]))." ".trim(rtrim($tirage["nom"]));
-   				$sheet->setCellValue("B".$row, $licencie);
+   				$sheet->setCellValue(Configuration::getParametreInBdd("pouleColonneLicencie").$row, $licencie);
    				$row = $row + 2;
-   				$sheet->setCellValue("B".$row, $club);
+   				$sheet->setCellValue(Configuration::getParametreInBdd("pouleColonneLicencie").$row, $club);
    				$row++;
    			}
    			
    			$writer = PHPExcel_IOFactory::createWriter($excel, "Excel5");
-   			$writer->save('Ressources/'.$competition.'_'.$categorieLibelle.'_poule_'.$i.'.xls');
+   			$writer->save(Configuration::getParametreInBdd("pouleTableauEmplacement").'/'.$competition.'_'.$categorieLibelle.'_poule_'.$i.'.xls');
    			
    		}
    		
@@ -880,12 +882,12 @@ class ControleurOrganisation {
    		$objet = PHPExcel_IOFactory::createReader('Excel5');
    		$excel = $objet->load('Data/tableau'.$nbCompetiteur.'.xls');
    		$sheet = $excel->getSheet(0);
-   		$sheet->setCellValue("H2", aff_date_court($competDate));
-   		$sheet->setCellValue("H4", $categorieLibelle);
-   		$sheet->setCellValue("D9", $competLibelle);
+   		$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleDateCompetition"), aff_date_court($competDate));
+   		$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleCategorie"), $categorieLibelle);
+   		$sheet->setCellValue(Configuration::getParametreInBdd("pouleCelluleLibelleCompetition"), $competLibelle);
    	
    		for ($row=10; $row<81; $row++) { //nombre de ligne max tableau de 96
-   			$valeur = $sheet->getCell("B".$row)->getValue();
+   			$valeur = $sheet->getCell(Configuration::getParametreInBdd("tabGaucheColonneLicencie").$row)->getValue();
    			if(!empty($valeur)) {
    				if(strrpos($valeur, '.')!==false){
    					$resClassement = explode(".", $valeur);
@@ -894,7 +896,7 @@ class ControleurOrganisation {
    					$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$competition);
    					if(!empty($tirage)) {
    						$licencie = trim(rtrim($tirage['prenom']))." ".trim(rtrim($tirage['nom']));
-   						$sheet->setCellValue("C".$row, $licencie);
+   						$sheet->setCellValue(Configuration::getParametreInBdd("tabGaucheColonneNomLicencie").$row, $licencie);
    					} 
    				}
    			}
@@ -902,7 +904,7 @@ class ControleurOrganisation {
    		$row = 0;
    		if($nbCompetiteur > 30) { //Tableau sur 2 colonnes
    			for ($row=10; $row<81; $row++) { //nombre de lignes max tableau de 96
-   				$valeur = $sheet->getCell("O".$row)->getValue();
+   				$valeur = $sheet->getCell(Configuration::getParametreInBdd("tabDroiteColonneLicencie").$row)->getValue();
    				if(!empty($valeur)) {
    					if(strrpos($valeur, '.')!==false){
    						$resClassement = explode(".", $valeur);
@@ -911,7 +913,7 @@ class ControleurOrganisation {
    						$tirage = $this->organisation->getLicencieByClassementPoule($categorie, $poule, $position,$competition);
    						if(!empty($tirage)) {
    							$licencie = trim(rtrim($tirage['prenom']))." ".trim(rtrim($tirage['nom']));
-   							$sheet->setCellValue("N".$row, $licencie);
+   							$sheet->setCellValue(Configuration::getParametreInBdd("tabDroiteColonneNomLicencie").$row, $licencie);
    						}
    					}
    				}
@@ -919,7 +921,7 @@ class ControleurOrganisation {
    		}
    		
    		$writer = PHPExcel_IOFactory::createWriter($excel, "Excel5");
-   		$writer->save('Ressources/'.$competition.'_'.$categorieLibelle.'_tableau.xls');
+   		$writer->save(Configuration::getParametreInBdd("pouleTableauEmplacement").'/'.$competition.'_'.$categorieLibelle.'_tableau.xls');
    		
    		
    		$categories = $this->gestion->getCategories();

@@ -3,6 +3,7 @@ require_once 'Config/Configuration.php';
 require_once 'Config/fonction.php';
 ?>
 <p><h3>Contact - A propos</h3></p>
+<p><img src='img/site/logo_gc4k_mini.png' border='0'/></p>
 <p><h2>Gestion Comp&eacute;tition Kendo</h2>version 2.0</p>
 <b>R&eacute;alisation :</b> Anthony COUE (<a href='mailto:anthony.coue@gmail.com' >anthony.coue@gmail.com</a>)<br />
 <b>Contenus et outils :</b> A FAIRE <br />

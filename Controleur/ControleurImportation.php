@@ -18,16 +18,16 @@ class ControleurImportation {
     	if ($fichier['error']) {
     		switch ($fichier['error']){
     			case 1: // UPLOAD_ERR_INI_SIZE
-    				$erreur[] = "Le fichier dépasse la limite autorisée par le serveur (fichier php.ini) !";
+    				$erreur[] = "Le fichier d√©passe la limite autoris√©e par le serveur (fichier php.ini) !";
     				break;
     			case 2: // UPLOAD_ERR_FORM_SIZE
-    				$erreur[] = "Le fichier dépasse la limite autorisée dans le formulaire HTML !";
+    				$erreur[] = "Le fichier d√©passe la limite autoris√©e dans le formulaire HTML !";
     				break;
     			case 3: // UPLOAD_ERR_PARTIAL
-    				$erreur[] = "L'envoi du fichier a été interrompu pendant le transfert !";
+    				$erreur[] = "L'envoi du fichier a √©t√© interrompu pendant le transfert !";
     				break;
     			case 4: // UPLOAD_ERR_NO_FILE
-    				$erreur[] = "Le fichier que vous avez envoyé a une taille nulle !";
+    				$erreur[] = "Le fichier que vous avez envoy√© a une taille nulle !";
     				break;
     		}
     	}
@@ -87,16 +87,16 @@ class ControleurImportation {
     	if ($fichier['error']) {
     		switch ($fichier['error']){
     			case 1: // UPLOAD_ERR_INI_SIZE
-    				$erreur[] = "Le fichier dépasse la limite autorisée par le serveur (fichier php.ini) !";
+    				$erreur[] = "Le fichier d√©passe la limite autoris√©e par le serveur (fichier php.ini) !";
     				break;
     			case 2: // UPLOAD_ERR_FORM_SIZE
-    				$erreur[] = "Le fichier dépasse la limite autorisée dans le formulaire HTML !";
+    				$erreur[] = "Le fichier d√©passe la limite autoris√©e dans le formulaire HTML !";
     				break;
     			case 3: // UPLOAD_ERR_PARTIAL
-    				$erreur[] = "L'envoi du fichier a été interrompu pendant le transfert !";
+    				$erreur[] = "L'envoi du fichier a √©t√© interrompu pendant le transfert !";
     				break;
     			case 4: // UPLOAD_ERR_NO_FILE
-    				$erreur[] = "Le fichier que vous avez envoyé a une taille nulle !";
+    				$erreur[] = "Le fichier que vous avez envoy√© a une taille nulle !";
     				break;
     		}
     	}
@@ -157,16 +157,16 @@ class ControleurImportation {
     	if ($fichier['error']) {
     		switch ($fichier['error']){
     			case 1: // UPLOAD_ERR_INI_SIZE
-    				$erreur[] = "Le fichier dépasse la limite autorisée par le serveur (fichier php.ini) !";
+    				$erreur[] = "Le fichier d√©passe la limite autoris√©e par le serveur (fichier php.ini) !";
     				break;
     			case 2: // UPLOAD_ERR_FORM_SIZE
-    				$erreur[] = "Le fichier dépasse la limite autorisée dans le formulaire HTML !";
+    				$erreur[] = "Le fichier d√©passe la limite autoris√©e dans le formulaire HTML !";
     				break;
     			case 3: // UPLOAD_ERR_PARTIAL
-    				$erreur[] = "L'envoi du fichier a été interrompu pendant le transfert !";
+    				$erreur[] = "L'envoi du fichier a √©t√© interrompu pendant le transfert !";
     				break;
     			case 4: // UPLOAD_ERR_NO_FILE
-    				$erreur[] = "Le fichier que vous avez envoyé a une taille nulle !";
+    				$erreur[] = "Le fichier que vous avez envoy√© a une taille nulle !";
     				break;
     		}
     	}
@@ -194,7 +194,7 @@ class ControleurImportation {
 	    					Log::loggerInformation("Licencie ".$prenom." ".$nom." repartis dans la cat&eacute;gorie $categorie");
 	   					} else {
 	   						$erreur[] = "Erreur dans l'ajout de la repartition de ".$prenom." ".$nom." dans la cat&eacute;gorie $categorie";
-	   						Log::loggerInformation("Erreur dans l'ajout de la repartition ".$prenom." ".$nom." dans la catégorie $categorie");
+	   						Log::loggerInformation("Erreur dans l'ajout de la repartition ".$prenom." ".$nom." dans la cat√©gorie $categorie");
 	   					}
     				} else {
 	    				$erreur[] = "La repartition licenci&eacute; ".$prenom." ".$nom." / cat&eacute;gorie $categorie existe en base";
@@ -215,7 +215,7 @@ class ControleurImportation {
     						Log::loggerInformation("Licencie ".$prenom." ".$nom." repartis dans la cat&eacute;gorie $categorie");
     					} else {
     						$erreur[] = "Erreur dans l'ajout de la repartition de ".$prenom." ".$nom." dans la cat&eacute;gorie $categorie";
-    						Log::loggerInformation("Erreur dans l'ajout de la repartition ".$prenom." ".$nom." dans la catégorie $categorie");
+    						Log::loggerInformation("Erreur dans l'ajout de la repartition ".$prenom." ".$nom." dans la cat√©gorie $categorie");
     					}
     				} else {
     					$erreur[] = "Erreur dans l'ajout du licenci&eacute; ".$prenom." ".$nom;

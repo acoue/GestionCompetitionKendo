@@ -57,7 +57,7 @@ abstract class Modele {
     	}
     	return $result;
     }
-
+    
     /**
      * Renvoie un objet de connexion a la BD en initialisant la connexion au besoin
      * 
