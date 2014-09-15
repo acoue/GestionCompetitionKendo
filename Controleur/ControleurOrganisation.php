@@ -225,7 +225,8 @@ class ControleurOrganisation {
     			$licenciesCategorie = $this->makeTirageClubAndTete($licenciesCategorie,$teteForTirage,$nbInPoule,$tiragePoule4);
     			$typeTirage .= "Ecart des clubs et des tetes de series";
     		}
-    		    	
+
+    		Log::loggerInformation("Tirage en individuel : ".$typeTirage);
     		//Répartition dans la table licencie_categorie -> tirage
     		$this->insertIntoTableTirage($categorie,$competition,$nbParticipantInCategorie,$nbInPoule,$licenciesCategorie);
 			//Creation des combats
@@ -286,6 +287,7 @@ class ControleurOrganisation {
     		
     		$licenciesTirage = $this->organisation->getTirageCategorieOrdonne($categorie,$competition);
     		$result[] = "Tirage en tableau effectué";
+    		Log::loggerInformation("Tirage en tableau : ".$typeTirage);
     	}
     	//Insertion dans la table historique
     	$this->organisation->insertHistoriqueTirage($categorie,$competition,$typeTirage);
@@ -393,7 +395,8 @@ class ControleurOrganisation {
     	$this->organisation->insertHistoriqueTirage($categorie,$competition,$typeTirage);
 		//Creation des combats
 		$this->creationCombat($categorie, $competition);
-    	
+
+		Log::loggerInformation("Tirage par Equipe : ".$typeTirage);
 		$result = array();
     	$licenciesCategorie = $this->organisation->getLicenciesInCategorie($categorie,$competition);
 		// Recuperation des competiteurs

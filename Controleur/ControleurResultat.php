@@ -99,7 +99,7 @@ class ControleurResultat {
     	
     	$result = $this->resultat->setResultatCombatPoule($idCombat,$pointR,$pointB,$vainqueur,$competition);
     	if(! empty($result)) {
-    		$erreur[] = "R&eacutesultat renseign&eacute;s pour le combat $idCombat";
+    		//$erreur[] = "R&eacutesultat renseign&eacute;s pour le combat $idCombat";
     		Log::loggerInformation("Resultat renseigne pour le combat $idCombat");
     	} else {
     		$erreur[] = "Erreur dans le renseignement du r&eacute;sultat pour le combat $idCombat";
@@ -164,7 +164,7 @@ class ControleurResultat {
     	if($licencie1 != "-1" ) {
     		$result = $this->resultat->addResultatPoule($poule, $licencie1, $res1, $categorie,$competition);
 			if(! empty($result)) {
-    			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
+    			//$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
     		} else {
     			$erreur[] = "Erreur dans le renseignement du classement pour la poule $poule";
@@ -174,7 +174,7 @@ class ControleurResultat {
     	if($licencie2 != "-1" ) {
     		$result = $this->resultat->addResultatPoule($poule, $licencie2, $res2, $categorie,$competition);
 			if(! empty($result)) {
-    			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
+    			//$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
     		} else {
     			$erreur[] = "Erreur dans le renseignement du classement pour la poule $poule";
@@ -184,7 +184,7 @@ class ControleurResultat {
     	if($licencie3 != "-1" ) {
     		$result = $this->resultat->addResultatPoule($poule, $licencie3, $res3, $categorie,$competition);
 			if(! empty($result)) {
-    			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
+    			//$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
     		} else {
     			$erreur[] = "Erreur dans le renseignement du classement pour la poule $poule";
@@ -194,7 +194,7 @@ class ControleurResultat {
     	if($licencie4 != "-1" ) {
     		$result = $this->resultat->addResultatPoule($poule, $licencie4, $res4, $categorie,$competition);
 			if(! empty($result)) {
-    			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
+    			//$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
     		} else {
     			$erreur[] = "Erreur dans le renseignement du classement pour la poule $poule";
@@ -204,7 +204,7 @@ class ControleurResultat {
     	if($licencie5 != "-1" ) {
     		$result = $this->resultat->addResultatPoule($poule, $licencie5, $res5, $categorie,$competition);
 			if(! empty($result)) {
-    			$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
+    			//$erreur[] = "Classement renseign&eacute;s pour la poule $poule";
     			Log::loggerInformation("Classement renseigne pour la poule $poule");
     		} else {
     			$erreur[] = "Erreur dans le renseignement du classement pour la poule $poule";

@@ -15,6 +15,7 @@ class ControleurImportation {
 // Importation CLUB
 ////////////////////////////
     public function importerClub($fichier) { 
+		$erreur = array();
     	if ($fichier['error']) {
     		switch ($fichier['error']){
     			case 1: // UPLOAD_ERR_INI_SIZE
@@ -51,7 +52,7 @@ class ControleurImportation {
   						$idRegion = $region['idregion'];
   						$resultAjout = $this->gestion->addClub($libelleClub,$idRegion);
   						if(! empty($resultAjout)) {
-  							$erreur[] = "Club $libelleClub ($libelleRegion) ajout&eacute;";
+  							//$erreur[] = "Club $libelleClub ($libelleRegion) ajout&eacute;";
   							Log::loggerInformation("Club ".$libelleClub." ajoute");
   						} else {
   							$erreur[] = "Erreur dans l'ajout du club $libelleClub";
@@ -84,6 +85,7 @@ class ControleurImportation {
 // Importation LICENCIE
 ////////////////////////////
     public function importerLicencie($fichier) {
+		$erreur = array();
     	if ($fichier['error']) {
     		switch ($fichier['error']){
     			case 1: // UPLOAD_ERR_INI_SIZE
@@ -122,14 +124,14 @@ class ControleurImportation {
 	    			if(empty($licencieExist)) {
 	    				$resultAjout = $this->gestion->addLicencie($prenom, $nom, $idClub);
 	    				if(! empty($resultAjout)) {
-	    					$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." ajout&eacute;";
+	    					//$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." ajout&eacute;";
 	    					Log::loggerInformation("Licencie ".$prenom." ".$nom." ajoute");
 	    				} else {
 	    					$erreur[] = "Erreur dans l'ajout du licenci&eacute; ".$prenom." ".$nom;
 	    					Log::loggerInformation("Erreur dans l'ajout du licencie ".$prenom." ".$nom);
 	    				}
 	    			} else {
-	    				$erreur[] = "Le licenci&eacute; ".$prenom." ".$nom." existe en base";
+	    				//$erreur[] = "Le licenci&eacute; ".$prenom." ".$nom." existe en base";
 	    				Log::loggerInformation("Le licencie ".$prenom." ".$nom." existe en base");
 	    			}
     			} else {
@@ -153,6 +155,7 @@ class ControleurImportation {
 // Importation REPARTITION
 ////////////////////////////
     public function importerRepartition($fichier,$categorie) {
+		$erreur = array();
     	$competition = $this->gestion->getIdCompetitionSelected();
     	if ($fichier['error']) {
     		switch ($fichier['error']){
@@ -190,7 +193,7 @@ class ControleurImportation {
     				if(empty($repartitionExist)) {
 	    				$resultAjout = $this->organisation->addLicencieInCategorie($categorie, $idlicencie,$competition);
 	    				if(! empty($resultAjout)) {
-	    					$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." r&eacute;partis dans la cat&eacutegorie $categorie";
+	    					//$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." r&eacute;partis dans la cat&eacutegorie $categorie";
 	    					Log::loggerInformation("Licencie ".$prenom." ".$nom." repartis dans la cat&eacute;gorie $categorie");
 	   					} else {
 	   						$erreur[] = "Erreur dans l'ajout de la repartition de ".$prenom." ".$nom." dans la cat&eacute;gorie $categorie";
@@ -211,7 +214,7 @@ class ControleurImportation {
 
     					$resultAjout = $this->organisation->addLicencieInCategorie($categorie, $idlicencie,$competition);
     					if(! empty($resultAjout)) {
-    						$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." r&eacute;partis dans la cat&eacutegorie $categorie";
+    						//$erreur[] = "Licenci&eacute; ".$prenom." ".$nom." r&eacute;partis dans la cat&eacutegorie $categorie";
     						Log::loggerInformation("Licencie ".$prenom." ".$nom." repartis dans la cat&eacute;gorie $categorie");
     					} else {
     						$erreur[] = "Erreur dans l'ajout de la repartition de ".$prenom." ".$nom." dans la cat&eacute;gorie $categorie";

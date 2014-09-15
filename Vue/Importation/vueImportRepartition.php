@@ -15,6 +15,13 @@ if(!empty($categories)) {
 ?>
 	</select>
 <br />
+<p>Le fichier doit contenir 2 colonnes : 
+<ul>
+	<li> - 1&egrave;re colonne : prénom </li>
+	<li> - 2&egrave;me colonne : nom </li>
+</ul>
+Ces 3 colones doivent &ecirc;tre s&eacute;par&eacute;es par un point-virgule (;)
+</p>
 	<input type="hidden" name="MAX_FILE_SIZE" value="2097152">     
 <label for="fichier">S&eacute;lectionner un fichier</label>
 	<input type="file" name="fichier" id="fichier" >    
