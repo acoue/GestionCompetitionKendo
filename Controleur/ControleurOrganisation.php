@@ -873,7 +873,7 @@ class ControleurOrganisation {
    		$licenciesTableau = $this->organisation->getLicencieInTableau($categorie,$competition);
    		$nb = count($licenciesTableau);
    		$nbCompetiteur = 0;
-   		$tabTableau = array(4,8,12,16,24,32,36,48,64,96);
+   		$tabTableau = array(4,6,8,12,16,24,32,36,48,64,96);
 
    		for ($i=0; $i<count($tabTableau); $i++) {
    			if($nb <= $tabTableau[$i]) {
